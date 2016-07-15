@@ -240,23 +240,24 @@
 <h2 id="rest">REST</h2>
 <h3 id="json-1-2">JSON <sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup> <sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup></h3>
 <p><strong>GET</strong></p>
-<p>[code lang="python"]
-import requests
-url = "http://localhost:8080/messages"
+<pre><code class="python">import requests
+url = &quot;http://localhost:8080/messages&quot;
 response = requests.get(url)
 data = response.json()
-[/code]</p>
+</code></pre>
+
 <p><strong>POST</strong> <sup id="fnref:3"><a class="footnote-ref" href="#fn:3" rel="footnote">3</a></sup></p>
-<p>[code lang="python"]
-import requests
-import json</p>
-<p>url = "http://localhost:8080/messages"
+<pre><code class="python">import requests
+import json
+
+url = &quot;http://localhost:8080/messages&quot;
 data = {'sender': 'Alice', 'receiver': 'Bob', 'message': 'Hello!'}
 headers = {
   'Content-type': 'application/json',
   'Accept': 'application/json'}
 r = requests.post(url, data=json.dumps(data), headers=headers)
-[/code]</p>
+</code></pre>
+
 <div class="footnote">
 <hr />
 <ol>

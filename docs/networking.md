@@ -4,16 +4,16 @@
 
 **GET**
 
-[code lang="python"]
+```python
 import requests
 url = "http://localhost:8080/messages"
 response = requests.get(url)
 data = response.json()
-[/code]
+```
 
 **POST** [^3]
 
-[code lang="python"]
+```python
 import requests
 import json
 
@@ -23,7 +23,7 @@ headers = {
   'Content-type': 'application/json',
   'Accept': 'application/json'}
 r = requests.post(url, data=json.dumps(data), headers=headers)
-[/code]
+```
 
 [^1]: [How to get JSON from webpage into Python script](http://stackoverflow.com/questions/12965203/how-to-get-json-from-webpage-into-python-script)
 [^2]: [Requests: HTTP for Humans](http://docs.python-requests.org/en/latest/)

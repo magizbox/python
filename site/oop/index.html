@@ -228,7 +228,7 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#oop-1">OOP 1</a></li>
+        <li class="main active"><a href="#object-oriented-programming">Object Oriented Programming</a></li>
         
     
         <li class="main "><a href="#object">Object</a></li>
@@ -238,41 +238,42 @@
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="oop-1">OOP <sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup></h1>
-<p>[code]
-class BankAccount:
+<h1 id="object-oriented-programming">Object Oriented Programming</h1>
+<p><sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup></p>
+<pre><code>class BankAccount:
   id = None
-  balance = 0</p>
-<p>def <strong>init</strong>(self, id, balance=0):
+  balance = 0
+
+  def __init__(self, id, balance=0):
     self.id = id
-    self.balance = balance</p>
-<p>def __get_balance():
+    self.balance = balance
+
+  def __get_balance():
      pass
   def withdraw():
      pass
    def deposite():
      pass
-[/code]</p>
+</code></pre>
+
 <h1 id="object">Object</h1>
 <p>Convert dict to object <sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup></p>
-<p>[code lang="python"]
-class Struct:
-    def <strong>init</strong>(self, **entries):
-        self.<strong>dict</strong>.update(entries)
-[/code]</p>
+<pre><code class="python">class Struct:
+    def __init__(self, **entries):
+        self.__dict__.update(entries)
+</code></pre>
+
 <p>Then, you can use</p>
-<p>[code]</p>
-<blockquote>
-<p>args = {'a': 1, 'b': 2}
-s = Struct(**args)
-s
-&lt; <strong>main</strong>.Struct instance at 0x01D6A738 &gt;
-s.a
+<pre><code>&gt; args = {'a': 1, 'b': 2}
+&gt; s = Struct(**args)
+&gt; s
+&lt; __main__.Struct instance at 0x01D6A738 &gt;
+&gt; s.a
 1
-s.b
+&gt; s.b
 2
-[/code]</p>
-</blockquote>
+</code></pre>
+
 <div class="footnote">
 <hr />
 <ol>

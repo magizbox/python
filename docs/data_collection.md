@@ -1,12 +1,11 @@
-<h3>Reverse a list</h3>
+## Reverse a list
 
 ```python
 [1, 3, 2][::-1]
 # [2, 3, 1]
 ```
 
-![](https://code.org/curriculum/course1/12/vocab.png)
-
+## Itertools
 
 ```python
 import itertools

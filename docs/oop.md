@@ -1,6 +1,8 @@
-# OOP [^1]
+# Object Oriented Programming
 
-[code]
+[^1]
+
+```
 class BankAccount:
   id = None
   balance = 0
@@ -15,7 +17,7 @@ class BankAccount:
      pass
    def deposite():
      pass
-[/code]
+```
 
 [^1]: [Why are Python's 'private' methods not actually private?](http://stackoverflow.com/questions/70528/why-are-pythons-private-methods-not-actually-private)
 
@@ -23,15 +25,15 @@ class BankAccount:
 
 Convert dict to object [^1]
 
-[code lang="python"]
+```python
 class Struct:
     def __init__(self, **entries):
         self.__dict__.update(entries)
-[/code]
+```
 
 Then, you can use
 
-[code]
+```
 > args = {'a': 1, 'b': 2}
 > s = Struct(**args)
 > s
@@ -40,6 +42,6 @@ Then, you can use
 1
 > s.b
 2
-[/code]
+```
 
 [^1]: [stackoverflow, Convert Python dict to object?](http://stackoverflow.com/questions/1305532/convert-python-dict-to-object)

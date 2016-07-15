@@ -82,18 +82,38 @@
         }, 
         {
             "location": "/data_object/", 
-            "text": "Convert dict to object \n1\n\n\nclass Struct:\n    def __init__(self, **entries):\n        self.__dict__.update(entries)\n\n\n\n\nThen, you can use\n\n\n args = {'a': 1, 'b': 2}\n\n s = Struct(**args)\n\n s\n\n __main__.Struct instance at 0x01D6A738 \n\n\n s.a\n1\n\n s.b\n2\n\n\n\n\n\n\n\n\n\n\n\n\nstackoverflow, Convert Python dict to object?", 
+            "text": "Convert dict to object\n\n\n1\n\n\nclass Struct:\n    def __init__(self, **entries):\n        self.__dict__.update(entries)\n\n\n\n\nThen, you can use\n\n\n args = {'a': 1, 'b': 2}\n\n s = Struct(**args)\n\n s\n\n __main__.Struct instance at 0x01D6A738 \n\n\n s.a\n1\n\n s.b\n2\n\n\n\n\n\n\n\n\n\n\n\n\nstackoverflow, Convert Python dict to object?", 
             "title": "Object"
         }, 
         {
+            "location": "/data_object/#convert-dict-to-object", 
+            "text": "1  class Struct:\n    def __init__(self, **entries):\n        self.__dict__.update(entries)  Then, you can use   args = {'a': 1, 'b': 2}  s = Struct(**args)  s  __main__.Struct instance at 0x01D6A738    s.a\n1  s.b\n2      stackoverflow, Convert Python dict to object?", 
+            "title": "Convert dict to object"
+        }, 
+        {
             "location": "/data_string/", 
-            "text": "Format\n\n\n\n'{0}, {1}, {2}'.format('a', 'b', 'c')\n# 'a, b, c'", 
+            "text": "Format\n\n\n'{0}, {1}, {2}'.format('a', 'b', 'c')\n# 'a, b, c'", 
             "title": "String"
         }, 
         {
+            "location": "/data_string/#format", 
+            "text": "'{0}, {1}, {2}'.format('a', 'b', 'c')\n# 'a, b, c'", 
+            "title": "Format"
+        }, 
+        {
             "location": "/data_collection/", 
-            "text": "Reverse a list\n\n\n\n[1, 3, 2][::-1]\n# [2, 3, 1]\n\n\n\n\n\n\nimport itertools\n\nx = [1, 2, 3]\ny = [2, 4, 5]\n\n[a + b for (a, b) in itertools.product(x, y)]\n# [3, 5, 6, 4, 6, 7, 5, 7, 8]", 
+            "text": "Reverse a list\n\n\n[1, 3, 2][::-1]\n# [2, 3, 1]\n\n\n\n\nItertools\n\n\nimport itertools\n\nx = [1, 2, 3]\ny = [2, 4, 5]\n\n[a + b for (a, b) in itertools.product(x, y)]\n# [3, 5, 6, 4, 6, 7, 5, 7, 8]", 
             "title": "Collection"
+        }, 
+        {
+            "location": "/data_collection/#reverse-a-list", 
+            "text": "[1, 3, 2][::-1]\n# [2, 3, 1]", 
+            "title": "Reverse a list"
+        }, 
+        {
+            "location": "/data_collection/#itertools", 
+            "text": "import itertools\n\nx = [1, 2, 3]\ny = [2, 4, 5]\n\n[a + b for (a, b) in itertools.product(x, y)]\n# [3, 5, 6, 4, 6, 7, 5, 7, 8]", 
+            "title": "Itertools"
         }, 
         {
             "location": "/data_time/", 
@@ -107,22 +127,22 @@
         }, 
         {
             "location": "/oop/", 
-            "text": "OOP \n1\n\n\n[code]\nclass BankAccount:\n  id = None\n  balance = 0\n\n\ndef \ninit\n(self, id, balance=0):\n    self.id = id\n    self.balance = balance\n\n\ndef __get_balance():\n     pass\n  def withdraw():\n     pass\n   def deposite():\n     pass\n[/code]\n\n\nObject\n\n\nConvert dict to object \n1\n\n\n[code lang=\"python\"]\nclass Struct:\n    def \ninit\n(self, **entries):\n        self.\ndict\n.update(entries)\n[/code]\n\n\nThen, you can use\n\n\n[code]\n\n\n\n\nargs = {'a': 1, 'b': 2}\ns = Struct(**args)\ns\n\n \nmain\n.Struct instance at 0x01D6A738 \n\ns.a\n1\ns.b\n2\n[/code]\n\n\n\n\n\n\n\n\n\n\n\n\nstackoverflow, Convert Python dict to object?", 
+            "text": "Object Oriented Programming\n\n\n1\n\n\nclass BankAccount:\n  id = None\n  balance = 0\n\n  def __init__(self, id, balance=0):\n    self.id = id\n    self.balance = balance\n\n  def __get_balance():\n     pass\n  def withdraw():\n     pass\n   def deposite():\n     pass\n\n\n\n\nObject\n\n\nConvert dict to object \n1\n\n\nclass Struct:\n    def __init__(self, **entries):\n        self.__dict__.update(entries)\n\n\n\n\nThen, you can use\n\n\n args = {'a': 1, 'b': 2}\n\n s = Struct(**args)\n\n s\n\n __main__.Struct instance at 0x01D6A738 \n\n\n s.a\n1\n\n s.b\n2\n\n\n\n\n\n\n\n\n\n\n\n\nstackoverflow, Convert Python dict to object?", 
             "title": "OOP"
         }, 
         {
-            "location": "/oop/#oop-1", 
-            "text": "[code]\nclass BankAccount:\n  id = None\n  balance = 0  def  init (self, id, balance=0):\n    self.id = id\n    self.balance = balance  def __get_balance():\n     pass\n  def withdraw():\n     pass\n   def deposite():\n     pass\n[/code]", 
-            "title": "OOP 1"
+            "location": "/oop/#object-oriented-programming", 
+            "text": "1  class BankAccount:\n  id = None\n  balance = 0\n\n  def __init__(self, id, balance=0):\n    self.id = id\n    self.balance = balance\n\n  def __get_balance():\n     pass\n  def withdraw():\n     pass\n   def deposite():\n     pass", 
+            "title": "Object Oriented Programming"
         }, 
         {
             "location": "/oop/#object", 
-            "text": "Convert dict to object  1  [code lang=\"python\"]\nclass Struct:\n    def  init (self, **entries):\n        self. dict .update(entries)\n[/code]  Then, you can use  [code]   args = {'a': 1, 'b': 2}\ns = Struct(**args)\ns   main .Struct instance at 0x01D6A738  \ns.a\n1\ns.b\n2\n[/code]       stackoverflow, Convert Python dict to object?", 
+            "text": "Convert dict to object  1  class Struct:\n    def __init__(self, **entries):\n        self.__dict__.update(entries)  Then, you can use   args = {'a': 1, 'b': 2}  s = Struct(**args)  s  __main__.Struct instance at 0x01D6A738    s.a\n1  s.b\n2      stackoverflow, Convert Python dict to object?", 
             "title": "Object"
         }, 
         {
             "location": "/networking/", 
-            "text": "REST\n\n\nJSON \n1\n \n2\n\n\nGET\n\n\n[code lang=\"python\"]\nimport requests\nurl = \"http://localhost:8080/messages\"\nresponse = requests.get(url)\ndata = response.json()\n[/code]\n\n\nPOST\n \n3\n\n\n[code lang=\"python\"]\nimport requests\nimport json\n\n\nurl = \"http://localhost:8080/messages\"\ndata = {'sender': 'Alice', 'receiver': 'Bob', 'message': 'Hello!'}\nheaders = {\n  'Content-type': 'application/json',\n  'Accept': 'application/json'}\nr = requests.post(url, data=json.dumps(data), headers=headers)\n[/code]\n\n\n\n\n\n\n\n\n\n\nHow to get JSON from webpage into Python script\n\n\n\n\n\n\nRequests: HTTP for Humans\n\n\n\n\n\n\nPost JSON using Python Requests", 
+            "text": "REST\n\n\nJSON \n1\n \n2\n\n\nGET\n\n\nimport requests\nurl = \nhttp://localhost:8080/messages\n\nresponse = requests.get(url)\ndata = response.json()\n\n\n\n\nPOST\n \n3\n\n\nimport requests\nimport json\n\nurl = \nhttp://localhost:8080/messages\n\ndata = {'sender': 'Alice', 'receiver': 'Bob', 'message': 'Hello!'}\nheaders = {\n  'Content-type': 'application/json',\n  'Accept': 'application/json'}\nr = requests.post(url, data=json.dumps(data), headers=headers)\n\n\n\n\n\n\n\n\n\n\n\n\nHow to get JSON from webpage into Python script\n\n\n\n\n\n\nRequests: HTTP for Humans\n\n\n\n\n\n\nPost JSON using Python Requests", 
             "title": "Networking"
         }, 
         {
@@ -132,7 +152,7 @@
         }, 
         {
             "location": "/networking/#json-1-2", 
-            "text": "GET  [code lang=\"python\"]\nimport requests\nurl = \"http://localhost:8080/messages\"\nresponse = requests.get(url)\ndata = response.json()\n[/code]  POST   3  [code lang=\"python\"]\nimport requests\nimport json  url = \"http://localhost:8080/messages\"\ndata = {'sender': 'Alice', 'receiver': 'Bob', 'message': 'Hello!'}\nheaders = {\n  'Content-type': 'application/json',\n  'Accept': 'application/json'}\nr = requests.post(url, data=json.dumps(data), headers=headers)\n[/code]      How to get JSON from webpage into Python script    Requests: HTTP for Humans    Post JSON using Python Requests", 
+            "text": "GET  import requests\nurl =  http://localhost:8080/messages \nresponse = requests.get(url)\ndata = response.json()  POST   3  import requests\nimport json\n\nurl =  http://localhost:8080/messages \ndata = {'sender': 'Alice', 'receiver': 'Bob', 'message': 'Hello!'}\nheaders = {\n  'Content-type': 'application/json',\n  'Accept': 'application/json'}\nr = requests.post(url, data=json.dumps(data), headers=headers)      How to get JSON from webpage into Python script    Requests: HTTP for Humans    Post JSON using Python Requests", 
             "title": "JSON 1 2"
         }, 
         {

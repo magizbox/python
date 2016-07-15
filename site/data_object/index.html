@@ -228,11 +228,15 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
+        <li class="main active"><a href="#convert-dict-to-object">Convert dict to object</a></li>
+        
+    
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<p>Convert dict to object <sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup></p>
+<h2 id="convert-dict-to-object">Convert dict to object</h2>
+<p><sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup></p>
 <pre><code class="python">class Struct:
     def __init__(self, **entries):
         self.__dict__.update(entries)
