@@ -1,26 +1,41 @@
 site_name: PythonTutorial
+site_author: "Brother Rain"
+
 pages:
 - "Home": 'index.md'
-- "Basic":
-  - "101": '101.md'
-  - "201": '201.md'
+- "Installation": 'install.md'
+- "IDE": 'ide.md'
+- "Doc":
+  - "Basic Syntax": 'basic_syntax.md'
   - "Data Structure":
-      - "Object": 'data_object.md'
+      - "Number": 'data_number.md'
       - "String": 'data_string.md'
+      - "Object": 'data_object.md'
       - "Collection": 'data_collection.md'
       - "Time": 'data_time.md'
   - "OOP": 'oop.md'
+  - "OS": 'os.md'
   - "Networking": 'networking.md'
   - "IO": 'io.md'
-- "Intermediate":
   - "Event Based": 'event_based.md'
   - "Logging": 'logging.md'
   - "Configuration": 'configuration.md'
   - "Web": 'web.md'
-- "Advanced":
-  - "IDE": 'ide.md'
   - "Package Manager": 'package_manager.md'
+  - "Environment": 'environment.md'
   - "Module": 'make_a_module.md'
   - "Production": 'production.md'
+
 markdown_extensions:
     - footnotes
+
+extra_css:
+  - css/book.css
+  - css/course.css
+  - css/video.css
+extra_javascript:
+  - js/underscore.js
+  - js/gspreadsheet.js
+  - js/book.js
+  - js/course.js
+  - js/video.js

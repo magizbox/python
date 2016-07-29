@@ -1,5 +1,3 @@
-<img src="https://code.org/curriculum/algebra/13/string-append.png" alt="" />
-
 ## Format
 
 ```python

@@ -13,7 +13,7 @@ https://www.continuum.io/downloads
 [https://docs.python.org/2/library/index.html](https://docs.python.org/2/library/index.html)
 
 
-## CentOS 6.3, Cent OS 7 [^1]
+## CentOS 6.3, Cent OS 7
 
 Download developer tools
 
@@ -52,33 +52,3 @@ wget https://repo.continuum.io/archive/Anaconda-2.3.0-Linux-x86_64.sh
 bash ~/Downloads/Anaconda-2.3.0-Linux-x86_64.sh
 ```
 
-## Install IDE
-
-```shell
-https://www.jetbrains.com/pycharm/download/
-```
-
-# Hello World
-
-```python
-print("Hello World")
-```
-
-
-# Challenge
-
-[https://www.hackerrank.com/challenges/py-hello-world](https://www.hackerrank.com/challenges/py-hello-world)
-
-# Tools
-
-Install py2exec
-```bash
-# py2exe
-conda install -c https://conda.anaconda.org/ivoflipse cg-py2exe
-```
-
-# Course
-
-* [Learn to Program and Analyze Data with Python](https://www.coursera.org/specializations/python)
-
-[^1]: [https://github.com/h2oai/h2o-2/wiki/Installing-python-2.7-on-centos-6.3.-Follow-this-sequence-exactly-for-centos-machine-only](https://github.com/h2oai/h2o-2/wiki/Installing-python-2.7-on-centos-6.3.-Follow-this-sequence-exactly-for-centos-machine-only)

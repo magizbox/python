@@ -20,7 +20,6 @@ datetime.datetime.now()
 
 Unixtime [^2]
 
-[code]
 ```python
 import time
 int(time.time())
