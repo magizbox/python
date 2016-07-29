@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
 
-	<title>Configuration - PythonTutorial</title>
+	<title>OS - PythonTutorial</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
@@ -130,8 +130,8 @@
 
                         
                             
-<li >
-    <a href="../os/">OS</a>
+<li class="active">
+    <a href="./">OS</a>
 </li>
 
                         
@@ -160,8 +160,8 @@
 
                         
                             
-<li class="active">
-    <a href="./">Configuration</a>
+<li >
+    <a href="../configuration/">Configuration</a>
 </li>
 
                         
@@ -210,12 +210,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../logging/">
+                        <a rel="next" href="../oop/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../web/">
+                        <a rel="prev" href="../networking/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -231,44 +231,30 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#configuration">Configuration</a></li>
+        <li class="main active"><a href="#os">OS</a></li>
         
-            <li><a href="#installation">Installation</a></li>
+            <li><a href="#file-operations">File Operations</a></li>
         
-            <li><a href="#usage">Usage</a></li>
+            <li><a href="#cli">CLI</a></li>
         
     
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h2 id="configuration">Configuration</h2>
-<p><a href="../pypi.python.org/pypi/pyconfiguration"><code>pyconfiguration</code></a></p>
-<h3 id="installation">Installation</h3>
-<pre><code>conda install -c rain1024 pyconfiguration
+<h1 id="os">OS</h1>
+<h2 id="file-operations">File Operations</h2>
+<p>Copy folder <sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup></p>
+<pre><code class="python">import shutil
+shutil.copyfile(&quot;src&quot;, &quot;dst&quot;)
 </code></pre>
 
-<h3 id="usage">Usage</h3>
-<p>Step 1: Create <code>config.json</code> file</p>
-<pre><code>{
-  &quot;SERVICE_URL&quot;: &quot;http://api.service.com&quot;
-}
-</code></pre>
-
-<p>Step 2: Add these code to <code>main.py</code> file</p>
-<pre><code>from pyconfiguration import Configuration
-Configuration.load('config.json')
-print Configuration.SERVICE_URL
-
-&gt; http://api.service.com
-</code></pre>
-
-<p>References: What's the best practice using a settings file <sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup></p>
+<h2 id="cli">CLI</h2>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:1">
-<p><a href="http://stackoverflow.com/questions/5055042/whats-the-best-practice-using-a-settings-file-in-python">What's the best practice using a settings file in Python?</a>&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p><a href="https://docs.python.org/2/library/shutil.html">shutil — High-level file operations</a>&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div></div>

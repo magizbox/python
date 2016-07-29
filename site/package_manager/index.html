@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        
+        <meta name="author" content="Brother Rain">
         
         <link rel="shortcut icon" href="../img/favicon.ico">
 
@@ -15,6 +15,9 @@
         <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="../css/highlight.css">
+        <link href="../css/book.css" rel="stylesheet">
+        <link href="../css/course.css" rel="stylesheet">
+        <link href="../css/video.css" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -59,19 +62,25 @@
                 
                 
                 
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Basic <b class="caret"></b></a>
+                    <li >
+                        <a href="../install/">Installation</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../ide/">IDE</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Doc <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
 <li >
-    <a href="../101/">101</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../201/">201</a>
+    <a href="../basic_syntax/">Basic Syntax</a>
 </li>
 
                         
@@ -82,13 +91,19 @@
         
             
 <li >
-    <a href="../data_object/">Object</a>
+    <a href="../data_number/">Number</a>
 </li>
 
         
             
 <li >
     <a href="../data_string/">String</a>
+</li>
+
+        
+            
+<li >
+    <a href="../data_object/">Object</a>
 </li>
 
         
@@ -116,6 +131,12 @@
                         
                             
 <li >
+    <a href="../os/">OS</a>
+</li>
+
+                        
+                            
+<li >
     <a href="../networking/">Networking</a>
 </li>
 
@@ -125,15 +146,6 @@
     <a href="../io/">IO</a>
 </li>
 
-                        
-                        </ul>
-                    </li>
-                
-                
-                
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Intermediate <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
                         
                             
 <li >
@@ -159,24 +171,15 @@
 </li>
 
                         
-                        </ul>
-                    </li>
-                
-                
-                
-                    <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Advanced <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                        
                             
-<li >
-    <a href="../ide/">IDE</a>
+<li class="active">
+    <a href="./">Package Manager</a>
 </li>
 
                         
                             
-<li class="active">
-    <a href="./">Package Manager</a>
+<li >
+    <a href="../environment/">Environment</a>
 </li>
 
                         
@@ -207,12 +210,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../ide/">
+                        <a rel="next" href="../web/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../make_a_module/">
+                        <a rel="prev" href="../environment/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -274,6 +277,11 @@ python setup.py py2exe --includes sip
         <script>var base_url = '..';</script>
         <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
         <script src="../js/base.js"></script>
+        <script src="../js/underscore.js"></script>
+        <script src="../js/gspreadsheet.js"></script>
+        <script src="../js/book.js"></script>
+        <script src="../js/course.js"></script>
+        <script src="../js/video.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
             <div class="modal-dialog">
