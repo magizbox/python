@@ -21,14 +21,17 @@ Python is a great language for the beginner-level programmers and supports the d
 ## Books
 
 <div class="books" gid="1gQFMXZtynpuTenoOQNGCHttArT4NspTWcyJQr5ps9Mk"></div>
+<div class="clearfix"></div>
 
 ## Courses
 
 <div class="courses" gid="1frO9QYhgsXbMzcyXoA4czWkxTWF8RBTJVf9uoO1rElU"></div>
+<div class="clearfix"></div>
 
 ## Videos
 
 <div class="videos" gid="1WMjweKiok6GnxZr9sIPx32RqgdYIQXSaI9gqs3A9TWI"></div>
+<div class="clearfix"></div>
 
 ## Challenges
 

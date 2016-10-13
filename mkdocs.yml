@@ -1,5 +1,6 @@
 site_name: PythonTutorial
-site_author: "Brother Rain"
+site_author: "Vu Anh"
+google_analytics: ['UA-68978617-1', 'magizbox.com']
 
 pages:
 - "Home": 'index.md'
