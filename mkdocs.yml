@@ -7,13 +7,15 @@ pages:
 - "Installation": 'install.md'
 - "IDE": 'ide.md'
 - "Doc":
-  - "Basic Syntax": 'basic_syntax.md'
+  - "Basic Syntax":
+    - "Overview": 'basic_syntax.md'
+    - "Yield and Generator": 'basic_syntax_yield.md'
   - "Data Structure":
-      - "Number": 'data_number.md'
-      - "String": 'data_string.md'
-      - "Object": 'data_object.md'
-      - "Collection": 'data_collection.md'
-      - "Time": 'data_time.md'
+    - "Number": 'data_number.md'
+    - "String": 'data_string.md'
+    - "Object": 'data_object.md'
+    - "Collection": 'data_collection.md'
+    - "Time": 'data_time.md'
   - "OOP": 'oop.md'
   - "OS": 'os.md'
   - "Networking": 'networking.md'

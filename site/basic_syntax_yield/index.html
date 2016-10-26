@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Vu Anh">
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+
+	<title>Yield and Generator - PythonTutorial</title>
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <link href="../css/book.css" rel="stylesheet">
+        <link href="../css/course.css" rel="stylesheet">
+        <link href="../css/video.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-68978617-1', 'magizbox.com');
+            ga('send', 'pageview');
+        </script>
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">PythonTutorial</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../install/">Installation</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../ide/">IDE</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Doc <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Basic Syntax</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../basic_syntax/">Overview</a>
+</li>
+
+        
+            
+<li class="active">
+    <a href="./">Yield and Generator</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Data Structure</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../data_number/">Number</a>
+</li>
+
+        
+            
+<li >
+    <a href="../data_string/">String</a>
+</li>
+
+        
+            
+<li >
+    <a href="../data_object/">Object</a>
+</li>
+
+        
+            
+<li >
+    <a href="../data_collection/">Collection</a>
+</li>
+
+        
+            
+<li >
+    <a href="../data_time/">Time</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+<li >
+    <a href="../oop/">OOP</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../os/">OS</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../networking/">Networking</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../io/">IO</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../event_based/">Event Based</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../logging/">Logging</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../configuration/">Configuration</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../web/">Web</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../package_manager/">Package Manager</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../environment/">Environment</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../make_a_module/">Module</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../production/">Production</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="../basic_syntax/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../data_number/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#yield-and-generators">Yield and Generators</a></li>
+        
+            <li><a href="#coroutines-and-subroutines">Coroutines and Subroutines</a></li>
+        
+            <li><a href="#example-fun-with-prime-numbers">Example: Fun With Prime Numbers</a></li>
+        
+            <li><a href="#dealing-with-infinite-sequences">Dealing With Infinite Sequences</a></li>
+        
+            <li><a href="#enter-the-generator">Enter the Generator</a></li>
+        
+            <li><a href="#magic">Magic?</a></li>
+        
+            <li><a href="#visualizing-the-flow">Visualizing the flow</a></li>
+        
+            <li><a href="#moar-power">Moar Power</a></li>
+        
+            <li><a href="#round-up">Round-up</a></li>
+        
+            <li><a href="#remember">Remember...</a></li>
+        
+    
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="yield-and-generators">Yield and Generators</h1>
+<h2 id="coroutines-and-subroutines">Coroutines and Subroutines</h2>
+<p>When we call a normal Python function, execution starts at function's first line and continues until a return statement, exception, or the end of the function (which is seen as an implicit return None) is encountered. Once a function returns control to its caller, that's it. Any work done by the function and stored in local variables is lost. A new call to the function creates everything from scratch.</p>
+<p>This is all very standard when discussing functions (more generally referred to as subroutines) in computer programming. There are times, though, when it's beneficial to have the ability to create a "function" which, instead of simply returning a single value, is able to yield a series of values. To do so, such a function would need to be able to "save its work," so to speak.</p>
+<p>I said, "yield a series of values" because our hypothetical function doesn't "return" in the normal sense. return implies that the function is returning control of execution to the point where the function was called. "Yield," however, implies that the transfer of control is temporary and voluntary, and our function expects to regain it in the future.</p>
+<p>In Python, "functions" with these capabilities are called generators, and they're incredibly useful. generators (and the yield statement) were initially introduced to give programmers a more straightforward way to write code responsible for producing a series of values. Previously, creating something like a random number generator required a class or module that both generated values and kept track of state between calls. With the introduction of generators, this became much simpler.</p>
+<p>To better understand the problem generators solve, let's take a look at an example. Throughout the example, keep in mind the core problem being solved: generating a series of values.</p>
+<p>Note: Outside of Python, all but the simplest generators would be referred to as coroutines. I'll use the latter term later in the post. The important thing to remember is, in Python, everything described here as a coroutine is still a generator. Python formally defines the term generator; coroutine is used in discussion but has no formal definition in the language.</p>
+<h2 id="example-fun-with-prime-numbers">Example: Fun With Prime Numbers</h2>
+<p>Suppose our boss asks us to write a function that takes a list of ints and returns some Iterable containing the elements which are prime1 numbers.</p>
+<p>Remember, an Iterable is just an object capable of returning its members one at a time.</p>
+<p>"Simple," we say, and we write the following:</p>
+<pre><code>def get_primes(input_list):
+    result_list = list()
+    for element in input_list:
+        if is_prime(element):
+            result_list.append()
+
+    return result_list
+</code></pre>
+
+<p>or better yet...</p>
+<pre><code>def get_primes(input_list):
+    return (element for element in input_list if is_prime(element))
+
+# not germane to the example, but here's a possible implementation of
+# is_prime...
+
+def is_prime(number):
+    if number &gt; 1:
+        if number == 2:
+            return True
+        if number % 2 == 0:
+            return False
+        for current in range(3, int(math.sqrt(number) + 1), 2):
+            if number % current == 0:
+                return False
+        return True
+    return False
+</code></pre>
+
+<p>Either get_primes implementation above fulfills the requirements, so we tell our boss we're done. She reports our function works and is exactly what she wanted.</p>
+<h2 id="dealing-with-infinite-sequences">Dealing With Infinite Sequences</h2>
+<p>Well, not quite exactly. A few days later, our boss comes back and tells us she's run into a small problem: she wants to use our get_primes function on a very large list of numbers. In fact, the list is so large that merely creating it would consume all of the system's memory. To work around this, she wants to be able to call get_primes with a start value and get all the primes larger than start (perhaps she's solving Project Euler problem 10).</p>
+<p>Once we think about this new requirement, it becomes clear that it requires more than a simple change to get_primes. Clearly, we can't return a list of all the prime numbers from start to infinity (operating on infinite sequences, though, has a wide range of useful applications). The chances of solving this problem using a normal function seem bleak.</p>
+<p>Before we give up, let's determine the core obstacle preventing us from writing a function that satisfies our boss's new requirements. Thinking about it, we arrive at the following: functions only get one chance to return results, and thus must return all results at once. It seems pointless to make such an obvious statement; "functions just work that way," we think. The real value lies in asking, "but what if they didn't?"</p>
+<p>Imagine what we could do if get_primes could simply return the next value instead of all the values at once. It wouldn't need to create a list at all. No list, no memory issues. Since our boss told us she's just iterating over the results, she wouldn't know the difference.</p>
+<p>Unfortunately, this doesn't seem possible. Even if we had a magical function that allowed us to iterate from n to infinity, we'd get stuck after returning the first value:</p>
+<pre><code>def get_primes(start):
+    for element in magical_infinite_range(start):
+        if is_prime(element):
+            return element
+</code></pre>
+
+<p>Imagine get_primes is called like so:</p>
+<pre><code>def solve_number_10():
+    # She *is* working on Project Euler #10, I knew it!
+    total = 2
+    for next_prime in get_primes(3):
+        if next_prime &lt; 2000000:
+            total += next_prime
+        else:
+            print(total)
+            return
+</code></pre>
+
+<p>Clearly, in get_primes, we would immediately hit the case where number = 3 and return at line 4. Instead of return, we need a way to generate a value and, when asked for the next one, pick up where we left off.</p>
+<p>Functions, though, can't do this. When they return, they're done for good. Even if we could guarantee a function would be called again, we have no way of saying, "OK, now, instead of starting at the first line like we normally do, start up where we left off at line 4." Functions have a single entry point: the first line.</p>
+<h2 id="enter-the-generator">Enter the Generator</h2>
+<p>This sort of problem is so common that a new construct was added to Python to solve it: the generator. A generator "generates" values. Creating generators was made as straightforward as possible through the concept of generator functions, introduced simultaneously.</p>
+<p>A generator function is defined like a normal function, but whenever it needs to generate a value, it does so with the yield keyword rather than return. If the body of a def contains yield, the function automatically becomes a generator function (even if it also contains a return statement). There's nothing else we need to do to create one.</p>
+<p>generator functions create generator iterators. That's the last time you'll see the term generator iterator, though, since they're almost always referred to as "generators". Just remember that a generator is a special type of iterator. To be considered an iterator, generators must define a few methods, one of which is <strong>next</strong>(). To get the next value from a generator, we use the same built-in function as for iterators: next().</p>
+<p>This point bears repeating: to get the next value from a generator, we use the same built-in function as for iterators: next().</p>
+<p>(next() takes care of calling the generator's <strong>next</strong>() method). Since a generator is a type of iterator, it can be used in a for loop.</p>
+<p>So whenever next() is called on a generator, the generator is responsible for passing back a value to whomever called next(). It does so by calling yield along with the value to be passed back (e.g. yield 7). The easiest way to remember what yield does is to think of it as return (plus a little magic) for generator functions.**</p>
+<p>Again, this bears repeating: yield is just return (plus a little magic) for generator functions.</p>
+<p>Here's a simple generator function:</p>
+<pre><code>&gt;&gt;&gt; def simple_generator_function():
+&gt;&gt;&gt;    yield 1
+&gt;&gt;&gt;    yield 2
+&gt;&gt;&gt;    yield 3
+</code></pre>
+
+<p>And here are two simple ways to use it:</p>
+<pre><code>&gt;&gt;&gt; for value in simple_generator_function():
+&gt;&gt;&gt;     print(value)
+1
+2
+3
+&gt;&gt;&gt; our_generator = simple_generator_function()
+&gt;&gt;&gt; next(our_generator)
+1
+&gt;&gt;&gt; next(our_generator)
+2
+&gt;&gt;&gt; next(our_generator)
+3
+</code></pre>
+
+<h2 id="magic">Magic?</h2>
+<p>What's the magic part? Glad you asked! When a generator function calls yield, the "state" of the generator function is frozen; the values of all variables are saved and the next line of code to be executed is recorded until next() is called again. Once it is, the generator function simply resumes where it left off. If next() is never called again, the state recorded during the yield call is (eventually) discarded.</p>
+<p>Let's rewrite get_primes as a generator function. Notice that we no longer need the magical_infinite_range function. Using a simple while loop, we can create our own infinite sequence:</p>
+<pre><code>def get_primes(number):
+    while True:
+        if is_prime(number):
+            yield number
+        number += 1
+</code></pre>
+
+<p>If a generator function calls return or reaches the end its definition, a StopIteration exception is raised. This signals to whoever was calling next() that the generator is exhausted (this is normal iterator behavior). It is also the reason the while True: loop is present in get_primes. If it weren't, the first time next() was called we would check if the number is prime and possibly yield it. If next() were called again, we would uselessly add 1 to number and hit the end of the generator function (causing StopIteration to be raised). Once a generator has been exhausted, calling next() on it will result in an error, so you can only consume all the values of a generator once. The following will not work:</p>
+<pre><code>&gt;&gt;&gt; our_generator = simple_generator_function()
+&gt;&gt;&gt; for value in our_generator:
+&gt;&gt;&gt;     print(value)
+
+&gt;&gt;&gt; # our_generator has been exhausted...
+&gt;&gt;&gt; print(next(our_generator))
+Traceback (most recent call last):
+  File &quot;&lt;ipython-input-13-7e48a609051a&gt;&quot;, line 1, in &lt;module&gt;
+    next(our_generator)
+StopIteration
+
+&gt;&gt;&gt; # however, we can always create a new generator
+&gt;&gt;&gt; # by calling the generator function again...
+
+&gt;&gt;&gt; new_generator = simple_generator_function()
+&gt;&gt;&gt; print(next(new_generator)) # perfectly valid
+1
+</code></pre>
+
+<p>Thus, the while loop is there to make sure we never reach the end of get_primes. It allows us to generate a value for as long as next() is called on the generator. This is a common idiom when dealing with infinite series (and generators in general).</p>
+<h2 id="visualizing-the-flow">Visualizing the flow</h2>
+<p>Let's go back to the code that was calling get_primes: solve_number_10.</p>
+<pre><code>def solve_number_10():
+    # She *is* working on Project Euler #10, I knew it!
+    total = 2
+    for next_prime in get_primes(3):
+        if next_prime &lt; 2000000:
+            total += next_prime
+        else:
+            print(total)
+            return
+</code></pre>
+
+<p>It's helpful to visualize how the first few elements are created when we call get_primes in solve_number_10's for loop. When the for loop requests the first value from get_primes, we enter get_primes as we would in a normal function.</p>
+<ol>
+<li>We enter the while loop on line 3</li>
+<li>The if condition holds (3 is prime)</li>
+<li>We yield the value 3 and control to solve_number_10.</li>
+</ol>
+<p>Then, back in solve_number_10:</p>
+<ol>
+<li>The value 3 is passed back to the for loop</li>
+<li>The for loop assigns next_prime to this value</li>
+<li>next_prime is added to total</li>
+<li>The for loop requests the next element from get_primes</li>
+</ol>
+<p>This time, though, instead of entering get_primes back at the top, we resume at line 5, where we left off.</p>
+<pre><code>def get_primes(number):
+    while True:
+        if is_prime(number):
+            yield number
+        number += 1 # &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</code></pre>
+
+<p>Most importantly, number still has the same value it did when we called yield (i.e. 3). Remember, yield both passes a value to whoever called next(), and saves the "state" of the generator function. Clearly, then, number is incremented to 4, we hit the top of the while loop, and keep incrementing number until we hit the next prime number (5). Again we yield the value of number to the for loop in solve_number_10. This cycle continues until the for loop stops (at the first prime greater than 2,000,000).</p>
+<h2 id="moar-power">Moar Power</h2>
+<p>In PEP 342, support was added for passing values into generators. PEP 342 gave generators the power to yield a value (as before), receive a value, or both yield a value and receive a (possibly different) value in a single statement.</p>
+<p>To illustrate how values are sent to a generator, let's return to our prime number example. This time, instead of simply printing every prime number greater than number, we'll find the smallest prime number greater than successive powers of a number (i.e. for 10, we want the smallest prime greater than 10, then 100, then 1000, etc.). We start in the same way as get_primes:</p>
+<pre><code>def print_successive_primes(iterations, base=10):
+    # like normal functions, a generator function
+    # can be assigned to a variable
+
+    prime_generator = get_primes(base)
+    # missing code...
+    for power in range(iterations):
+        # missing code...
+
+def get_primes(number):
+    while True:
+        if is_prime(number):
+        # ... what goes here?
+</code></pre>
+
+<p>The next line of get_primes takes a bit of explanation. While yield number would yield the value of number, a statement of the form other = yield foo means, "yield foo and, when a value is sent to me, set other to that value." You can "send" values to a generator using the generator's send method.</p>
+<pre><code>def get_primes(number):
+    while True:
+        if is_prime(number):
+            number = yield number
+        number += 1
+</code></pre>
+
+<p>In this way, we can set number to a different value each time the generator yields. We can now fill in the missing code in print_successive_primes:</p>
+<pre><code>def print_successive_primes(iterations, base=10):
+    prime_generator = get_primes(base)
+    prime_generator.send(None)
+    for power in range(iterations):
+        print(prime_generator.send(base ** power))
+</code></pre>
+
+<p>Two things to note here: First, we're printing the result of generator.send, which is possible because send both sends a value to the generator and returns the value yielded by the generator (mirroring how yield works from within the generator function).</p>
+<p>Second, notice the prime_generator.send(None) line. When you're using send to "start" a generator (that is, execute the code from the first line of the generator function up to the first yield statement), you must send None. This makes sense, since by definition the generator hasn't gotten to the first yield statement yet, so if we sent a real value there would be nothing to "receive" it. Once the generator is started, we can send values as we do above.</p>
+<h2 id="round-up">Round-up</h2>
+<p>In the second half of this series, we'll discuss the various ways in which generators have been enhanced and the power they gained as a result. yield has become one of the most powerful keywords in Python. Now that we've built a solid understanding of how yield works, we have the knowledge necessary to understand some of the more "mind-bending" things that yield can be used for.</p>
+<p>Believe it or not, we've barely scratched the surface of the power of yield. For example, while send does work as described above, it's almost never used when generating simple sequences like our example. Below, I've pasted a small demonstration of one common way send is used. I'll not say any more about it as figuring out how and why it works will be a good warm-up for part two.</p>
+<pre><code>import random
+
+def get_data():
+    &quot;&quot;&quot;Return 3 random integers between 0 and 9&quot;&quot;&quot;
+    return random.sample(range(10), 3)
+
+def consume():
+    &quot;&quot;&quot;Displays a running average across lists of integers sent to it&quot;&quot;&quot;
+    running_sum = 0
+    data_items_seen = 0
+
+    while True:
+        data = yield
+        data_items_seen += len(data)
+        running_sum += sum(data)
+        print('The running average is {}'.format(running_sum / float(data_items_seen)))
+
+def produce(consumer):
+    &quot;&quot;&quot;Produces a set of values and forwards them to the pre-defined consumer
+    function&quot;&quot;&quot;
+    while True:
+        data = get_data()
+        print('Produced {}'.format(data))
+        consumer.send(data)
+        yield
+
+if __name__ == '__main__':
+    consumer = consume()
+    consumer.send(None)
+    producer = produce(consumer)
+
+    for _ in range(10):
+        print('Producing...')
+        next(producer)
+</code></pre>
+
+<h2 id="remember">Remember...</h2>
+<p>There are a few key ideas I hope you take away from this discussion:</p>
+<ul>
+<li>generators are used to generate a series of values</li>
+<li>yield is like the return of generator functions</li>
+<li>The only other thing yield does is save the "state" of a generator function</li>
+<li>A generator is just a special type of iterator</li>
+<li>Like iterators, we can get the next value from a generator using next()<ul>
+<li>for gets values by calling next() implicitly</li>
+</ul>
+</li>
+</ul></div>
+            
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
+        <script src="../js/underscore.js"></script>
+        <script src="../js/gspreadsheet.js"></script>
+        <script src="../js/book.js"></script>
+        <script src="../js/course.js"></script>
+        <script src="../js/video.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
