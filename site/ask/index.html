@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
 
-	<title>IO - PythonTutorial</title>
+	<title><span class='fa fa-question-circle'></span> Ask - PythonTutorial</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
@@ -78,7 +78,7 @@
                 
                 
                 
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class='fa fa-book'></span> Learn <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
@@ -161,8 +161,8 @@
 
                         
                             
-<li class="active">
-    <a href="./">IO</a>
+<li >
+    <a href="../io/">IO</a>
 </li>
 
                         
@@ -231,8 +231,8 @@
                 
                 
                 
-                    <li >
-                        <a href="../ask/"><span class='fa fa-question-circle'></span> Ask</a>
+                    <li class="active">
+                        <a href="./"><span class='fa fa-question-circle'></span> Ask</a>
                     </li>
                 
                 
@@ -247,12 +247,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../networking/">
+                        <a rel="next" href="../solve/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
-                    <li >
-                        <a rel="prev" href="../ide/">
+                    <li class="disabled">
+                        <a rel="prev" >
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -268,31 +268,39 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#read-json-1">Read JSON 1</a></li>
+        <li class="main active"><a href="#getting-help-with-python">Getting help with Python</a></li>
+        
+    
+        <li class="main "><a href="#other-resources">Other resources</a></li>
+        
+    
+        <li class="main "><a href="#how-to-ask-a-good-question">How to ask a good question</a></li>
         
     
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="read-json-1">Read JSON <sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup></h1>
-<pre><code class="python">import json
-from pprint import pprint
-
-with open('data.json') as data_file:
-    data = json.load(data_file)
-
-pprint(data)
-</code></pre>
-
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:1">
-<p><a href="http://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file-in-python">Parsing values from a JSON file in Python</a>&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div></div>
+<h1 id="getting-help-with-python">Getting help with Python</h1>
+<p>We are always happy to help you get your Python project going!</p>
+<p>Python has been around for many years, there are many archives of past questions, tutorials and articles on the web. A quick search may well answer your question directly! If not, please feel free to post a question to below github issue.</p>
+<p><center>
+<a class="btn btn-danger" target="_blank" href="https://github.com/magizbox/python/issues/1">
+    Ask Python Question <i class="fa fa-question"></i>
+</a>
+</center></p>
+<h1 id="other-resources">Other resources</h1>
+<p>There are curated collections of python questions on StackOverflow.</p>
+<h1 id="how-to-ask-a-good-question">How to ask a good question</h1>
+<p>Asking good questions is <strong>the best way to get good answers</strong>. Try to follow these tips:</p>
+<ul>
+<li>Make the question precise and specific. <em>"My code doesn't work"</em>, for example, does not help us to help you as much as <em>"This following code me an answer I didn't expect"</em>.</li>
+<li>Show that you've <strong>tried to solve the problem yourself</strong>. Everyone who answers questions on the list has a full-time job or study to do; no-one gets paid for answering these support questions. Spend their goodwill wisely: <em>"Here's the code I tried..."</em> or <em>"I read in the documentation that ..."</em> shows that you've at least made some effort to find things out for yourself.</li>
+<li>Where appropriate <strong>show a complete test case</strong>. Seeing where your code goes wrong is generally much easier if we can run it our our computers. Corollaries: don't post your entire project - take some time to reduce it down to a minimal test case. <strong>Include enough data</strong> - runnable code is no help if critical resources. Reducing your code down to a minimal test case is often enough for you to figure out the problem yourself, which is always satisfying!</li>
+<li><strong>Don't re-post your question after only a few hours</strong>. People are busy, and may be in a different timezone to you. If you're not sure if your question made it to the list, look in the archive.</li>
+<li><strong>Adding lots of exclamation marks or other punctuation</strong> will <strong>not</strong> move your question up the queue. Quite the reverse, in fact.</li>
+<li>Ask questions <strong>on the list, rather than emailing the developers directly</strong>. This gives us the chance to share the load of answering questions, and also ensures that answers are archived in case they're of use to others in the future.</li>
+</ul></div>
             
         </div>
 

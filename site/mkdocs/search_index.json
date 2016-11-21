@@ -3,7 +3,7 @@
         {
             "location": "/", 
             "text": "What is Python?\n\n\n\n\nPython is a widely used general-purpose, high-level programming language. Its design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code than would be possible in languages such as C++ or Java. The language provides constructs intended to enable clear programs on both a small and large scale.\n\n\n\n\nPython is Interpreted\n\n\nPython is processed at runtime by the interpreter. You do not need to compile your program before executing it. This is similar to PERL and PHP.\n\n\nPython is Interactive\n\n\nYou can actually sit at a Python prompt and interact with the interpreter directly to write your programs.\n\n\nPython is Object-Oriented\n\n\nPython supports Object-Oriented style or technique of programming that encapsulates code within objects.\n\n\nPython is a Beginner's Language\n\n\nPython is a great language for the beginner-level programmers and supports the development of a wide range of applications from simple text processing to WWW browsers to games.\n\n\nBooks\n\n\n\n\n\n\n\n\nCourses\n\n\n\n\n\n\n\n\nVideos\n\n\n\n\n\n\n\n\nChallenges\n\n\n\n\nwww.pythonchallenge.com\n\n\n\n\nExternal Links\n\n\n\n\nTop 10 Python Libraries Of 2015", 
-            "title": "Home"
+            "title": "<span class='fa fa-home'></span> Home"
         }, 
         {
             "location": "/#what-is-python", 
@@ -38,7 +38,7 @@
         {
             "location": "/install/", 
             "text": "Installation\n\n\nWindows 8, 64 bit\n\n\nStep 1.\n Install Anaconda\n\n\nhttps://www.continuum.io/downloads\n\n\n\n\nStep 2.\n Discover the Map\n\n\nhttps://docs.python.org/2/library/index.html\n\n\nCentOS 6.3, Cent OS 7\n\n\nDownload developer tools\n\n\nyum groupinstall \nDevelopment tools\n\nyum install zlib-devel\nyum install bzip2-devel\nyum install openssl-devel\nyum install ncurses-devel\nyum install sqlite-devel\n\n\n\n\n\nDownload, compile and install Python\n\n\ncd /opt\nwget --no-check-certificate https://www.python.org/ftp/python/2.7.6/Python-2.7.6.tar.xz\ntar xf Python-2.7.6.tar.xz\ncd Python-2.7.6\n./configure --prefix=/usr/local\nmake \n make altinstall\n\nln -s /usr/local/bin/python2.7 /usr/local/bin/python\n\n## link\n\n# final check\nwhich python\npython -V\n\n# install Anaconda\ncd ~/Downloads\nwget https://repo.continuum.io/archive/Anaconda-2.3.0-Linux-x86_64.sh\nbash ~/Downloads/Anaconda-2.3.0-Linux-x86_64.sh", 
-            "title": "Installation"
+            "title": "<span class='fa fa-cloud-download'></span> Getting Started"
         }, 
         {
             "location": "/install/#installation", 
@@ -54,36 +54,6 @@
             "location": "/install/#centos-63-cent-os-7", 
             "text": "Download developer tools  yum groupinstall  Development tools \nyum install zlib-devel\nyum install bzip2-devel\nyum install openssl-devel\nyum install ncurses-devel\nyum install sqlite-devel  Download, compile and install Python  cd /opt\nwget --no-check-certificate https://www.python.org/ftp/python/2.7.6/Python-2.7.6.tar.xz\ntar xf Python-2.7.6.tar.xz\ncd Python-2.7.6\n./configure --prefix=/usr/local\nmake   make altinstall\n\nln -s /usr/local/bin/python2.7 /usr/local/bin/python\n\n## link\n\n# final check\nwhich python\npython -V\n\n# install Anaconda\ncd ~/Downloads\nwget https://repo.continuum.io/archive/Anaconda-2.3.0-Linux-x86_64.sh\nbash ~/Downloads/Anaconda-2.3.0-Linux-x86_64.sh", 
             "title": "CentOS 6.3, Cent OS 7"
-        }, 
-        {
-            "location": "/ide/", 
-            "text": "Today, I write some notes about my favorite Python IDE - \nPyCharm\n.\u00a0I believe it's a good one for developing python, which supports git, vim, etc. This list below contains my favorite features.\n\n\nEditing\n\n\nALT + SHIFT + UP/DOWN: Move line up and down\n\n\nAutocomplete\n\n\nTab (replace)\n\n\nCode Completion\n\n\n\n\ncheck.if ENTER\n\n\n\n\nif check:\n  type_something\n\n\n\n\nMulticursor\n\n\nSHIFT + F6\n\n\nTemplating\n\n\n\n\nNavigator\n\n\nSearching\n\n\n\n\n\n\nCommand\n\n\nDescription\n\n\n\n\n\n\nDouble Shift\n\n\nSearch every where\n\n\n\n\n\n\n\nDebuging\n\n\nAlt + Enter\n\n\n\nAlt + Enter is one of shortcuts in \nKeyboard Shortcuts You Cannot Miss\n \n1\n, its\u00a0show the list of available intention actions.\n\n\n\n\nWorkspace\n\n\nCustom\u00a0Scheme\n\n\n\nGo to \nFile - Settings...\n then \nEditor - Colors Fonts\n\n\nNow you can change your scheme, I like \nDarcular\n\n\n\n\nIPython Support\n\n\n\nPyCharm supports usage of IPython magic commands.\n\n\n\n\nVim Support\n\n\n\nYou can configure PyCharm to work as a Vim editor \n2\n\n\n\n\n\n\n\n\n\n\n\n\n\nKeyboard Shortcuts You Cannot Miss\n\n\n\n\n\n\n\u00a0\nConfiguring PyCharm to work as a Vim editor\n\n\n\n\n\n\n\n\n\n\n\nhttp://pastebin.com/qGpWpFYW", 
-            "title": "IDE"
-        }, 
-        {
-            "location": "/ide/#editing", 
-            "text": "ALT + SHIFT + UP/DOWN: Move line up and down  Autocomplete  Tab (replace)  Code Completion   check.if ENTER   if check:\n  type_something  Multicursor  SHIFT + F6  Templating", 
-            "title": "Editing"
-        }, 
-        {
-            "location": "/ide/#navigator", 
-            "text": "", 
-            "title": "Navigator"
-        }, 
-        {
-            "location": "/ide/#searching", 
-            "text": "Command  Description    Double Shift  Search every where", 
-            "title": "Searching"
-        }, 
-        {
-            "location": "/ide/#debuging", 
-            "text": "", 
-            "title": "Debuging"
-        }, 
-        {
-            "location": "/ide/#workspace", 
-            "text": "", 
-            "title": "Workspace"
         }, 
         {
             "location": "/basic_syntax/", 
@@ -319,6 +289,36 @@
             "location": "/io/#read-json-1", 
             "text": "import json\nfrom pprint import pprint\n\nwith open('data.json') as data_file:\n    data = json.load(data_file)\n\npprint(data)      Parsing values from a JSON file in Python", 
             "title": "Read JSON 1"
+        }, 
+        {
+            "location": "/ide/", 
+            "text": "Today, I write some notes about my favorite Python IDE - \nPyCharm\n.\u00a0I believe it's a good one for developing python, which supports git, vim, etc. This list below contains my favorite features.\n\n\nEditing\n\n\nALT + SHIFT + UP/DOWN: Move line up and down\n\n\nAutocomplete\n\n\nTab (replace)\n\n\nCode Completion\n\n\n\n\ncheck.if ENTER\n\n\n\n\nif check:\n  type_something\n\n\n\n\nMulticursor\n\n\nSHIFT + F6\n\n\nTemplating\n\n\n\n\nNavigator\n\n\nSearching\n\n\n\n\n\n\nCommand\n\n\nDescription\n\n\n\n\n\n\nDouble Shift\n\n\nSearch every where\n\n\n\n\n\n\n\nDebuging\n\n\nAlt + Enter\n\n\n\nAlt + Enter is one of shortcuts in \nKeyboard Shortcuts You Cannot Miss\n \n1\n, its\u00a0show the list of available intention actions.\n\n\n\n\nWorkspace\n\n\nCustom\u00a0Scheme\n\n\n\nGo to \nFile - Settings...\n then \nEditor - Colors Fonts\n\n\nNow you can change your scheme, I like \nDarcular\n\n\n\n\nIPython Support\n\n\n\nPyCharm supports usage of IPython magic commands.\n\n\n\n\nVim Support\n\n\n\nYou can configure PyCharm to work as a Vim editor \n2\n\n\n\n\n\n\n\n\n\n\n\n\n\nKeyboard Shortcuts You Cannot Miss\n\n\n\n\n\n\n\u00a0\nConfiguring PyCharm to work as a Vim editor\n\n\n\n\n\n\n\n\n\n\n\nhttp://pastebin.com/qGpWpFYW", 
+            "title": "IDE"
+        }, 
+        {
+            "location": "/ide/#editing", 
+            "text": "ALT + SHIFT + UP/DOWN: Move line up and down  Autocomplete  Tab (replace)  Code Completion   check.if ENTER   if check:\n  type_something  Multicursor  SHIFT + F6  Templating", 
+            "title": "Editing"
+        }, 
+        {
+            "location": "/ide/#navigator", 
+            "text": "", 
+            "title": "Navigator"
+        }, 
+        {
+            "location": "/ide/#searching", 
+            "text": "Command  Description    Double Shift  Search every where", 
+            "title": "Searching"
+        }, 
+        {
+            "location": "/ide/#debuging", 
+            "text": "", 
+            "title": "Debuging"
+        }, 
+        {
+            "location": "/ide/#workspace", 
+            "text": "", 
+            "title": "Workspace"
         }, 
         {
             "location": "/event_based/", 
@@ -744,6 +744,36 @@
             "location": "/production/#production-with-docker", 
             "text": "Base Image:  magizbox/conda2.7/  Docker Folder  your_app/\n\u251c\u2500\u2500 app\n\u2502\u00a0\u00a0 \u251c\u2500\u2500 config\n\u2502\u00a0\u00a0 \u2514\u2500\u2500 main.py\n\u251c\u2500\u2500 Dockerfile\n\u2514\u2500\u2500 run.sh  Dockerfile  FROM magizbox/conda2.7:4.0\n\nADD ./app /app\nADD ./run.sh /run.sh\n\nRUN conda env create -f environment.yml  run.sh  source activate your_environment\n\ncd /app\n\npython main.py  Compose   service:\n  build: ./service-app\n  command: 'bash run.sh'  Note: an other python conda with lower version (such as 3.5), will occur error when install requests package", 
             "title": "Production with docker"
+        }, 
+        {
+            "location": "/solve/", 
+            "text": "Python Challenge\n\n\n\nwindow.location = \"http://magizbox.com:5000\";", 
+            "title": "<span class='fa fa-bolt'></span> Solve"
+        }, 
+        {
+            "location": "/solve/#python-challenge", 
+            "text": "window.location = \"http://magizbox.com:5000\";", 
+            "title": "Python Challenge"
+        }, 
+        {
+            "location": "/ask/", 
+            "text": "Getting help with Python\n\n\nWe are always happy to help you get your Python project going!\n\n\nPython has been around for many years, there are many archives of past questions, tutorials and articles on the web. A quick search may well answer your question directly! If not, please feel free to post a question to below github issue.\n\n\n\n\n\n    Ask Python Question \n\n\n\n\n\n\nOther resources\n\n\nThere are curated collections of python questions on StackOverflow.\n\n\nHow to ask a good question\n\n\nAsking good questions is \nthe best way to get good answers\n. Try to follow these tips:\n\n\n\n\nMake the question precise and specific. \n\"My code doesn't work\"\n, for example, does not help us to help you as much as \n\"This following code me an answer I didn't expect\"\n.\n\n\nShow that you've \ntried to solve the problem yourself\n. Everyone who answers questions on the list has a full-time job or study to do; no-one gets paid for answering these support questions. Spend their goodwill wisely: \n\"Here's the code I tried...\"\n or \n\"I read in the documentation that ...\"\n shows that you've at least made some effort to find things out for yourself.\n\n\nWhere appropriate \nshow a complete test case\n. Seeing where your code goes wrong is generally much easier if we can run it our our computers. Corollaries: don't post your entire project - take some time to reduce it down to a minimal test case. \nInclude enough data\n - runnable code is no help if critical resources. Reducing your code down to a minimal test case is often enough for you to figure out the problem yourself, which is always satisfying!\n\n\nDon't re-post your question after only a few hours\n. People are busy, and may be in a different timezone to you. If you're not sure if your question made it to the list, look in the archive.\n\n\nAdding lots of exclamation marks or other punctuation\n will \nnot\n move your question up the queue. Quite the reverse, in fact.\n\n\nAsk questions \non the list, rather than emailing the developers directly\n. This gives us the chance to share the load of answering questions, and also ensures that answers are archived in case they're of use to others in the future.", 
+            "title": "<span class='fa fa-question-circle'></span> Ask"
+        }, 
+        {
+            "location": "/ask/#getting-help-with-python", 
+            "text": "We are always happy to help you get your Python project going!  Python has been around for many years, there are many archives of past questions, tutorials and articles on the web. A quick search may well answer your question directly! If not, please feel free to post a question to below github issue.   \n    Ask Python Question", 
+            "title": "Getting help with Python"
+        }, 
+        {
+            "location": "/ask/#other-resources", 
+            "text": "There are curated collections of python questions on StackOverflow.", 
+            "title": "Other resources"
+        }, 
+        {
+            "location": "/ask/#how-to-ask-a-good-question", 
+            "text": "Asking good questions is  the best way to get good answers . Try to follow these tips:   Make the question precise and specific.  \"My code doesn't work\" , for example, does not help us to help you as much as  \"This following code me an answer I didn't expect\" .  Show that you've  tried to solve the problem yourself . Everyone who answers questions on the list has a full-time job or study to do; no-one gets paid for answering these support questions. Spend their goodwill wisely:  \"Here's the code I tried...\"  or  \"I read in the documentation that ...\"  shows that you've at least made some effort to find things out for yourself.  Where appropriate  show a complete test case . Seeing where your code goes wrong is generally much easier if we can run it our our computers. Corollaries: don't post your entire project - take some time to reduce it down to a minimal test case.  Include enough data  - runnable code is no help if critical resources. Reducing your code down to a minimal test case is often enough for you to figure out the problem yourself, which is always satisfying!  Don't re-post your question after only a few hours . People are busy, and may be in a different timezone to you. If you're not sure if your question made it to the list, look in the archive.  Adding lots of exclamation marks or other punctuation  will  not  move your question up the queue. Quite the reverse, in fact.  Ask questions  on the list, rather than emailing the developers directly . This gives us the chance to share the load of answering questions, and also ensures that answers are archived in case they're of use to others in the future.", 
+            "title": "How to ask a good question"
         }
     ]
 }
