@@ -18,6 +18,7 @@ pages:
   - "OOP": 'oop.md'
   - "OS": 'os.md'
   - "Networking": 'networking.md'
+  - "Concurrency and Parallelism": 'concurrency_parallelism.md'
   - "IO": 'io.md'
   - "IDE": 'ide.md'
   - "Event Based": 'event_based.md'

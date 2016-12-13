@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
 
-	<title>Overview - PythonTutorial</title>
+	<title>Concurrency and Parallelism - PythonTutorial</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
@@ -88,8 +88,8 @@
     <ul class="dropdown-menu">
         
             
-<li class="active">
-    <a href="./">Overview</a>
+<li >
+    <a href="../basic_syntax/">Overview</a>
 </li>
 
         
@@ -161,8 +161,8 @@
 
                         
                             
-<li >
-    <a href="../concurrency_parallelism/">Concurrency and Parallelism</a>
+<li class="active">
+    <a href="./">Concurrency and Parallelism</a>
 </li>
 
                         
@@ -253,12 +253,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../install/">
+                        <a rel="next" href="../networking/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../basic_syntax_yield/">
+                        <a rel="prev" href="../io/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -274,167 +274,231 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#print-print">Print, print</a></li>
+        <li class="main active"><a href="#starting-a-new-thread">Starting a New Thread</a></li>
         
     
-        <li class="main "><a href="#conditional">Conditional</a></li>
+        <li class="main "><a href="#the-threading-module">The Threading Module</a></li>
         
     
-        <li class="main "><a href="#loop">Loop</a></li>
-        
-            <li><a href="#while-loop">While Loop</a></li>
-        
-            <li><a href="#for-loop">For Loop</a></li>
-        
-            <li><a href="#yield-and-generator">Yield and Generator</a></li>
+        <li class="main "><a href="#creating-thread-using-threading-module">Creating Thread Using Threading Module</a></li>
         
     
-        <li class="main "><a href="#functions">Functions</a></li>
-        
-            <li><a href="#variable-length-arguments">Variable-length arguments</a></li>
+        <li class="main "><a href="#synchronizing-threads">Synchronizing Threads</a></li>
         
     
-        <li class="main "><a href="#coding-convention">Coding Convention</a></li>
-        
-            <li><a href="#code-layout">Code layout</a></li>
+        <li class="main "><a href="#related-readings">Related Readings</a></li>
         
     
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h2 id="print-print">Print, print</h2>
-<pre><code class="python">print &quot;Hello World&quot;
-</code></pre>
-
-<h2 id="conditional">Conditional</h2>
-<pre><code>if you_smart:
-    print &quot;learn python&quot;
-else:
-    print &quot;go away&quot;
-</code></pre>
-
-<h2 id="loop">Loop</h2>
-<p>In general, statements are executed sequentially: The first statement in a function is executed first, followed by the second, and so on. There may be a situation when you need to execute a block of code several number of times.</p>
-<p>Programming languages provide various control structures that allow for more complicated execution paths. A loop statement allows us to execute a statement or group of statements multiple times. The following diagram illustrates a loop statement</p>
-<div class="text-center">
-<img src="https://www.tutorialspoint.com/python/images/loop_architecture.jpg"></img>
-</div>
-
-<p>Python programming language provides following types of loops to handle looping requirements.</p>
-<table>
-<tbody>
-<tr>
-<td class="col-xs-2"><strong>while loop</strong></td>
-<td>Repeats a statement or group of statements while a given condition is TRUE. It tests the condition before executing the loop body.</td>
-</tr>
-<tr>
-<td><strong>for loop</strong></td>
-<td>Executes a sequence of statements multiple times and abbreviates the code that manages the loop variable.</td>
-</tr>
-<tr>
-<td><strong>nested loops</strong></td>
-<td>You can use one or more loop inside any another while, for or do..while loop.</td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="while-loop">While Loop</h3>
-<p>A while loop statement in Python programming language repeatedly executes a target statement as long as a given condition is true.</p>
-<p><strong>Syntax</strong></p>
-<p>The syntax of a while loop in Python programming language is</p>
-<pre><code>while expression:
-   statement(s)
-</code></pre>
-
-<p><strong>Example</strong></p>
-<pre><code class="python">count = 0
-while count &lt; 9:
-   print 'The count is:', count
-   count += 1
-
-print &quot;Good bye!&quot;
-</code></pre>
-
-<h3 id="for-loop">For Loop</h3>
-<p>It has the ability to iterate over the items of any sequence, such as a list or a string.</p>
-<p><strong>Syntax</strong></p>
-<pre><code>for iterating_var in sequence:
-   statements(s)
-</code></pre>
-
-<p>If a sequence contains an expression list, it is evaluated first. Then, the first item in the sequence is assigned to the iterating variable iterating_var. Next, the statements block is executed. Each item in the list is assigned to iterating_var, and the statement(s) block is executed until the entire sequence is exhausted.</p>
-<p><strong>Example</strong></p>
-<pre><code class="python">for i in range(10):
-    print &quot;hello&quot;, i
-
-for letter in 'Python':
-   print 'Current letter :', letter
-
-fruits = ['banana', 'apple',  'mango']
-for fruit in fruits:
-   print 'Current fruit :', fruit
-
-print &quot;Good bye!&quot;
-</code></pre>
-
-<h3 id="yield-and-generator">Yield and Generator</h3>
-<p>Yield is a keyword that is used like return, except the function will return a generator.</p>
-<pre><code>def createGenerator():
-    yield 1
-    yield 2
-    yield 3
-
-mygenerator = createGenerator() # create a generator
-print(mygenerator) # mygenerator is an object!
-# &lt;generator object createGenerator at 0xb7555c34&gt;
-for i in mygenerator:
-    print(i)
-# 1
-# 2
-# 3
-</code></pre>
-
-<p>Visit <a href="../basic_syntax_yield/">Yield and Generator explained</a> for more information</p>
-<p><strong>Related Readings</strong></p>
+<p>Running several threads is similar to running several different programs concurrently, but with the following benefits</p>
 <ul>
-<li><a href="https://www.tutorialspoint.com/python/python_loops.htm">"Python Loops". www.tutorialspoint.com</a></li>
-<li><a href="http://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do">"What does the “yield” keyword do?". stackoverflow.com</a></li>
-<li><a href="https://jeffknupp.com/blog/2013/04/07/improve-your-python-yield-and-generators-explained/">"Improve Your Python: 'yield' and Generators Explained". jeffknupp.com</a></li>
+<li>Multiple threads within a process share the same data space with the main thread and can therefore share information or communicate with each other more easily than if they were separate processes.</li>
+<li>Threads sometimes called light-weight processes and they do not require much memory overhead; they are cheaper than processes.</li>
 </ul>
-<h2 id="functions">Functions</h2>
-<h3 id="variable-length-arguments">Variable-length arguments</h3>
-<pre><code>def functionname([formal_args,] *var_args_tuple ):
-   &quot;function_docstring&quot;
-   function_suite
-   return [expression]
+<p>A thread has a beginning, an execution sequence, and a conclusion. It has an instruction pointer that keeps track of where within its context it is currently running.</p>
+<ul>
+<li>It can be pre-empted (interrupted)</li>
+<li>It can temporarily be put on hold (also known as sleeping) while other threads are running - this is called yielding.</li>
+</ul>
+<h2 id="starting-a-new-thread">Starting a New Thread</h2>
+<p>To spawn another thread, you need to call following method available in thread module:</p>
+<pre><code class="python">thread.start_new_thread ( function, args[, kwargs] )
 </code></pre>
 
+<p>This method call enables a fast and efficient way to create new threads in both Linux and Windows.</p>
+<p>The method call returns immediately and the child thread starts and calls function with the passed list of args. When function returns, the thread terminates.</p>
+<p>Here, args is a tuple of arguments; use an empty tuple to call function without passing any arguments. kwargs is an optional dictionary of keyword arguments.</p>
 <p><strong>Example</strong></p>
 <pre><code class="python">#!/usr/bin/python
 
-# Function definition is here
-def printinfo( arg1, *vartuple ):
-   &quot;This prints a variable passed arguments&quot;
-   print &quot;Output is: &quot;
-   print arg1
-   for var in vartuple:
-      print var
-   return;
+import thread
+import time
 
-# Now you can call printinfo function
-printinfo( 10 )
-printinfo( 70, 60, 50 )
+# Define a function for the thread
+def print_time( threadName, delay):
+   count = 0
+   while count &lt; 5:
+      time.sleep(delay)
+      count += 1
+      print &quot;%s: %s&quot; % ( threadName, time.ctime(time.time()) )
 
+# Create two threads as follows
+try:
+   thread.start_new_thread( print_time, (&quot;Thread-1&quot;, 2, ) )
+   thread.start_new_thread( print_time, (&quot;Thread-2&quot;, 4, ) )
+except:
+   print &quot;Error: unable to start thread&quot;
+
+while 1:
+   pass
 </code></pre>
 
-<p><strong>Related Readings</strong></p>
+<p>When the above code is executed, it produces the following result</p>
+<pre><code>Thread-1: Thu Jan 22 15:42:17 2009
+Thread-1: Thu Jan 22 15:42:19 2009
+Thread-2: Thu Jan 22 15:42:19 2009
+Thread-1: Thu Jan 22 15:42:21 2009
+Thread-2: Thu Jan 22 15:42:23 2009
+Thread-1: Thu Jan 22 15:42:23 2009
+Thread-1: Thu Jan 22 15:42:25 2009
+Thread-2: Thu Jan 22 15:42:27 2009
+Thread-2: Thu Jan 22 15:42:31 2009
+Thread-2: Thu Jan 22 15:42:35 2009
+</code></pre>
+
+<p>Although it is very effective for low-level threading, but the thread module is very limited compared to the newer threading module.</p>
+<h2 id="the-threading-module">The Threading Module</h2>
+<p>The newer threading module included with Python 2.4 provides much more powerful, high-level support for threads than the thread module discussed in the previous section.</p>
+<p>The threading module exposes all the methods of the thread module and provides some additional methods:</p>
 <ul>
-<li><a href="http://www.tutorialspoint.com/python/python_functions.htm">"Python Functions". www.tutorialspoint.com</a></li>
+<li><strong>threading.activeCount()</strong>: Returns the number of thread objects that are active.</li>
+<li><strong>threading.currentThread()</strong>: Returns the number of thread objects in the caller's thread control.</li>
+<li><strong>threading.enumerate()</strong>: Returns a list of all thread objects that are currently active.</li>
 </ul>
-<h2 id="coding-convention">Coding Convention</h2>
-<h3 id="code-layout">Code layout</h3>
-<p>Indentation: 4 spaces</p></div>
+<p>In addition to the methods, the threading module has the Thread class that implements threading. The methods provided by the Thread class are as follows:</p>
+<ul>
+<li><strong>run()</strong>: The run() method is the entry point for a thread.</li>
+<li><strong>start()</strong>: The start() method starts a thread by calling the run method.</li>
+<li><strong>join([time])</strong>: The join() waits for threads to terminate.</li>
+<li>isAlive(): The isAlive() method checks whether a thread is still executing.</li>
+<li><strong>getName()</strong>: The getName() method returns the name of a thread.</li>
+<li><strong>setName()</strong>: The setName() method sets the name of a thread.</li>
+</ul>
+<h2 id="creating-thread-using-threading-module">Creating Thread Using Threading Module</h2>
+<p>To implement a new thread using the threading module, you have to do the following −</p>
+<ul>
+<li>Define a new subclass of the Thread class.</li>
+<li>Override the <strong>init</strong>(self [,args]) method to add additional arguments.</li>
+<li>Then, override the run(self [,args]) method to implement what the thread should do when started.</li>
+</ul>
+<p>Once you have created the new Thread subclass, you can create an instance of it and then start a new thread by invoking the start(), which in turn calls run() method.</p>
+<p><strong>Example</strong></p>
+<pre><code class="python">#!/usr/bin/python
+
+import threading
+import time
+
+exitFlag = 0
+
+class myThread (threading.Thread):
+    def __init__(self, threadID, name, counter):
+        threading.Thread.__init__(self)
+        self.threadID = threadID
+        self.name = name
+        self.counter = counter
+    def run(self):
+        print &quot;Starting &quot; + self.name
+        print_time(self.name, self.counter, 5)
+        print &quot;Exiting &quot; + self.name
+
+def print_time(threadName, delay, counter):
+    while counter:
+        if exitFlag:
+            threadName.exit()
+        time.sleep(delay)
+        print &quot;%s: %s&quot; % (threadName, time.ctime(time.time()))
+        counter -= 1
+
+# Create new threads
+thread1 = myThread(1, &quot;Thread-1&quot;, 1)
+thread2 = myThread(2, &quot;Thread-2&quot;, 2)
+
+# Start new Threads
+thread1.start()
+thread2.start()
+
+print &quot;Exiting Main Thread&quot;
+</code></pre>
+
+<p>When the above code is executed, it produces the following result</p>
+<pre><code>Starting Thread-1
+Starting Thread-2
+Exiting Main Thread
+Thread-1: Thu Mar 21 09:10:03 2013
+Thread-1: Thu Mar 21 09:10:04 2013
+Thread-2: Thu Mar 21 09:10:04 2013
+Thread-1: Thu Mar 21 09:10:05 2013
+Thread-1: Thu Mar 21 09:10:06 2013
+Thread-2: Thu Mar 21 09:10:06 2013
+Thread-1: Thu Mar 21 09:10:07 2013
+Exiting Thread-1
+Thread-2: Thu Mar 21 09:10:08 2013
+Thread-2: Thu Mar 21 09:10:10 2013
+Thread-2: Thu Mar 21 09:10:12 2013
+Exiting Thread-2
+</code></pre>
+
+<h2 id="synchronizing-threads">Synchronizing Threads</h2>
+<p>The threading module provided with Python includes a simple-to-implement locking mechanism that allows you to synchronize threads. A new lock is created by calling the Lock() method, which returns the new lock.</p>
+<p>The acquire(blocking) method of the new lock object is used to force threads to run synchronously. The optional blocking parameter enables you to control whether the thread waits to acquire the lock.</p>
+<p>If blocking is set to 0, the thread returns immediately with a 0 value if the lock cannot be acquired and with a 1 if the lock was acquired. If blocking is set to 1, the thread blocks and wait for the lock to be released.</p>
+<p>The release() method of the new lock object is used to release the lock when it is no longer required.</p>
+<p><strong>Example</strong></p>
+<pre><code class="python">#!/usr/bin/python
+
+import threading
+import time
+
+class myThread (threading.Thread):
+    def __init__(self, threadID, name, counter):
+        threading.Thread.__init__(self)
+        self.threadID = threadID
+        self.name = name
+        self.counter = counter
+    def run(self):
+        print &quot;Starting &quot; + self.name
+        # Get lock to synchronize threads
+        threadLock.acquire()
+        print_time(self.name, self.counter, 3)
+        # Free lock to release next thread
+        threadLock.release()
+
+def print_time(threadName, delay, counter):
+    while counter:
+        time.sleep(delay)
+        print &quot;%s: %s&quot; % (threadName, time.ctime(time.time()))
+        counter -= 1
+
+threadLock = threading.Lock()
+threads = []
+
+# Create new threads
+thread1 = myThread(1, &quot;Thread-1&quot;, 1)
+thread2 = myThread(2, &quot;Thread-2&quot;, 2)
+
+# Start new Threads
+thread1.start()
+thread2.start()
+
+# Add threads to thread list
+threads.append(thread1)
+threads.append(thread2)
+
+# Wait for all threads to complete
+for t in threads:
+    t.join()
+print &quot;Exiting Main Thread&quot;
+</code></pre>
+
+<p>When the above code is executed, it produces the following result</p>
+<pre><code>Starting Thread-1
+Starting Thread-2
+Starting Thread-3
+Thread-1 processing One
+Thread-2 processing Two
+Thread-3 processing Three
+Thread-1 processing Four
+Thread-2 processing Five
+Exiting Thread-3
+Exiting Thread-1
+Exiting Thread-2
+Exiting Main Thread
+</code></pre>
+
+<h2 id="related-readings">Related Readings</h2></div>
             
         </div>
 
