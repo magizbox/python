@@ -232,4 +232,5 @@ Exiting Main Thread
 ```
 ## Related Readings
 
-* ["Python Multithreaded Programming". www.tutorialspoint.com. N.p., 2016. Web. 13 Dec. 2016.](https://www.tutorialspoint.com/python/python_multithreading.htm)
+* ["Python Multithreaded Programming". *www.tutorialspoint.com*. N.p., 2016. Web. 13 Dec. 2016.](https://www.tutorialspoint.com/python/python_multithreading.htm)
+* ["An Introduction To Python Concurrency". *dabeaz.com*. N.p., 2016. Web. 14 Dec. 2016.](http://www.dabeaz.com/usenix2009/concurrent/)

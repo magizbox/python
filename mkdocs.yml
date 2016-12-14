@@ -29,7 +29,6 @@ pages:
   - "Environment": 'environment.md'
   - "Module": 'make_a_module.md'
   - "Production": 'production.md'
-- "<span class='fa fa-bolt'></span> Solve": "solve.md"
 - "<span class='fa fa-question-circle'></span> Ask": "ask.md"
 markdown_extensions:
     - footnotes
