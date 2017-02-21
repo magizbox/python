@@ -8,7 +8,7 @@
         <meta name="author" content="Vu Anh">
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title><span class='fa fa-cloud-download'></span> Getting Started - PythonTutorial</title>
+        <title><span class='fa fa-cloud-download'></span> Get Started - PythonTutorial</title>
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -61,7 +61,7 @@
                         <a href=".."><span class='fa fa-home'></span> Home</a>
                     </li>
                     <li class="active">
-                        <a href="./"><span class='fa fa-cloud-download'></span> Getting Started</a>
+                        <a href="./"><span class='fa fa-cloud-download'></span> Get Started</a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class='fa fa-book'></span> Learn <b class="caret"></b></a>
@@ -193,53 +193,83 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#installation">Installation</a></li>
-            <li><a href="#windows-8-64-bit">Windows 8, 64 bit</a></li>
-            <li><a href="#centos-63-cent-os-7">CentOS 6.3, Cent OS 7</a></li>
+        <li class="main active"><a href="#get-started">Get Started</a></li>
+            <li><a href="#for-windows">For Windows</a></li>
+            <li><a href="#for-centos">For CentOS</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="installation">Installation</h1>
-<h2 id="windows-8-64-bit">Windows 8, 64 bit</h2>
-<p><strong>Step 1.</strong> Install Anaconda</p>
-<pre><code class="shell">https://www.continuum.io/downloads
-</code></pre>
+<h1 id="get-started">Get Started</h1>
+<p>Welcome! This tutorial details how to get started with Python.</p>
+<h2 id="for-windows">For Windows</h2>
+<h3 id="anaconda-430">Anaconda 4.3.0</h3>
+<div class="row">
+<div class="col-sm-6">
+<i>Anaconda is BSD licensed which gives you permission to use Anaconda commercially and for redistribution.</i>
+<br/><br/>
+1. Download the installer <br/>
+2. Optional: Verify data integrity with MD5 or SHA-256  <br/>
+3. Double-click the <b>.exe</b> file to install Anaconda and follow the instructions on the screen
+
+</div>
+
+<div class="col-sm-6 text-center">
+<h4>Python 3.6 version</h4>
+<a class="btn btn-success" href="https://repo.continuum.io/archive/Anaconda3-4.3.0.1-Windows-x86_64.exe" target="_blank">64-BIT INSTALLER</a>
+<br/>
+<hr style="border-top: 1px solid rgba(51, 51, 51, 0.24);">
+<h4>Python 2.7 version</h4>
+<a class="btn btn-success" href="https://repo.continuum.io/archive/Anaconda2-4.3.0.1-Windows-x86_64.exe" target="_blank">64-BIT INSTALLER</a>
+<br/>
+</div>
+
+</div>
 
 <p><strong>Step 2.</strong> Discover the Map</p>
 <p><a href="https://docs.python.org/2/library/index.html">https://docs.python.org/2/library/index.html</a></p>
-<h2 id="centos-63-cent-os-7">CentOS 6.3, Cent OS 7</h2>
-<p>Download developer tools</p>
+<h2 id="for-centos">For CentOS</h2>
+<h3 id="developer-tools">Developer tools</h3>
+<p><div class="row">
+<div class="col-sm-4">
+<i>The Development tools will allow you to build and compile software from source code. Tools for building RPMs are also included, as well as source code management tools like Git, SVN, and CVS.</i>
+</div>
+<div class="col-sm-8"></p>
 <pre><code class="bash">yum groupinstall &quot;Development tools&quot;
 yum install zlib-devel
 yum install bzip2-devel
 yum install openssl-devel
 yum install ncurses-devel
 yum install sqlite-devel
-
 </code></pre>
 
-<p>Download, compile and install Python</p>
+<p></div>
+</div></p>
+<h3 id="python-anaconda">Python &amp; Anaconda</h3>
+<p><div class="row">
+<div class="col-sm-4">
+<i>Anaconda is BSD licensed which gives you permission to use Anaconda commercially and for redistribution.</i>
+</div>
+<div class="col-sm-8"></p>
 <pre><code class="bash">cd /opt
 wget --no-check-certificate https://www.python.org/ftp/python/2.7.6/Python-2.7.6.tar.xz
 tar xf Python-2.7.6.tar.xz
 cd Python-2.7.6
 ./configure --prefix=/usr/local
 make &amp;&amp; make altinstall
-
-ln -s /usr/local/bin/python2.7 /usr/local/bin/python
-
 ## link
-
+ln -s /usr/local/bin/python2.7 /usr/local/bin/python
 # final check
 which python
 python -V
-
 # install Anaconda
 cd ~/Downloads
 wget https://repo.continuum.io/archive/Anaconda-2.3.0-Linux-x86_64.sh
 bash ~/Downloads/Anaconda-2.3.0-Linux-x86_64.sh
-</code></pre></div>
+</code></pre>
+
+<p></div>
+</div></p></div>
         </div>
 
         <footer class="col-md-12">

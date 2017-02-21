@@ -36,24 +36,39 @@
             "title": "External Links"
         }, 
         {
-            "location": "/install/", 
-            "text": "Installation\n\n\nWindows 8, 64 bit\n\n\nStep 1.\n Install Anaconda\n\n\nhttps://www.continuum.io/downloads\n\n\n\n\nStep 2.\n Discover the Map\n\n\nhttps://docs.python.org/2/library/index.html\n\n\nCentOS 6.3, Cent OS 7\n\n\nDownload developer tools\n\n\nyum groupinstall \nDevelopment tools\n\nyum install zlib-devel\nyum install bzip2-devel\nyum install openssl-devel\nyum install ncurses-devel\nyum install sqlite-devel\n\n\n\n\n\nDownload, compile and install Python\n\n\ncd /opt\nwget --no-check-certificate https://www.python.org/ftp/python/2.7.6/Python-2.7.6.tar.xz\ntar xf Python-2.7.6.tar.xz\ncd Python-2.7.6\n./configure --prefix=/usr/local\nmake \n make altinstall\n\nln -s /usr/local/bin/python2.7 /usr/local/bin/python\n\n## link\n\n# final check\nwhich python\npython -V\n\n# install Anaconda\ncd ~/Downloads\nwget https://repo.continuum.io/archive/Anaconda-2.3.0-Linux-x86_64.sh\nbash ~/Downloads/Anaconda-2.3.0-Linux-x86_64.sh", 
-            "title": "<span class='fa fa-cloud-download'></span> Getting Started"
+            "location": "/get_started/", 
+            "text": "Get Started\n\n\nWelcome! This tutorial details how to get started with Python.\n\n\nFor Windows\n\n\nAnaconda 4.3.0\n\n\n\n\n\n\nAnaconda is BSD licensed which gives you permission to use Anaconda commercially and for redistribution.\n\n\n\n1. Download the installer \n\n2. Optional: Verify data integrity with MD5 or SHA-256  \n\n3. Double-click the \n.exe\n file to install Anaconda and follow the instructions on the screen\n\n\n\n\n\n\n\nPython 3.6 version\n\n\n64-BIT INSTALLER\n\n\n\n\n\n\nPython 2.7 version\n\n\n64-BIT INSTALLER\n\n\n\n\n\n\n\n\n\n\nStep 2.\n Discover the Map\n\n\nhttps://docs.python.org/2/library/index.html\n\n\nFor CentOS\n\n\nDeveloper tools\n\n\n\n\n\n\nThe Development tools will allow you to build and compile software from source code. Tools for building RPMs are also included, as well as source code management tools like Git, SVN, and CVS.\n\n\n\n\n\n\nyum groupinstall \nDevelopment tools\n\nyum install zlib-devel\nyum install bzip2-devel\nyum install openssl-devel\nyum install ncurses-devel\nyum install sqlite-devel\n\n\n\n\n\n\n\n\nPython \n Anaconda\n\n\n\n\n\n\nAnaconda is BSD licensed which gives you permission to use Anaconda commercially and for redistribution.\n\n\n\n\n\n\ncd /opt\nwget --no-check-certificate https://www.python.org/ftp/python/2.7.6/Python-2.7.6.tar.xz\ntar xf Python-2.7.6.tar.xz\ncd Python-2.7.6\n./configure --prefix=/usr/local\nmake \n make altinstall\n## link\nln -s /usr/local/bin/python2.7 /usr/local/bin/python\n# final check\nwhich python\npython -V\n# install Anaconda\ncd ~/Downloads\nwget https://repo.continuum.io/archive/Anaconda-2.3.0-Linux-x86_64.sh\nbash ~/Downloads/Anaconda-2.3.0-Linux-x86_64.sh", 
+            "title": "<span class='fa fa-cloud-download'></span> Get Started"
         }, 
         {
-            "location": "/install/#installation", 
+            "location": "/get_started/#get-started", 
+            "text": "Welcome! This tutorial details how to get started with Python.", 
+            "title": "Get Started"
+        }, 
+        {
+            "location": "/get_started/#for-windows", 
             "text": "", 
-            "title": "Installation"
+            "title": "For Windows"
         }, 
         {
-            "location": "/install/#windows-8-64-bit", 
-            "text": "Step 1.  Install Anaconda  https://www.continuum.io/downloads  Step 2.  Discover the Map  https://docs.python.org/2/library/index.html", 
-            "title": "Windows 8, 64 bit"
+            "location": "/get_started/#anaconda-430", 
+            "text": "Anaconda is BSD licensed which gives you permission to use Anaconda commercially and for redistribution.  \n1. Download the installer  \n2. Optional: Verify data integrity with MD5 or SHA-256   \n3. Double-click the  .exe  file to install Anaconda and follow the instructions on the screen", 
+            "title": "Anaconda 4.3.0"
         }, 
         {
-            "location": "/install/#centos-63-cent-os-7", 
-            "text": "Download developer tools  yum groupinstall  Development tools \nyum install zlib-devel\nyum install bzip2-devel\nyum install openssl-devel\nyum install ncurses-devel\nyum install sqlite-devel  Download, compile and install Python  cd /opt\nwget --no-check-certificate https://www.python.org/ftp/python/2.7.6/Python-2.7.6.tar.xz\ntar xf Python-2.7.6.tar.xz\ncd Python-2.7.6\n./configure --prefix=/usr/local\nmake   make altinstall\n\nln -s /usr/local/bin/python2.7 /usr/local/bin/python\n\n## link\n\n# final check\nwhich python\npython -V\n\n# install Anaconda\ncd ~/Downloads\nwget https://repo.continuum.io/archive/Anaconda-2.3.0-Linux-x86_64.sh\nbash ~/Downloads/Anaconda-2.3.0-Linux-x86_64.sh", 
-            "title": "CentOS 6.3, Cent OS 7"
+            "location": "/get_started/#for-centos", 
+            "text": "", 
+            "title": "For CentOS"
+        }, 
+        {
+            "location": "/get_started/#developer-tools", 
+            "text": "The Development tools will allow you to build and compile software from source code. Tools for building RPMs are also included, as well as source code management tools like Git, SVN, and CVS.    yum groupinstall  Development tools \nyum install zlib-devel\nyum install bzip2-devel\nyum install openssl-devel\nyum install ncurses-devel\nyum install sqlite-devel", 
+            "title": "Developer tools"
+        }, 
+        {
+            "location": "/get_started/#python-anaconda", 
+            "text": "Anaconda is BSD licensed which gives you permission to use Anaconda commercially and for redistribution.    cd /opt\nwget --no-check-certificate https://www.python.org/ftp/python/2.7.6/Python-2.7.6.tar.xz\ntar xf Python-2.7.6.tar.xz\ncd Python-2.7.6\n./configure --prefix=/usr/local\nmake   make altinstall\n## link\nln -s /usr/local/bin/python2.7 /usr/local/bin/python\n# final check\nwhich python\npython -V\n# install Anaconda\ncd ~/Downloads\nwget https://repo.continuum.io/archive/Anaconda-2.3.0-Linux-x86_64.sh\nbash ~/Downloads/Anaconda-2.3.0-Linux-x86_64.sh", 
+            "title": "Python &amp; Anaconda"
         }, 
         {
             "location": "/basic_syntax/", 

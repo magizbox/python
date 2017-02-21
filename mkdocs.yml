@@ -4,7 +4,7 @@ google_analytics: ['UA-68978617-1', 'magizbox.com']
 
 pages:
 - "<span class='fa fa-home'></span> Home": "index.md"
-- "<span class='fa fa-cloud-download'></span> Getting Started": 'install.md'
+- "<span class='fa fa-cloud-download'></span> Get Started": 'get_started.md'
 - "<span class='fa fa-book'></span> Learn":
   - "Basic Syntax":
     - "Overview": 'basic_syntax.md'
