@@ -6,6 +6,8 @@ A mostly reasonable approach to Python
 
 ## Table of contents
 
+* [Python Resources](http://magizbox.com/training/python/site/)
+* [Get Started](http://magizbox.com/training/python/site/get_started/)
 * [Basic Syntax](http://magizbox.com/training/python/site/basic_syntax/)
 * [Data Structure](http://magizbox.com/training/python/site/data_number/)
 * [Object Oriented Programming](http://magizbox.com/training/python/site/oop/)
