@@ -1,6 +1,6 @@
 ## Convert dict to object
 
-[^1]
+Elegant way to convert a normal Python dict with some nested dicts to an object
 
 ```python
 class Struct:
@@ -21,4 +21,6 @@ Then, you can use
 2
 ```
 
-[^1]: [stackoverflow, Convert Python dict to object?](http://stackoverflow.com/questions/1305532/convert-python-dict-to-object)
+**Related Readings**
+
+* [stackoverflow, Convert Python dict to object?](http://stackoverflow.com/questions/1305532/convert-python-dict-to-object)

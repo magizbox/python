@@ -39,6 +39,7 @@ extra_css:
   - css/book.css
   - css/course.css
   - css/video.css
+  - css/custom.css
 extra_javascript:
   - js/underscore.js
   - js/gspreadsheet.js
