@@ -1,0 +1,22 @@
+{
+    "menu": {
+        "header": "Sample Menu", 
+        "items": [
+            {
+                "id": "Open"
+            }, 
+            {
+                "id": "OpenNew", 
+                "label": "Open New"
+            }, 
+            null, 
+            {
+                "id": "Help"
+            }, 
+            {
+                "id": "About", 
+                "label": "About Adobe CVG Viewer..."
+            }
+        ]
+    }
+}

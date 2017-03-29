@@ -112,7 +112,7 @@
 </li>
                             
 <li >
-    <a href="../os/">OS</a>
+    <a href="../os/">Operating System</a>
 </li>
                             
 <li >
@@ -198,29 +198,133 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#read-json-1">Read JSON 1</a></li>
+        <li class="main active"><a href="#json">JSON</a></li>
+        <li class="main "><a href="#xml">XML</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="read-json-1">Read JSON <sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup></h1>
+<h1 id="json">JSON</h1>
+<p><strong>Write json file with pretty format and unicode</strong></p>
+<pre><code class="python">import json
+import io
+
+data = {
+    &quot;menu&quot;: {
+        &quot;header&quot;: &quot;Sample Menu&quot;,
+        &quot;items&quot;: [
+            {&quot;id&quot;: &quot;Open&quot;},
+            {&quot;id&quot;: &quot;OpenNew&quot;, &quot;label&quot;: &quot;Open New&quot;},
+            None,
+            {&quot;id&quot;: &quot;Help&quot;},
+            {&quot;id&quot;: &quot;About&quot;, &quot;label&quot;: &quot;About Adobe CVG Viewer...&quot;}
+        ]
+    }}
+
+with io.open(&quot;sample_json.json&quot;, &quot;w&quot;, encoding=&quot;utf8&quot;) as f:
+    content = json.dumps(data, indent=4, sort_keys=True, ensure_ascii=False)
+    f.write(unicode(content))
+</code></pre>
+
+<p>Result</p>
+<pre><code>{
+    &quot;menu&quot;: {
+        &quot;header&quot;: &quot;Sample Menu&quot;,
+        &quot;items&quot;: [
+            {
+                &quot;id&quot;: &quot;Open&quot;
+            },
+            {
+                &quot;id&quot;: &quot;OpenNew&quot;,
+                &quot;label&quot;: &quot;Open New&quot;
+            },
+            null,
+            {
+                &quot;id&quot;: &quot;Help&quot;
+            },
+            {
+                &quot;id&quot;: &quot;About&quot;,
+                &quot;label&quot;: &quot;About Adobe CVG Viewer...&quot;
+            }
+        ]
+    }
+}
+</code></pre>
+
+<p><strong>Read json file</strong></p>
 <pre><code class="python">import json
 from pprint import pprint
 
-with open('data.json') as data_file:
+with open('sample_json.json') as data_file:
     data = json.load(data_file)
 
 pprint(data)
 </code></pre>
 
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:1">
-<p><a href="http://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file-in-python">Parsing values from a JSON file in Python</a>&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div></div>
+<p>Result</p>
+<pre><code>{u'menu': {u'header': u'Sample Menu',
+           u'items': [{u'id': u'Open'},
+                      {u'id': u'OpenNew', u'label': u'Open New'},
+                      None,
+                      {u'id': u'Help'},
+                      {u'id': u'About',
+                       u'label': u'About Adobe CVG Viewer...'}]}}
+</code></pre>
+
+<p><strong>Related Reading</strong></p>
+<ul>
+<li>Parsing values from a JSON file in Python, <a href="http://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file-in-python">stackoverflow</a></li>
+<li>How do I write JSON data to a file in Python?, <a href="http://stackoverflow.com/questions/12309269/how-do-i-write-json-data-to-a-file-in-python">stackoverflow</a></li>
+</ul>
+<h1 id="xml">XML</h1>
+<p><strong>Write xml file with <code>lxml</code> package</strong></p>
+<pre><code class="python">import lxml.etree as ET
+# root declaration
+root = ET.Element('catalog')
+# insert comment
+comment = ET.Comment(' this is a xml sample file ')
+root.insert(1, comment)
+# book element
+book = ET.SubElement(root, 'book', id=&quot;bk001&quot;)
+# book data
+author = ET.SubElement(book, 'author')
+author.text = &quot;Gambardella, Matthew&quot;
+title = ET.SubElement(book, 'title')
+title.text = &quot;XML Developer's Guide&quot;
+# write xml to file
+tree = ET.ElementTree(root)
+tree.write(&quot;sample_book.xml&quot;, pretty_print=True, xml_declaration=True, encoding='utf-8')
+</code></pre>
+
+<p>Result</p>
+<pre><code class="xml">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;catalog&gt;
+  &lt;!-- this is a xml sample file --&gt;
+  &lt;book id=&quot;bk001&quot;&gt;
+    &lt;author&gt;Gambardella, Matthew&lt;/author&gt;
+    &lt;title&gt;XML Developer's Guide&lt;/title&gt;
+  &lt;/book&gt;
+&lt;/catalog&gt;
+</code></pre>
+
+<p><strong>Read xml file with <code>lxml</code> package</strong></p>
+<pre><code class="python">from lxml import etree as ET
+
+tree = ET.parse(&quot;sample_book.xml&quot;)
+root = tree.getroot()
+book = root.find('book')
+print &quot;Book Information&quot;
+print &quot;ID     :&quot;, book.attrib[&quot;id&quot;]
+print &quot;Author :&quot;, book.find('author').text
+print &quot;Title  :&quot;, book.find('title').text
+</code></pre>
+
+<p>Result</p>
+<pre><code>Book Information
+ID     : bk001
+Author : Gambardella, Matthew
+Title  : XML Developer's Guide
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">

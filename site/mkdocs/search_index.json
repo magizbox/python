@@ -192,13 +192,18 @@
         }, 
         {
             "location": "/data_string/", 
-            "text": "Format\n\n\n'{0}, {1}, {2}'.format('a', 'b', 'c')\n# 'a, b, c'", 
+            "text": "Format\n\n\n'{0}, {1}, {2}'.format('a', 'b', 'c')\n# 'a, b, c'\n\n\n\n\nRegular Expressions\n\n\nThe aim of this chapter of our Python tutorial is to present a detailed led and descriptive introduction into regular expressions. This introduction will explain the theoretical aspects of regular expressions and will show you how to use them in Python scripts. \n\n\nRegular Expressions are used in programming languages to filter texts or textstrings. It's possible to check, if a text or a string matches a regular expression. \n\n\nThere is an aspect of regular expressions which shouldn't go unmentioned: The syntax of regular expressions is the same for all programming and script languages, e.g. Python, Perl, Java, SED, AWK and even X#.\n\n\nA Simple Regular Expression\n\n\nWe already said in the previous section that we can see the variable \"sub\" as a very simple regular expression. \nIf you want to use regular expressions in Python, you have to import the re module, which provides methods and functions to deal with regular expressions. \n\n\nSyntax of Regular Expressions", 
             "title": "String"
         }, 
         {
             "location": "/data_string/#format", 
             "text": "'{0}, {1}, {2}'.format('a', 'b', 'c')\n# 'a, b, c'", 
             "title": "Format"
+        }, 
+        {
+            "location": "/data_string/#regular-expressions", 
+            "text": "The aim of this chapter of our Python tutorial is to present a detailed led and descriptive introduction into regular expressions. This introduction will explain the theoretical aspects of regular expressions and will show you how to use them in Python scripts.   Regular Expressions are used in programming languages to filter texts or textstrings. It's possible to check, if a text or a string matches a regular expression.   There is an aspect of regular expressions which shouldn't go unmentioned: The syntax of regular expressions is the same for all programming and script languages, e.g. Python, Perl, Java, SED, AWK and even X#.  A Simple Regular Expression  We already said in the previous section that we can see the variable \"sub\" as a very simple regular expression. \nIf you want to use regular expressions in Python, you have to import the re module, which provides methods and functions to deal with regular expressions.   Syntax of Regular Expressions", 
+            "title": "Regular Expressions"
         }, 
         {
             "location": "/data_object/", 
@@ -277,13 +282,13 @@
         }, 
         {
             "location": "/os/", 
-            "text": "OS\n\n\nFile Operations\n\n\nCopy folder \n1\n\n\nimport shutil\nshutil.copyfile(\nsrc\n, \ndst\n)\n\n\n\n\nCLI\n\n\n\n\n\n\n\n\n\n\nshutil \u2014 High-level file operations", 
-            "title": "OS"
+            "text": "Operating System\n\n\nFile Operations\n\n\nCopy folder \n1\n\n\nimport shutil\nshutil.copyfile(\nsrc\n, \ndst\n)\n\n\n\n\nCLI\n\n\n\n\n\n\n\n\n\n\nshutil \u2014 High-level file operations", 
+            "title": "Operating System"
         }, 
         {
-            "location": "/os/#os", 
+            "location": "/os/#operating-system", 
             "text": "", 
-            "title": "OS"
+            "title": "Operating System"
         }, 
         {
             "location": "/os/#file-operations", 
@@ -342,13 +347,18 @@
         }, 
         {
             "location": "/io/", 
-            "text": "Read JSON \n1\n\n\nimport json\nfrom pprint import pprint\n\nwith open('data.json') as data_file:\n    data = json.load(data_file)\n\npprint(data)\n\n\n\n\n\n\n\n\n\n\n\n\nParsing values from a JSON file in Python", 
+            "text": "JSON\n\n\nWrite json file with pretty format and unicode\n\n\nimport json\nimport io\n\ndata = {\n    \nmenu\n: {\n        \nheader\n: \nSample Menu\n,\n        \nitems\n: [\n            {\nid\n: \nOpen\n},\n            {\nid\n: \nOpenNew\n, \nlabel\n: \nOpen New\n},\n            None,\n            {\nid\n: \nHelp\n},\n            {\nid\n: \nAbout\n, \nlabel\n: \nAbout Adobe CVG Viewer...\n}\n        ]\n    }}\n\nwith io.open(\nsample_json.json\n, \nw\n, encoding=\nutf8\n) as f:\n    content = json.dumps(data, indent=4, sort_keys=True, ensure_ascii=False)\n    f.write(unicode(content))\n\n\n\n\nResult\n\n\n{\n    \nmenu\n: {\n        \nheader\n: \nSample Menu\n,\n        \nitems\n: [\n            {\n                \nid\n: \nOpen\n\n            },\n            {\n                \nid\n: \nOpenNew\n,\n                \nlabel\n: \nOpen New\n\n            },\n            null,\n            {\n                \nid\n: \nHelp\n\n            },\n            {\n                \nid\n: \nAbout\n,\n                \nlabel\n: \nAbout Adobe CVG Viewer...\n\n            }\n        ]\n    }\n}\n\n\n\n\nRead json file\n\n\nimport json\nfrom pprint import pprint\n\nwith open('sample_json.json') as data_file:\n    data = json.load(data_file)\n\npprint(data)\n\n\n\n\nResult\n\n\n{u'menu': {u'header': u'Sample Menu',\n           u'items': [{u'id': u'Open'},\n                      {u'id': u'OpenNew', u'label': u'Open New'},\n                      None,\n                      {u'id': u'Help'},\n                      {u'id': u'About',\n                       u'label': u'About Adobe CVG Viewer...'}]}}\n\n\n\n\nRelated Reading\n\n\n\n\nParsing values from a JSON file in Python, \nstackoverflow\n\n\nHow do I write JSON data to a file in Python?, \nstackoverflow\n\n\n\n\nXML\n\n\nWrite xml file with \nlxml\n package\n\n\nimport lxml.etree as ET\n# root declaration\nroot = ET.Element('catalog')\n# insert comment\ncomment = ET.Comment(' this is a xml sample file ')\nroot.insert(1, comment)\n# book element\nbook = ET.SubElement(root, 'book', id=\nbk001\n)\n# book data\nauthor = ET.SubElement(book, 'author')\nauthor.text = \nGambardella, Matthew\n\ntitle = ET.SubElement(book, 'title')\ntitle.text = \nXML Developer's Guide\n\n# write xml to file\ntree = ET.ElementTree(root)\ntree.write(\nsample_book.xml\n, pretty_print=True, xml_declaration=True, encoding='utf-8')\n\n\n\n\nResult\n\n\n?xml version='1.0' encoding='UTF-8'?\n\n\ncatalog\n\n  \n!-- this is a xml sample file --\n\n  \nbook id=\nbk001\n\n    \nauthor\nGambardella, Matthew\n/author\n\n    \ntitle\nXML Developer's Guide\n/title\n\n  \n/book\n\n\n/catalog\n\n\n\n\n\nRead xml file with \nlxml\n package\n\n\nfrom lxml import etree as ET\n\ntree = ET.parse(\nsample_book.xml\n)\nroot = tree.getroot()\nbook = root.find('book')\nprint \nBook Information\n\nprint \nID     :\n, book.attrib[\nid\n]\nprint \nAuthor :\n, book.find('author').text\nprint \nTitle  :\n, book.find('title').text\n\n\n\n\nResult\n\n\nBook Information\nID     : bk001\nAuthor : Gambardella, Matthew\nTitle  : XML Developer's Guide", 
             "title": "IO"
         }, 
         {
-            "location": "/io/#read-json-1", 
-            "text": "import json\nfrom pprint import pprint\n\nwith open('data.json') as data_file:\n    data = json.load(data_file)\n\npprint(data)      Parsing values from a JSON file in Python", 
-            "title": "Read JSON 1"
+            "location": "/io/#json", 
+            "text": "Write json file with pretty format and unicode  import json\nimport io\n\ndata = {\n     menu : {\n         header :  Sample Menu ,\n         items : [\n            { id :  Open },\n            { id :  OpenNew ,  label :  Open New },\n            None,\n            { id :  Help },\n            { id :  About ,  label :  About Adobe CVG Viewer... }\n        ]\n    }}\n\nwith io.open( sample_json.json ,  w , encoding= utf8 ) as f:\n    content = json.dumps(data, indent=4, sort_keys=True, ensure_ascii=False)\n    f.write(unicode(content))  Result  {\n     menu : {\n         header :  Sample Menu ,\n         items : [\n            {\n                 id :  Open \n            },\n            {\n                 id :  OpenNew ,\n                 label :  Open New \n            },\n            null,\n            {\n                 id :  Help \n            },\n            {\n                 id :  About ,\n                 label :  About Adobe CVG Viewer... \n            }\n        ]\n    }\n}  Read json file  import json\nfrom pprint import pprint\n\nwith open('sample_json.json') as data_file:\n    data = json.load(data_file)\n\npprint(data)  Result  {u'menu': {u'header': u'Sample Menu',\n           u'items': [{u'id': u'Open'},\n                      {u'id': u'OpenNew', u'label': u'Open New'},\n                      None,\n                      {u'id': u'Help'},\n                      {u'id': u'About',\n                       u'label': u'About Adobe CVG Viewer...'}]}}  Related Reading   Parsing values from a JSON file in Python,  stackoverflow  How do I write JSON data to a file in Python?,  stackoverflow", 
+            "title": "JSON"
+        }, 
+        {
+            "location": "/io/#xml", 
+            "text": "Write xml file with  lxml  package  import lxml.etree as ET\n# root declaration\nroot = ET.Element('catalog')\n# insert comment\ncomment = ET.Comment(' this is a xml sample file ')\nroot.insert(1, comment)\n# book element\nbook = ET.SubElement(root, 'book', id= bk001 )\n# book data\nauthor = ET.SubElement(book, 'author')\nauthor.text =  Gambardella, Matthew \ntitle = ET.SubElement(book, 'title')\ntitle.text =  XML Developer's Guide \n# write xml to file\ntree = ET.ElementTree(root)\ntree.write( sample_book.xml , pretty_print=True, xml_declaration=True, encoding='utf-8')  Result  ?xml version='1.0' encoding='UTF-8'?  catalog \n   !-- this is a xml sample file -- \n   book id= bk001 \n     author Gambardella, Matthew /author \n     title XML Developer's Guide /title \n   /book  /catalog   Read xml file with  lxml  package  from lxml import etree as ET\n\ntree = ET.parse( sample_book.xml )\nroot = tree.getroot()\nbook = root.find('book')\nprint  Book Information \nprint  ID     : , book.attrib[ id ]\nprint  Author : , book.find('author').text\nprint  Title  : , book.find('title').text  Result  Book Information\nID     : bk001\nAuthor : Gambardella, Matthew\nTitle  : XML Developer's Guide", 
+            "title": "XML"
         }, 
         {
             "location": "/ide/", 

@@ -1,4 +1,4 @@
-# OS
+# Operating System
 
 ## File Operations
 

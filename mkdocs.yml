@@ -18,7 +18,7 @@ pages:
     - "Collection": 'data_collection.md'
     - "Time": 'data_time.md'
   - "OOP": 'oop.md'
-  - "OS": 'os.md'
+  - "Operating System": 'os.md'
   - "Networking": 'networking.md'
   - "Concurrency and Parallelism": 'concurrency_parallelism.md'
   - "IO": 'io.md'

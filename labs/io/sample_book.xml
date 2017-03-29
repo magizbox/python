@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<catalog>
+  <!-- this is a xml sample file -->
+  <book id="bk001">
+    <author>Gambardella, Matthew</author>
+    <title>XML Developer's Guide</title>
+  </book>
+</catalog>
