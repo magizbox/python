@@ -8,9 +8,7 @@
         <meta name="author" content="Vu Anh">
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-
-	<title>String - PythonTutorial</title>
-
+        <title>String - PythonTutorial</title>
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -19,14 +17,15 @@
         <link href="../css/course.css" rel="stylesheet">
         <link href="../css/video.css" rel="stylesheet">
         <link href="../css/custom.css" rel="stylesheet">
-
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
-
-        
+	
+	<script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -35,8 +34,7 @@
 
             ga('create', 'UA-68978617-1', 'magizbox.com');
             ga('send', 'pageview');
-        </script>
-        
+        </script> 
     </head>
 
     <body>
@@ -46,7 +44,6 @@
 
         <!-- Collapsed navigation -->
         <div class="navbar-header">
-            
             <!-- Expander button -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -54,191 +51,124 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            
-
-            <!-- Main title -->
             <a class="navbar-brand" href="..">PythonTutorial</a>
         </div>
 
         <!-- Expanded navigation -->
         <div class="navbar-collapse collapse">
-            
                 <!-- Main navigation -->
                 <ul class="nav navbar-nav">
-                
-                
                     <li >
                         <a href=".."><span class='fa fa-home'></span> Home</a>
                     </li>
-                
-                
-                
                     <li >
                         <a href="../get_started/"><span class='fa fa-cloud-download'></span> Get Started</a>
                     </li>
-                
-                
-                
                     <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class='fa fa-book'></span> Learn <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                        
                             
   <li class="dropdown-submenu">
-    <a tabindex="-1" href="">Basic Syntax</a>
+    <a href="#">Basic Syntax</a>
     <ul class="dropdown-menu">
-        
             
 <li >
     <a href="../basic_syntax/">Overview</a>
 </li>
-
-        
             
 <li >
     <a href="../basic_syntax_yield/">Yield and Generator</a>
 </li>
-
-        
     </ul>
   </li>
-
-                        
                             
   <li class="dropdown-submenu">
-    <a tabindex="-1" href="">Data Structure</a>
+    <a href="#">Data Structure</a>
     <ul class="dropdown-menu">
-        
             
 <li >
     <a href="../data_number/">Number</a>
 </li>
-
-        
             
 <li class="active">
     <a href="./">String</a>
 </li>
-
-        
             
 <li >
     <a href="../data_object/">Object</a>
 </li>
-
-        
             
 <li >
     <a href="../data_collection/">Collection</a>
 </li>
-
-        
             
 <li >
     <a href="../data_time/">Time</a>
 </li>
-
-        
     </ul>
   </li>
-
-                        
                             
 <li >
     <a href="../oop/">OOP</a>
 </li>
-
-                        
                             
 <li >
     <a href="../os/">Operating System</a>
 </li>
-
-                        
                             
 <li >
     <a href="../networking/">Networking</a>
 </li>
-
-                        
                             
 <li >
     <a href="../concurrency_parallelism/">Concurrency and Parallelism</a>
 </li>
-
-                        
                             
 <li >
     <a href="../io/">IO</a>
 </li>
-
-                        
                             
 <li >
     <a href="../ide/">IDE</a>
 </li>
-
-                        
                             
 <li >
     <a href="../event_based/">Event Based</a>
 </li>
-
-                        
                             
 <li >
     <a href="../logging/">Logging</a>
 </li>
-
-                        
                             
 <li >
     <a href="../configuration/">Configuration</a>
 </li>
-
-                        
                             
 <li >
     <a href="../web/">Web</a>
 </li>
-
-                        
                             
 <li >
     <a href="../package_manager/">Package Manager</a>
 </li>
-
-                        
                             
 <li >
     <a href="../environment/">Environment</a>
 </li>
-
-                        
                             
 <li >
     <a href="../make_a_module/">Module</a>
 </li>
-
-                        
                             
 <li >
     <a href="../production/">Production</a>
 </li>
-
-                        
                         </ul>
                     </li>
-                
-                
-                
                     <li >
                         <a href="../ask/"><span class='fa fa-question-circle'></span> Ask</a>
                     </li>
-                
-                
                 </ul>
-            
 
             <ul class="nav navbar-nav navbar-right">
                 <li>
@@ -246,7 +176,6 @@
                         <i class="fa fa-search"></i> Search
                     </a>
                 </li>
-                
                     <li >
                         <a rel="next" href="../data_number/">
                             <i class="fa fa-arrow-left"></i> Previous
@@ -257,33 +186,23 @@
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
-                
-                
                     <li>
                         <a href="https://github.com/magizbox/python/">
-                            
-                                <i class="fa fa-github"></i>
-                            
-                            GitHub
+                                <i class="fa fa-github"></i>GitHub
                         </a>
                     </li>
-                
             </ul>
         </div>
     </div>
 </div>
 
         <div class="container">
-            
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-    
         <li class="main active"><a href="#format">Format</a></li>
-        
-    
         <li class="main "><a href="#regular-expressions">Regular Expressions</a></li>
-        
-    
+            <li><a href="#functions">Functions</a></li>
+            <li><a href="#tokens-cheatsheet">Tokens Cheatsheet</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -297,10 +216,81 @@
 <p>The aim of this chapter of our Python tutorial is to present a detailed led and descriptive introduction into regular expressions. This introduction will explain the theoretical aspects of regular expressions and will show you how to use them in Python scripts. </p>
 <p>Regular Expressions are used in programming languages to filter texts or textstrings. It's possible to check, if a text or a string matches a regular expression. </p>
 <p>There is an aspect of regular expressions which shouldn't go unmentioned: The syntax of regular expressions is the same for all programming and script languages, e.g. Python, Perl, Java, SED, AWK and even X#.</p>
-<p><strong>A Simple Regular Expression</strong></p>
-<p>We already said in the previous section that we can see the variable "sub" as a very simple regular expression. 
-If you want to use regular expressions in Python, you have to import the re module, which provides methods and functions to deal with regular expressions. </p>
-<p><strong>Cheatsheet</strong></p>
+<h3 id="functions">Functions</h3>
+<h4 id="match-function">match function</h4>
+<p>This function attempts to match RE pattern to string with optional flags.</p>
+<pre><code>re.match(pattern, string, flags=0)
+</code></pre>
+
+<p>Example</p>
+<pre><code class="python">import re
+
+line = &quot;Cats are smarter than dogs&quot;
+
+matched_object = re.match(r'(.*) are (.*?) .*', line, re.M | re.I)
+
+if matched_object:
+    print &quot;matched_object.group()  : &quot;, matched_object.group()
+    print &quot;matched_object.group(1) : &quot;, matched_object.group(1)
+    print &quot;matched_object.group(2) : &quot;, matched_object.group(2)
+else:
+    print &quot;No match!!&quot;
+</code></pre>
+
+<p>When the code is executed, it produces following results</p>
+<pre><code>matched_object.group()  :  Cats are smarter than dogs
+matched_object.group(1) :  Cats
+matched_object.group(2) :  smarter
+</code></pre>
+
+<h4 id="search-function">search function</h4>
+<p>This function searches for first occurrence of RE pattern within stirng with optional flags</p>
+<pre><code>re.search(pattern, string, flags=0)
+</code></pre>
+
+<p>Example</p>
+<pre><code class="python">#!/usr/bin/python
+import re
+
+line = &quot;Cats are smarter than dogs&quot;
+
+search_object = re.search(r'dogs', line, re.M | re.I)
+if search_object:
+    print &quot;search --&gt; search_object.group() : &quot;, search_object.group()
+else:
+    print &quot;Nothing found!!&quot;
+</code></pre>
+
+<p>When the code is executed, it produces following results</p>
+<pre><code>search --&gt; search_object.group() :  dogs
+</code></pre>
+
+<h4 id="sub-function">sub function</h4>
+<p>This method replaces all occurrences of the RE pattern in string with repl, substituting all occurrences unless max provided. This method returns modified string.</p>
+<pre><code>re.sub(pattern, repl, string, max=0)
+</code></pre>
+
+<p>Example</p>
+<pre><code class="python">#!/usr/bin/python
+import re
+
+phone = &quot;2004-959-559 # This is Phone Number&quot;
+
+# Delete Python-style comments
+num = re.sub(r'#.*$', &quot;&quot;, phone)
+print &quot;Phone Num : &quot;, num
+
+# Remove anything other than digits
+num = re.sub(r'\D', &quot;&quot;, phone)    
+print &quot;Phone Num : &quot;, num
+</code></pre>
+
+<p>When the code is executed, it produces following results</p>
+<pre><code>Phone Num :  2004-959-559
+Phone Num :  2004959559
+</code></pre>
+
+<h3 id="tokens-cheatsheet">Tokens Cheatsheet</h3>
 <table class="highlight-table">
 <tr>
 <th colspan=3>Character Classes</th>
@@ -401,35 +391,64 @@ is</h> beautiful.</t>
 <t> abc@&%$<h>\\</h>123</t>
 </td>
 </tr>
-<tr><td>\u00A9</td> <td>unicode escaped ©</td><td class="example">
+
+<tr>
+<td>\u00A9</td> <td>unicode escaped ©</td><td class="example">
 <f> /<hp>\u00A9</hp>/ </f>
-<t> Copyright<h>©</h>2017 - All rights reserved</t></td></tr>
+<t> Copyright<h>©</h>2017 - All rights reserved</t>
+</td>
+</tr>
 
 <th colspan=3>Groups and Lockaround</th>
 <tr><td>(abc)</td> <td>capture group</td>
 <td class="example">
 <f> /<hbg><hg>(</hg>demo<hb>|</hb>example<hg>)</hbg><hby></hg><h>[0-9]</h></hby>/ </f>
-<t> <h>demo1</h><h>example4</h>demo</td>
+<t> <h>demo1</h><h>example4</h>demo </t>
+</td>
 </tr>
+
 <tr><td>\1</td> <td>backreference to group #1</td>
 <td class="example">
 <f> /<hbg><hg>(</hg>abc<hb>|</hb>def<hg>)</hbg>=<hg>\1</hg>/</f>
-<t> <h>abc=abc</h> <h>def=def</h>abc=def</td>
+<t> <h>abc=abc</h> <h>def=def</h>abc=def </t>
+</td>
 </tr>
+
 <tr><td>(?:abc)</td> <td>non-capturing group</td>
 <td class="example">
 <f> /<hbg><hg>(</hg><hg>?:</hg>abc<hg>)</hg></hbg><hb>{3}</hb>/</f>
-<t> <h>abcabcabc</h> abcabc</h></td>
+<t> <h>abcabcabc</h> abcabc</h> </t>
+</td>
 </tr>
+
 <tr><td>(?=abc)</td> <td>positive lookahead</td>
 <td class="example">
 <f> /t<hbg><hg>(?=</hg>s<hg>)</hg></hbg>/</f>
-<t> tt<h>t</h>ssstt<h>t</h>ss</td>
+<t> tt<h>t</h>ssstt<h>t</h>ss </t>
+</td>
 </tr>
+
 <tr><td>(?!abc)</td> <td>negative lookahead</td>
 <td class="example">
 <f> /t<hbg><hg>(?!</hg>s<hg>)</hg></hbg>/</f>
-<t> <h>t</h><h>t</h>tsss<h>t</h><h>t</h>tss</td>
+<t> <h>t</h><h>t</h>tsss<h>t</h><h>t</h>tss </t>
+</td>
+</tr>
+
+<tr>
+<td>(?<=abc)</td> <td>positive lookbehind</td>
+<td class="example">
+<f> /<hbg><hg>(?<=</hg>foo<hg>)</hg></hbg>bar/</f>
+<t> foo<h>bar</h> fuubar </t>
+</td>
+</tr>
+
+<tr>
+<td>(?&lt;!abc)</td> <td>negative lookbehind</td>
+<td class="example">
+<f> /<hbg><hg>(?&lt;!</hg>foo<hg>)</hg></hbg>bar/ </f>
+<t> foobar fuu<h>bar</h> </t>
+</td>
 </tr>
 
 <th colspan=3>Quantifiers & Alternation</th>
@@ -443,6 +462,7 @@ is</h> beautiful.</t>
 <t> <h>demos123</h> demosA123 demos?123</t>
 </td>
 </tr>
+
 <tr><td>a{5}, a{2,}</td> <td>exactly five, two or more</td>
 <td class="example">
 <f> /w<hb>{3}</hb>/ </f>
@@ -475,20 +495,15 @@ is</h> beautiful.</t>
 
 <p><strong>Related Readings</strong></p>
 <ul>
-<li><a href="http://regexr.com/">http://regexr.com/</a></li>
+<li>Online regex tester and debugger: PHP, PCRE, Python, Golang and JavaScript, <a href="https://regex101.com/">regex101.com</a></li>
+<li>RegExr: Learn, Build, &amp; Test RegEx, <a href="http://regexr.com/">regexr.com</a></li>
 </ul></div>
-            
         </div>
 
         <footer class="col-md-12">
             <hr>
-            
             <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
-
-        <script src="../js/jquery-1.10.2.min.js"></script>
-        <script src="../js/bootstrap-3.0.3.min.js"></script>
-        <script src="../js/highlight.pack.js"></script>
         <script>var base_url = '..';</script>
         <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
         <script src="../js/base.js"></script>
@@ -496,32 +511,30 @@ is</h> beautiful.</t>
         <script src="../js/gspreadsheet.js"></script>
         <script src="../js/book.js"></script>
         <script src="../js/course.js"></script>
-        <script src="../js/video.js"></script>
-
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+        <script src="../js/video.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
                     </div>
-                    <div class="modal-body">
-                        <p>
-                            From here you can search these documents. Enter
-                            your search terms below.
-                        </p>
-                        <form role="form">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
-                            </div>
-                        </form>
-                        <div id="mkdocs-search-results"></div>
-                    </div>
-                    <div class="modal-footer">
-                    </div>
-                </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
             </div>
         </div>
+    </div>
+</div>
 
     </body>
 </html>

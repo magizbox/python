@@ -3,7 +3,7 @@
 
     
     <url>
-     <loc>None/</loc>
+     <loc>/</loc>
      <lastmod>2017-03-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -11,7 +11,7 @@
 
     
     <url>
-     <loc>None/get_started/</loc>
+     <loc>/get_started/</loc>
      <lastmod>2017-03-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -20,97 +20,97 @@
     
         
     <url>
-     <loc>None</loc>
+     <loc></loc>
      <lastmod></lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None</loc>
+     <loc></loc>
      <lastmod></lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/oop/</loc>
+     <loc>/oop/</loc>
      <lastmod>2017-03-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/os/</loc>
+     <loc>/os/</loc>
      <lastmod>2017-03-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/networking/</loc>
+     <loc>/networking/</loc>
      <lastmod>2017-03-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/concurrency_parallelism/</loc>
+     <loc>/concurrency_parallelism/</loc>
      <lastmod>2017-03-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/io/</loc>
+     <loc>/io/</loc>
      <lastmod>2017-03-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/ide/</loc>
+     <loc>/ide/</loc>
      <lastmod>2017-03-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/event_based/</loc>
+     <loc>/event_based/</loc>
      <lastmod>2017-03-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/logging/</loc>
+     <loc>/logging/</loc>
      <lastmod>2017-03-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/configuration/</loc>
+     <loc>/configuration/</loc>
      <lastmod>2017-03-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/web/</loc>
+     <loc>/web/</loc>
      <lastmod>2017-03-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/package_manager/</loc>
+     <loc>/package_manager/</loc>
      <lastmod>2017-03-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/environment/</loc>
+     <loc>/environment/</loc>
      <lastmod>2017-03-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/make_a_module/</loc>
+     <loc>/make_a_module/</loc>
      <lastmod>2017-03-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/production/</loc>
+     <loc>/production/</loc>
      <lastmod>2017-03-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -119,7 +119,7 @@
 
     
     <url>
-     <loc>None/ask/</loc>
+     <loc>/ask/</loc>
      <lastmod>2017-03-30</lastmod>
      <changefreq>daily</changefreq>
     </url>

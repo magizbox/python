@@ -13,12 +13,103 @@ Regular Expressions are used in programming languages to filter texts or textstr
 
 There is an aspect of regular expressions which shouldn't go unmentioned: The syntax of regular expressions is the same for all programming and script languages, e.g. Python, Perl, Java, SED, AWK and even X#.
 
-**A Simple Regular Expression**
+### Functions
 
-We already said in the previous section that we can see the variable "sub" as a very simple regular expression. 
-If you want to use regular expressions in Python, you have to import the re module, which provides methods and functions to deal with regular expressions. 
+#### match function
 
-**Cheatsheet**
+This function attempts to match RE pattern to string with optional flags.
+
+```
+re.match(pattern, string, flags=0)
+```
+
+Example
+
+```python
+import re
+
+line = "Cats are smarter than dogs"
+
+matched_object = re.match(r'(.*) are (.*?) .*', line, re.M | re.I)
+
+if matched_object:
+    print "matched_object.group()  : ", matched_object.group()
+    print "matched_object.group(1) : ", matched_object.group(1)
+    print "matched_object.group(2) : ", matched_object.group(2)
+else:
+    print "No match!!"
+```
+
+When the code is executed, it produces following results
+
+```
+matched_object.group()  :  Cats are smarter than dogs
+matched_object.group(1) :  Cats
+matched_object.group(2) :  smarter
+```
+
+#### search function
+
+This function searches for first occurrence of RE pattern within stirng with optional flags
+
+```
+re.search(pattern, string, flags=0)
+```
+
+Example
+
+```python
+#!/usr/bin/python
+import re
+
+line = "Cats are smarter than dogs"
+
+search_object = re.search(r'dogs', line, re.M | re.I)
+if search_object:
+    print "search --> search_object.group() : ", search_object.group()
+else:
+    print "Nothing found!!"
+```
+
+When the code is executed, it produces following results
+
+```
+search --> search_object.group() :  dogs
+```
+
+#### sub function
+
+This method replaces all occurrences of the RE pattern in string with repl, substituting all occurrences unless max provided. This method returns modified string.
+
+```
+re.sub(pattern, repl, string, max=0)
+```
+
+Example
+
+```python
+#!/usr/bin/python
+import re
+
+phone = "2004-959-559 # This is Phone Number"
+
+# Delete Python-style comments
+num = re.sub(r'#.*$', "", phone)
+print "Phone Num : ", num
+
+# Remove anything other than digits
+num = re.sub(r'\D', "", phone)    
+print "Phone Num : ", num
+```
+
+When the code is executed, it produces following results
+
+```
+Phone Num :  2004-959-559
+Phone Num :  2004959559
+```
+
+### Tokens Cheatsheet
 
 <table class="highlight-table">
 <tr>
@@ -120,35 +211,64 @@ is</h> beautiful.</t>
 <t> abc@&%$<h>\\</h>123</t>
 </td>
 </tr>
-<tr><td>\u00A9</td> <td>unicode escaped ©</td><td class="example">
+
+<tr>
+<td>\u00A9</td> <td>unicode escaped ©</td><td class="example">
 <f> /<hp>\u00A9</hp>/ </f>
-<t> Copyright<h>©</h>2017 - All rights reserved</t></td></tr>
+<t> Copyright<h>©</h>2017 - All rights reserved</t>
+</td>
+</tr>
 
 <th colspan=3>Groups and Lockaround</th>
 <tr><td>(abc)</td> <td>capture group</td>
 <td class="example">
 <f> /<hbg><hg>(</hg>demo<hb>|</hb>example<hg>)</hbg><hby></hg><h>[0-9]</h></hby>/ </f>
-<t> <h>demo1</h><h>example4</h>demo</td>
+<t> <h>demo1</h><h>example4</h>demo </t>
+</td>
 </tr>
+
 <tr><td>\1</td> <td>backreference to group #1</td>
 <td class="example">
 <f> /<hbg><hg>(</hg>abc<hb>|</hb>def<hg>)</hbg>=<hg>\1</hg>/</f>
-<t> <h>abc=abc</h> <h>def=def</h>abc=def</td>
+<t> <h>abc=abc</h> <h>def=def</h>abc=def </t>
+</td>
 </tr>
+
 <tr><td>(?:abc)</td> <td>non-capturing group</td>
 <td class="example">
 <f> /<hbg><hg>(</hg><hg>?:</hg>abc<hg>)</hg></hbg><hb>{3}</hb>/</f>
-<t> <h>abcabcabc</h> abcabc</h></td>
+<t> <h>abcabcabc</h> abcabc</h> </t>
+</td>
 </tr>
+
 <tr><td>(?=abc)</td> <td>positive lookahead</td>
 <td class="example">
 <f> /t<hbg><hg>(?=</hg>s<hg>)</hg></hbg>/</f>
-<t> tt<h>t</h>ssstt<h>t</h>ss</td>
+<t> tt<h>t</h>ssstt<h>t</h>ss </t>
+</td>
 </tr>
+
 <tr><td>(?!abc)</td> <td>negative lookahead</td>
 <td class="example">
 <f> /t<hbg><hg>(?!</hg>s<hg>)</hg></hbg>/</f>
-<t> <h>t</h><h>t</h>tsss<h>t</h><h>t</h>tss</td>
+<t> <h>t</h><h>t</h>tsss<h>t</h><h>t</h>tss </t>
+</td>
+</tr>
+
+<tr>
+<td>(?<=abc)</td> <td>positive lookbehind</td>
+<td class="example">
+<f> /<hbg><hg>(?<=</hg>foo<hg>)</hg></hbg>bar/</f>
+<t> foo<h>bar</h> fuubar </t>
+</td>
+</tr>
+
+<tr>
+<td>(?&lt;!abc)</td> <td>negative lookbehind</td>
+<td class="example">
+<f> /<hbg><hg>(?&lt;!</hg>foo<hg>)</hg></hbg>bar/ </f>
+<t> foobar fuu<h>bar</h> </t>
+</td>
 </tr>
 
 <th colspan=3>Quantifiers & Alternation</th>
@@ -162,6 +282,7 @@ is</h> beautiful.</t>
 <t> <h>demos123</h> demosA123 demos?123</t>
 </td>
 </tr>
+
 <tr><td>a{5}, a{2,}</td> <td>exactly five, two or more</td>
 <td class="example">
 <f> /w<hb>{3}</hb>/ </f>
@@ -194,4 +315,7 @@ is</h> beautiful.</t>
 
 **Related Readings**
 
-* [http://regexr.com/](http://regexr.com/)
+* Online regex tester and debugger: PHP, PCRE, Python, Golang and JavaScript, [regex101.com](https://regex101.com/)
+* RegExr: Learn, Build, & Test RegEx, [regexr.com](http://regexr.com/)
+
+
