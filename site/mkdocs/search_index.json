@@ -267,13 +267,18 @@
         }, 
         {
             "location": "/data_time/", 
-            "text": "Datetime\n\n\nPrint current time \n1\n\n\nfrom datetime import datetime\ndatetime.now().strftime('%Y-%m-%d %H:%M:%S')\n# '2015-12-29 14:02:27'\n\n\n\n\nGet current time \n1\n\n\nimport datetime\ndatetime.datetime.now()\n# datetime(2009, 1, 6, 15, 8, 24, 78915)\n\n\n\n\nUnixtime \n2\n\n\nimport time\nint(time.time())\n\n\n\n\n\n\n\n\n\n\n\n\nHow to get current time in Python\n\n\n\n\n\n\nDoes Python's time.time() return the local or UTC timestamp?", 
+            "text": "Datetime\n\n\nPrint current time\n\n\nfrom datetime import datetime\ndatetime.now().strftime('%Y-%m-%d %H:%M:%S')\n# '2015-12-29 14:02:27'\n\n\n\n\nGet current time\n\n\nimport datetime\ndatetime.datetime.now()\n# datetime(2009, 1, 6, 15, 8, 24, 78915)\n\n\n\n\nUnixtime\n\n\nimport time\nint(time.time())\n\n\n\n\nMeasure time elapsed\n\n\nimport time\n\nstart = time.time()\nprint(\nhello\n)\nend = time.time()\nprint(end - start)\n\n\n\n\nRelated Readings\n\n\n\n\nHow to get current time in Python, \nstackoverflow\n\n\nDoes Python's time.time() return the local or UTC timestamp?, \nstackoverflow\n\n\nMeasure time elapsed in Python?, \nstackoverflow", 
             "title": "Time"
         }, 
         {
             "location": "/data_time/#datetime", 
-            "text": "Print current time  1  from datetime import datetime\ndatetime.now().strftime('%Y-%m-%d %H:%M:%S')\n# '2015-12-29 14:02:27'  Get current time  1  import datetime\ndatetime.datetime.now()\n# datetime(2009, 1, 6, 15, 8, 24, 78915)  Unixtime  2  import time\nint(time.time())      How to get current time in Python    Does Python's time.time() return the local or UTC timestamp?", 
+            "text": "Print current time  from datetime import datetime\ndatetime.now().strftime('%Y-%m-%d %H:%M:%S')\n# '2015-12-29 14:02:27'  Get current time  import datetime\ndatetime.datetime.now()\n# datetime(2009, 1, 6, 15, 8, 24, 78915)  Unixtime  import time\nint(time.time())  Measure time elapsed  import time\n\nstart = time.time()\nprint( hello )\nend = time.time()\nprint(end - start)", 
             "title": "Datetime"
+        }, 
+        {
+            "location": "/data_time/#related-readings", 
+            "text": "How to get current time in Python,  stackoverflow  Does Python's time.time() return the local or UTC timestamp?,  stackoverflow  Measure time elapsed in Python?,  stackoverflow", 
+            "title": "Related Readings"
         }, 
         {
             "location": "/oop/", 
