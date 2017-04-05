@@ -200,23 +200,55 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#list">List</a></li>
-            <li><a href="#reverse-a-list">Reverse a list</a></li>
-            <li><a href="#itertools">Itertools</a></li>
         <li class="main "><a href="#dictionary">Dictionary</a></li>
+        <li class="main "><a href="#related-readings">Related Readings</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
+<p>The most basic data structure in Python is the <strong>sequence</strong>. Each element of a sequence is assigned a number - its position or index. The first index is zero, the second index is one, and so forth.</p>
 <h2 id="list">List</h2>
+<p>The list is a most versatile datatype available in Python which can be written as a list of comma-separated values (items) between square brackets. Important thing about a list is that items in a list need not be of the same type.</p>
+<p><strong>Create a list</strong></p>
 <pre><code class="python">a = [1, 2, 3]
+# [1, 2, 3]
 </code></pre>
 
-<h3 id="reverse-a-list">Reverse a list</h3>
+<p><strong>Access values in lists</strong></p>
+<pre><code class="python">list1 = ['physics', 'chemistry', 1997, 2000]
+list2 = [1, 2, 3, 4, 5, 6, 7 ]
+
+print list1[0]   # physics
+
+print list2[1:5] # [2, 3, 4, 5]
+</code></pre>
+
+<p><strong>Updated lists</strong></p>
+<pre><code class="python">list = ['physics', 'chemistry', 1997, 2000]
+print list[2] # 1997
+
+list[2] = 2001
+print list[2] # 2001
+</code></pre>
+
+<p><strong>Delete list elements</strong></p>
+<pre><code class="python">list1 = ['physics', 'chemistry', 1997, 2000];
+
+print list1
+# ['physics', 'chemistry', 1997, 2000]
+
+del list1[2]
+
+print list1
+# ['physics', 'chemistry', 2000]
+</code></pre>
+
+<p><strong>Reverse a list</strong></p>
 <pre><code class="python">[1, 3, 2][::-1]
 # [2, 3, 1]
 </code></pre>
 
-<h3 id="itertools">Itertools</h3>
+<p><strong>Itertools</strong></p>
 <pre><code class="python">import itertools
 
 x = [1, 2, 3]
@@ -226,15 +258,28 @@ y = [2, 4, 5]
 # [3, 5, 6, 4, 6, 7, 5, 7, 8]
 </code></pre>
 
+<p><strong>Select random elements in list</strong></p>
+<pre><code class="python">import random
+
+x = [13, 23, 14, 52, 6, 23]
+
+random.choice(x) # 52
+
+random.sample(x, 3) # [23, 14, 52]
+</code></pre>
+
 <h2 id="dictionary">Dictionary</h2>
-<pre><code>dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'}
+<p>Each key is separated from its value by a colon (:), the items are separated by commas, and the whole thing is enclosed in curly braces. An empty dictionary without any items is written with just two curly braces, like this: {}.</p>
+<p>Keys are unique within a dictionary while values may not be. The values of a dictionary can be of any type, but the keys must be of an immutable data type such as strings, numbers, or tuples.</p>
+<p><strong>Create a dictionary</strong></p>
+<pre><code class="python">dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'}
 
 print &quot;dict['Name']: &quot;, dict['Name']
 print &quot;dict['Age']: &quot;, dict['Age']
 </code></pre>
 
 <p><strong>Update dictionary</strong></p>
-<pre><code>dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'}
+<pre><code class="python">dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'}
 
 dict['Age'] = 8; # update existing entry
 dict['School'] = &quot;DPS School&quot;; # Add new entry
@@ -253,7 +298,13 @@ del dict ;        # delete entire dictionary
 
 print &quot;dict['Age']: &quot;, dict['Age']
 print &quot;dict['School']: &quot;, dict['School']
-</code></pre></div>
+</code></pre>
+
+<h2 id="related-readings">Related Readings</h2>
+<ul>
+<li>Python Lists, <a href="https://www.tutorialspoint.com/python/python_lists.htm">tutorialspoint.com</a></li>
+<li>Python Dictionary, <a href="https://www.tutorialspoint.com/python/python_dictionary.htm">tutorialspoint.com</a></li>
+</ul></div>
         </div>
 
         <footer class="col-md-12">
