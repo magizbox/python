@@ -36,10 +36,10 @@ Welcome! This tutorial details how to get started with Python.
 
 ### Developer tools
 <div class="row">
-<div class="col-sm-4">
+<div class="col-sm-6">
 <i>The Development tools will allow you to build and compile software from source code. Tools for building RPMs are also included, as well as source code management tools like Git, SVN, and CVS.</i>
 </div>
-<div class="col-sm-8">
+<div class="col-sm-6">
 ```bash
 yum groupinstall "Development tools"
 yum install zlib-devel
@@ -53,10 +53,10 @@ yum install sqlite-devel
 
 ### Python & Anaconda
 <div class="row">
-<div class="col-sm-4">
+<div class="col-sm-6">
 <i>Anaconda is BSD licensed which gives you permission to use Anaconda commercially and for redistribution.</i>
 </div>
-<div class="col-sm-8">
+<div class="col-sm-6">
 
 ```bash
 cd /opt

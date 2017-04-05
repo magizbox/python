@@ -8,7 +8,7 @@
         <meta name="author" content="Vu Anh">
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Overview - Python</title>
+        <title>Test - Python</title>
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -72,8 +72,8 @@
     <a href="#">Basic Syntax</a>
     <ul class="dropdown-menu">
             
-<li class="active">
-    <a href="./">Overview</a>
+<li >
+    <a href="../basic_syntax/">Overview</a>
 </li>
             
 <li >
@@ -140,8 +140,8 @@
     <a href="../configuration/">Configuration</a>
 </li>
                             
-<li >
-    <a href="../test/">Test</a>
+<li class="active">
+    <a href="./">Test</a>
 </li>
                             
 <li >
@@ -181,12 +181,12 @@
                     </a>
                 </li>
                     <li >
-                        <a rel="next" href="../get_started/">
+                        <a rel="next" href="../configuration/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../basic_syntax_yield/">
+                        <a rel="prev" href="../web/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -203,152 +203,60 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#print-print">Print, print</a></li>
-        <li class="main "><a href="#conditional">Conditional</a></li>
-        <li class="main "><a href="#loop">Loop</a></li>
-            <li><a href="#while-loop">While Loop</a></li>
-            <li><a href="#for-loop">For Loop</a></li>
-            <li><a href="#yield-and-generator">Yield and Generator</a></li>
-        <li class="main "><a href="#functions">Functions</a></li>
-            <li><a href="#variable-length-arguments">Variable-length arguments</a></li>
-        <li class="main "><a href="#coding-convention">Coding Convention</a></li>
-            <li><a href="#code-layout">Code layout</a></li>
+        <li class="main active"><a href="#the-basics">The Basics</a></li>
+        <li class="main "><a href="#skipping-tests">Skipping tests</a></li>
+        <li class="main "><a href="#related-readings">Related Readings</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h2 id="print-print">Print, print</h2>
-<pre><code class="python">print &quot;Hello World&quot;
+<blockquote>
+<p>Testing your code is very important.</p>
+</blockquote>
+<p>Getting used to writing testing code and running this code in parallel is now considered a good habit. Used wisely, this method helps you define more precisely your code’s intent and have a more decoupled architecture.</p>
+<h2 id="the-basics">The Basics</h2>
+<p><strong>Unittest</strong></p>
+<p>unittest is the batteries-included test module in the Python standard library. Its API will be familiar to anyone who has used any of the JUnit/nUnit/CppUnit series of tools.</p>
+<p>Creating test cases is accomplished by subclassing unittest.TestCase.</p>
+<pre><code class="python">import unittest
+
+def fun(x):
+    return x + 1
+
+class MyTest(unittest.TestCase):
+    def test(self):
+        self.assertEqual(fun(3), 4)
 </code></pre>
 
-<h2 id="conditional">Conditional</h2>
-<pre><code>if you_smart:
-    print &quot;learn python&quot;
-else:
-    print &quot;go away&quot;
+<h2 id="skipping-tests">Skipping tests</h2>
+<p>Unittest supports skipping individual test methods and even whole classes of tests. In addition, it supports marking a test as an “expected failure,” a test that is broken and will fail, but shouldn’t be counted as a failure on a .code <code>TestResult</code>.</p>
+<p>Skipping a test is simply a matter of using the <code>skip() decorator</code> or one of its conditional variants.</p>
+<pre><code class="python">import sys
+import unittest
+
+class MyTestCase(unittest.TestCase):
+
+    @unittest.skip(&quot;demonstrating skipping&quot;)
+    def test_nothing(self):
+        self.fail(&quot;shouldn't happen&quot;)
+
+    @unittest.skipIf(mylib.__version__ &lt; (1, 3),
+                     &quot;not supported in this library version&quot;)
+    def test_format(self):
+        # Tests that work for only a certain version of the library.
+        pass
+
+    @unittest.skipUnless(sys.platform.startswith(&quot;win&quot;), &quot;requires Windows&quot;)
+    def test_windows_support(self):
+        # windows specific testing code
+        pass
 </code></pre>
 
-<h2 id="loop">Loop</h2>
-<p>In general, statements are executed sequentially: The first statement in a function is executed first, followed by the second, and so on. There may be a situation when you need to execute a block of code several number of times.</p>
-<p>Programming languages provide various control structures that allow for more complicated execution paths. A loop statement allows us to execute a statement or group of statements multiple times. The following diagram illustrates a loop statement</p>
-<div class="text-center">
-<img src="https://www.tutorialspoint.com/python/images/loop_architecture.jpg"></img>
-</div>
-
-<p>Python programming language provides following types of loops to handle looping requirements.</p>
-<table>
-<tbody>
-<tr>
-<td class="col-xs-2"><strong>while loop</strong></td>
-<td>Repeats a statement or group of statements while a given condition is TRUE. It tests the condition before executing the loop body.</td>
-</tr>
-<tr>
-<td><strong>for loop</strong></td>
-<td>Executes a sequence of statements multiple times and abbreviates the code that manages the loop variable.</td>
-</tr>
-<tr>
-<td><strong>nested loops</strong></td>
-<td>You can use one or more loop inside any another while, for or do..while loop.</td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="while-loop">While Loop</h3>
-<p>A while loop statement in Python programming language repeatedly executes a target statement as long as a given condition is true.</p>
-<p><strong>Syntax</strong></p>
-<p>The syntax of a while loop in Python programming language is</p>
-<pre><code>while expression:
-   statement(s)
-</code></pre>
-
-<p><strong>Example</strong></p>
-<pre><code class="python">count = 0
-while count &lt; 9:
-   print 'The count is:', count
-   count += 1
-
-print &quot;Good bye!&quot;
-</code></pre>
-
-<h3 id="for-loop">For Loop</h3>
-<p>It has the ability to iterate over the items of any sequence, such as a list or a string.</p>
-<p><strong>Syntax</strong></p>
-<pre><code>for iterating_var in sequence:
-   statements(s)
-</code></pre>
-
-<p>If a sequence contains an expression list, it is evaluated first. Then, the first item in the sequence is assigned to the iterating variable iterating_var. Next, the statements block is executed. Each item in the list is assigned to iterating_var, and the statement(s) block is executed until the entire sequence is exhausted.</p>
-<p><strong>Example</strong></p>
-<pre><code class="python">for i in range(10):
-    print &quot;hello&quot;, i
-
-for letter in 'Python':
-   print 'Current letter :', letter
-
-fruits = ['banana', 'apple',  'mango']
-for fruit in fruits:
-   print 'Current fruit :', fruit
-
-print &quot;Good bye!&quot;
-</code></pre>
-
-<h3 id="yield-and-generator">Yield and Generator</h3>
-<p>Yield is a keyword that is used like return, except the function will return a generator.</p>
-<pre><code>def createGenerator():
-    yield 1
-    yield 2
-    yield 3
-
-mygenerator = createGenerator() # create a generator
-print(mygenerator) # mygenerator is an object!
-# &lt;generator object createGenerator at 0xb7555c34&gt;
-for i in mygenerator:
-    print(i)
-# 1
-# 2
-# 3
-</code></pre>
-
-<p>Visit <a href="../basic_syntax_yield/">Yield and Generator explained</a> for more information</p>
-<p><strong>Related Readings</strong></p>
+<h2 id="related-readings">Related Readings</h2>
 <ul>
-<li><a href="https://www.tutorialspoint.com/python/python_loops.htm">"Python Loops". www.tutorialspoint.com</a></li>
-<li><a href="http://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do">"What does the “yield” keyword do?". stackoverflow.com</a></li>
-<li><a href="https://jeffknupp.com/blog/2013/04/07/improve-your-python-yield-and-generators-explained/">"Improve Your Python: 'yield' and Generators Explained". jeffknupp.com</a></li>
-</ul>
-<h2 id="functions">Functions</h2>
-<h3 id="variable-length-arguments">Variable-length arguments</h3>
-<pre><code>def functionname([formal_args,] *var_args_tuple ):
-   &quot;function_docstring&quot;
-   function_suite
-   return [expression]
-</code></pre>
-
-<p><strong>Example</strong></p>
-<pre><code class="python">#!/usr/bin/python
-
-# Function definition is here
-def printinfo( arg1, *vartuple ):
-   &quot;This prints a variable passed arguments&quot;
-   print &quot;Output is: &quot;
-   print arg1
-   for var in vartuple:
-      print var
-   return;
-
-# Now you can call printinfo function
-printinfo( 10 )
-printinfo( 70, 60, 50 )
-
-</code></pre>
-
-<p><strong>Related Readings</strong></p>
-<ul>
-<li><a href="http://www.tutorialspoint.com/python/python_functions.htm">"Python Functions". www.tutorialspoint.com</a></li>
-</ul>
-<h2 id="coding-convention">Coding Convention</h2>
-<h3 id="code-layout">Code layout</h3>
-<p>Indentation: 4 spaces</p></div>
+<li>Testing Your Code, <a href="http://python-guide-pt-br.readthedocs.io/en/latest/writing/tests/">The Hitchhiker's Guide to Python</a></li>
+<li>unittest — Unit testing framework, <a href="https://docs.python.org/2.7/library/unittest.html#organizing-test-code">docs.python.org</a></li>
+</ul></div>
         </div>
 
         <footer class="col-md-12">

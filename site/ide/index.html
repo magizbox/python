@@ -8,7 +8,7 @@
         <meta name="author" content="Vu Anh">
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>IDE - PythonTutorial</title>
+        <title>IDE - Python</title>
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -51,7 +51,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="..">PythonTutorial</a>
+            <a class="navbar-brand" href="..">Python</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -117,19 +117,15 @@
 </li>
                             
 <li >
+    <a href="../io/">IO</a>
+</li>
+                            
+<li >
     <a href="../networking/">Networking</a>
 </li>
                             
 <li >
     <a href="../concurrency_parallelism/">Concurrency and Parallelism</a>
-</li>
-                            
-<li >
-    <a href="../io/">IO</a>
-</li>
-                            
-<li class="active">
-    <a href="./">IDE</a>
 </li>
                             
 <li >
@@ -145,7 +141,15 @@
 </li>
                             
 <li >
+    <a href="../test/">Test</a>
+</li>
+                            
+<li >
     <a href="../web/">Web</a>
+</li>
+                            
+<li class="active">
+    <a href="./">IDE</a>
 </li>
                             
 <li >
@@ -177,12 +181,12 @@
                     </a>
                 </li>
                     <li >
-                        <a rel="next" href="../io/">
+                        <a rel="next" href="../web/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../event_based/">
+                        <a rel="prev" href="../package_manager/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -199,82 +203,109 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#editing">Editing</a></li>
-        <li class="main "><a href="#navigator">Navigator</a></li>
-        <li class="main "><a href="#searching">Searching</a></li>
-        <li class="main "><a href="#debuging">Debuging</a></li>
-        <li class="main "><a href="#workspace">Workspace</a></li>
+        <li class="main active"><a href="#pycharm-features">Pycharm Features</a></li>
+            <li><a href="#intelligent-editor">Intelligent Editor</a></li>
+            <li><a href="#navigation">Navigation</a></li>
+            <li><a href="#graphical-debugger">Graphical Debugger</a></li>
+            <li><a href="#workspace">Workspace</a></li>
+            <li><a href="#ipython-support">IPython Support</a></li>
+            <li><a href="#vim-support">Vim Support</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
 <p>Today, I write some notes about my favorite Python IDE - <strong>PyCharm</strong>. I believe it's a good one for developing python, which supports git, vim, etc. This list below contains my favorite features.</p>
-<h3 id="editing">Editing</h3>
-<p>ALT + SHIFT + UP/DOWN: Move line up and down</p>
-<p><strong>Autocomplete</strong></p>
-<p>Tab (replace)</p>
-<p><strong>Code Completion</strong></p>
-<blockquote>
-<p>check.if ENTER</p>
-</blockquote>
+<h2 id="pycharm-features">Pycharm Features</h2>
+<ul>
+<li>Intelligent Editor</li>
+<li>Navigation</li>
+<li>Graphical Debugger</li>
+<li>Refactorings</li>
+<li>Code Inspections</li>
+<li>Version Control Integration</li>
+<li>Scientific Tools</li>
+</ul>
+<h3 id="intelligent-editor">Intelligent Editor</h3>
+<p>PyCharm provides smart code completion, code inspections, on-the-fly error highlighting and quick-fixes, along with automated code refactorings and rich navigation capabilities.</p>
+<p><img alt="" src="../img/pycharm_editor.png" /></p>
+<p><strong>Syntax Highlighting</strong></p>
+<p>Read your code easier with customizable colors for Python code and Django templates. Choose from several predefined color themes.</p>
+<p><strong>Auto-Identation and code formating</strong></p>
+<p>Automatic indents are inserted on new line. Indent verification and code re-formatting are compliant with project code-style settings.</p>
+<p><strong>Configurable code styles</strong></p>
+<p>Select a predefined coding style to apply to your code style configuration for various supported languages.</p>
+<p><strong>Code completion</strong></p>
+<p>Code completion for keywords, classes, variables, etc. as you type or via Ctrl+Space. Editor suggestions are context-aware and offer the most appropriate options.</p>
+<p>Keyboard shortcuts: <code>Tab</code>, <code>Alt+Enter</code></p>
+<p><strong>Code selection and comments</strong></p>
+<p>Select a block of code and expand it to an expression, to a line, to a logical block of code, and so on with shortcuts. Single keystroke to comment/uncomment the current line or selection.</p>
+<p><strong>Code formatter</strong></p>
+<p>Code formatter with code style configuration and other features help you write neat code that's easy to support. PyCharm contains built-in PEP-8 for Python and other standards compliant code formatting for supported languages.</p>
+<p><strong>Code snippets and templates</strong></p>
+<p>Save time using advanced customizable and parametrized live code templates and snippets.</p>
+<p><img alt="" src="https://lh3.googleusercontent.com/qHBauwtBmhMmiD6C2fTL-WxhXk8NQrCPDB4y7JbaeFP3synnksOve6_g8kRfrHcP3k45o-H9jCw-7Q=w729-h484-no" /></p>
+<p>Keyboard shortcuts <code>check.if ENTER</code></p>
 <pre><code>if check:
   type_something
 </code></pre>
 
-<p><strong>Multicursor</strong></p>
-<p>SHIFT + F6</p>
-<p><strong>Templating</strong></p>
-<p><img alt="" src="https://lh3.googleusercontent.com/qHBauwtBmhMmiD6C2fTL-WxhXk8NQrCPDB4y7JbaeFP3synnksOve6_g8kRfrHcP3k45o-H9jCw-7Q=w729-h484-no" /></p>
-<h3 id="navigator">Navigator</h3>
-<h3 id="searching">Searching</h3>
-<table>
-<tr>
-<td style="text-align:center; font-weight:bold;">Command</td>
-<td style="text-align:center; font-weight:bold;">Description</td>
-</tr>
-<tr>
-<td>Double Shift</td>
-<td>Search every where</td>
-</tr>
-</table>
-
-<h3 id="debuging">Debuging</h3>
-<h3>Alt + Enter</h3>
-
-<p>Alt + Enter is one of shortcuts in <em>Keyboard Shortcuts You Cannot Miss</em> <sup id="fnref-544-1"><a href="#fn-544-1" rel="footnote">1</a></sup>, its show the list of available intention actions.</p>
-<p><img src="http://blog.jetbrains.com/pycharm/files/2015/03/intentions2.png" alt="http://blog.jetbrains.com/pycharm/files/2015/03/intentions2.png" /></p>
+<p><strong>Code folding</strong></p>
+<p>Code folding, auto-insertion of braces, brackets &amp; quotes, matching brace/bracket highlighting, etc.</p>
+<p><strong>On-the-fly error highlighting</strong></p>
+<p>Errors are shown as you type. The integrated spell-checker verifies your identifiers and comments for misspellings.</p>
+<p><strong>Multiple carets and selections</strong></p>
+<p>With multiple carets, you can edit several locations in your file at the same time.</p>
+<p>Keyboard shortcuts: <code>SHIFT + F6</code></p>
+<p><strong>Code analysis</strong></p>
+<p>Numerous code inspections verify Python code as you type and also allow inspecting the whole project for possible errors or code smells.</p>
+<p><strong>Quick-fixes</strong></p>
+<p>Quick-fixes for most inspections make it easy to fix or improve the code instantly. Alt+Enter shows appropriate options for each inspection.</p>
+<p>Keyboard shortcuts: <code>F2</code></p>
+<p><strong>Duplicated code detector</strong></p>
+<p>Smart duplicated code detector analyzes your code and searches for copy/pasted code. You'll be presented with a list of candidates for refactoring—and with the help of refactorings it's easy to keep your code dry.</p>
+<p><strong>Configurable language injections</strong></p>
+<p>Natively edit non-Python code embedded into string literals, with code completion, error-highlighting, and other coding assistance features.</p>
+<p><strong>Code auto generation</strong></p>
+<p>Code auto-generation from usage with quick-fixes; docstrings and the code matching verification, plus autoupdate on refactoring. Automatic generation of a docstring stub (reStructuredText, Epytext, Google, and NumPy).</p>
+<p><strong>Intention actions</strong></p>
+<p>Intention actions help you apply automated changes to code that is correct, to improve it or to make your coding routine easier.</p>
+<p><strong>Searching</strong></p>
+<p>Keyboard shortcuts: <code>Double Shift</code> (search everywhere)</p>
+<h3 id="navigation">Navigation</h3>
+<p><strong>Shortcuts</strong></p>
+<p>Keyboard shortcuts: <code>ALT + SHIFT + UP/DOWN</code> (move line up and down)</p>
+<h3 id="graphical-debugger">Graphical Debugger</h3>
+<p>PyCharm provides extensive options for debugging your Python/Django and JavaScript code:</p>
+<ul>
+<li>Set breakpoints right inside the editor and define hit conditions</li>
+<li>Inspect context-relevant local variables and user-defined watches, including arrays and complex objects, and edit values on the fly</li>
+<li>Set up remote debugging using remote interpreters</li>
+<li>Evaluate an expression in runtime and collect run-time type statistics for better autocompletion and code inspections</li>
+<li>Attach to a running process</li>
+<li>Debug Django templates</li>
+</ul>
+<p><img alt="" src="../img/pycharm_debugger.png" /></p>
+<p><strong>Inline Debugger</strong></p>
+<p>With an inline debugger, all live debugging data are shown directly in the editor, with variable values integrated into the editor's look-and-feel. Variable values can be viewed in the source code, right next to their usages.</p>
+<p><strong>Step into My Code</strong></p>
+<p>Use Step into My Code to stay focused on your code: the debugger will only step through your code bypassing any library sources.</p>
+<p><strong>Multi-process debugging</strong></p>
+<p>PyCharm can debug applications that spawn multiple Python processes, such as Django applications that don't run in --no-reload mode, or applications using many other Web frameworks that use a similar approach to code auto-reloading.</p>
+<p><strong>Run/Debug configurations</strong></p>
+<p>Every script/test or debugger execution creates a special 'Run/Debug Configuration' that can be edited and used later. Run/Debug Configurations can be shared with project settings for use by the whole team.</p>
 <h3 id="workspace">Workspace</h3>
 <h3>Custom Scheme</h3>
 
 <p>Go to <code>File - Settings...</code> then <code>Editor - Colors Fonts</code></p>
 <p>Now you can change your scheme, I like <em>Darcular</em></p>
 <p><img src="https://confluence.jetbrains.com/download/attachments/51945983/appearance3.png?version=1&amp;modificationDate=1372843959000" alt="https://confluence.jetbrains.com/download/attachments/51945983/appearance3.png?version=1&amp;modificationDate=1372843959000" /></p>
-<h3>IPython Support</h3>
-
+<h3 id="ipython-support">IPython Support</h3>
 <p>PyCharm supports usage of IPython magic commands.</p>
 <p><img src="http://i.stack.imgur.com/aTEW2.png" alt="http://i.stack.imgur.com/aTEW2.png" /></p>
-<h3>Vim Support</h3>
-
-<p>You can configure PyCharm to work as a Vim editor <sup id="fnref-544-2"><a href="#fn-544-2" rel="footnote">2</a></sup></p>
+<h3 id="vim-support">Vim Support</h3>
+<p>You can configure PyCharm to work as a Vim editor</p>
 <p><img src="https://confluence.jetbrains.com/download/attachments/51946537/vim4.png?version=1&amp;modificationDate=1370956971000" alt="https://confluence.jetbrains.com/download/attachments/51946537/vim4.png?version=1&amp;modificationDate=1370956971000" /></p>
-<div class="footnotes">
-<hr />
-<ol>
-
-<li id="fn-544-1">
-<a href="https://www.jetbrains.com/idea/help/keyboard-shortcuts-you-cannot-miss.html" target="_blank">Keyboard Shortcuts You Cannot Miss</a>&#160;<a href="#fnref-544-1" rev="footnote">&#8617;</a>
-</li>
-
-<li id="fn-544-2">
- <a href="https://confluence.jetbrains.com/display/PYH/Configuring+PyCharm+to+work+as+a+Vim+editor" target="_blank">Configuring PyCharm to work as a Vim editor</a>&#160;<a href="#fnref-544-2" rev="footnote">&#8617;</a>
-</li>
-
-</ol>
-</div>
-
-<div style="visibility:hidden">
-http://pastebin.com/qGpWpFYW
-</div></div>
+<p>Keyboard Shortcuts: <code>Ctrl+Shift+V</code> (paste)</p></div>
         </div>
 
         <footer class="col-md-12">

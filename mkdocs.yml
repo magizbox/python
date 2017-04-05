@@ -1,4 +1,4 @@
-site_name: PythonTutorial
+site_name: Python
 site_author: "Vu Anh"
 google_analytics: ['UA-68978617-1', 'magizbox.com']
 repo_url: https://github.com/magizbox/python/
@@ -19,14 +19,15 @@ pages:
     - "Time": 'data_time.md'
   - "OOP": 'oop.md'
   - "Operating System": 'os.md'
+  - "IO": 'io.md'
   - "Networking": 'networking.md'
   - "Concurrency and Parallelism": 'concurrency_parallelism.md'
-  - "IO": 'io.md'
-  - "IDE": 'ide.md'
   - "Event Based": 'event_based.md'
   - "Logging": 'logging.md'
   - "Configuration": 'configuration.md'
+  - "Test": 'test.md'
   - "Web": 'web.md'
+  - "IDE": 'ide.md'
   - "Package Manager": 'package_manager.md'
   - "Environment": 'environment.md'
   - "Module": 'make_a_module.md'
