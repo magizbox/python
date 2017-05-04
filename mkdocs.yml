@@ -13,10 +13,10 @@ pages:
     - "Yield and Generator": 'basic_syntax_yield.md'
   - "Data Structure":
     - "Number": 'data_number.md'
-    - "String": 'data_string.md'
-    - "Object": 'data_object.md'
     - "Collection": 'data_collection.md'
+    - "String": 'data_string.md'
     - "Time": 'data_time.md'
+    - "Object": 'data_object.md'
   - "OOP": 'oop.md'
   - "Operating System": 'os.md'
   - "IO": 'io.md'
