@@ -13,10 +13,10 @@ pages:
     - "Yield and Generator": 'basic_syntax_yield.md'
   - "Data Structure":
     - "Number": 'data_number.md'
-    - "String": 'data_string.md'
-    - "Object": 'data_object.md'
     - "Collection": 'data_collection.md'
+    - "String": 'data_string.md'
     - "Time": 'data_time.md'
+    - "Object": 'data_object.md'
   - "OOP": 'oop.md'
   - "Operating System": 'os.md'
   - "IO": 'io.md'
@@ -33,6 +33,7 @@ pages:
   - "Module": 'make_a_module.md'
   - "Production": 'production.md'
 - "<span class='fa fa-question-circle'></span> Ask": "ask.md"
+
 markdown_extensions:
     - footnotes
 
@@ -43,7 +44,9 @@ extra_css:
   - css/custom.css
 extra_javascript:
   - js/underscore.js
+  - js/jquery.js
   - js/gspreadsheet.js
   - js/book.js
   - js/course.js
   - js/video.js
+  - js/script.js

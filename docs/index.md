@@ -14,7 +14,7 @@ You can actually sit at a Python prompt and interact with the interpreter direct
 
 Python supports Object-Oriented style or technique of programming that encapsulates code within objects.
 
-**Python is a Beginner's Language**
+**Python is Beginner Friendly**
 
 Python is a great language for the beginner-level programmers and supports the development of a wide range of applications from simple text processing to WWW browsers to games.
 
