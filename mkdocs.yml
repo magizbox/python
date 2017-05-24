@@ -7,7 +7,7 @@ edit_uri: edit/master/docs/
 pages:
 - "<span class='fa fa-home'></span> Home": "index.md"
 - "<span class='fa fa-cloud-download'></span> Get Started": 'get_started.md'
-- "<span class='fa fa-book'></span> Learn":
+- "<span class='fa fa-book'></span> Tutorials":
   - "Basic Syntax":
     - "Overview": 'basic_syntax.md'
     - "Yield and Generator": 'basic_syntax_yield.md'
