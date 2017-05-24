@@ -9,7 +9,7 @@ This site is intended to host a variety of resources and pointers to information
 * a [reading list](#books)
 * collection of [best courses](#courses) about python
 * links to [python videos](#videos)
-* as well as [tutorials](/tutorials) and cool [demos]()
+* as well as [tutorials](/tutorials) and cool [demos](https://github.com/magizbox/python/tree/master/labs)
 
 ## Books
 
