@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2017-05-04</lastmod>
+     <lastmod>2017-05-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,12 +12,18 @@
     
     <url>
      <loc>/get_started/</loc>
-     <lastmod>2017-05-04</lastmod>
+     <lastmod>2017-05-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
+        
+    <url>
+     <loc>/tutorials/</loc>
+     <lastmod>2017-05-25</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
         
     <url>
      <loc></loc>
@@ -33,102 +39,94 @@
         
     <url>
      <loc>/oop/</loc>
-     <lastmod>2017-05-04</lastmod>
+     <lastmod>2017-05-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/os/</loc>
-     <lastmod>2017-05-04</lastmod>
+     <lastmod>2017-05-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/io/</loc>
-     <lastmod>2017-05-04</lastmod>
+     <lastmod>2017-05-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/networking/</loc>
-     <lastmod>2017-05-04</lastmod>
+     <lastmod>2017-05-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/concurrency_parallelism/</loc>
-     <lastmod>2017-05-04</lastmod>
+     <lastmod>2017-05-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/event_based/</loc>
-     <lastmod>2017-05-04</lastmod>
+     <lastmod>2017-05-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/logging/</loc>
-     <lastmod>2017-05-04</lastmod>
+     <lastmod>2017-05-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/configuration/</loc>
-     <lastmod>2017-05-04</lastmod>
+     <lastmod>2017-05-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/test/</loc>
-     <lastmod>2017-05-04</lastmod>
+     <lastmod>2017-05-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/web/</loc>
-     <lastmod>2017-05-04</lastmod>
+     <lastmod>2017-05-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ide/</loc>
-     <lastmod>2017-05-04</lastmod>
+     <lastmod>2017-05-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/package_manager/</loc>
-     <lastmod>2017-05-04</lastmod>
+     <lastmod>2017-05-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/environment/</loc>
-     <lastmod>2017-05-04</lastmod>
+     <lastmod>2017-05-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/make_a_module/</loc>
-     <lastmod>2017-05-04</lastmod>
+     <lastmod>2017-05-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/production/</loc>
-     <lastmod>2017-05-04</lastmod>
+     <lastmod>2017-05-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
-    
-
-    
-    <url>
-     <loc>/ask/</loc>
-     <lastmod>2017-05-04</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
     
 
 </urlset>

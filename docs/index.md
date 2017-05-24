@@ -1,22 +1,15 @@
-## What is Python?
+## Welcome to Python 
 
-> Python is a widely used general-purpose, high-level programming language. Its design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code than would be possible in languages such as C++ or Java. The language provides constructs intended to enable clear programs on both a small and large scale.
+Python is a widely used general-purpose, high-level programming language. Its design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code than would be possible in languages such as C++ or Java. The language provides constructs intended to enable clear programs on both a small and large scale.
 
-**Python is Interpreted**
 
-Python is processed at runtime by the interpreter. You do not need to compile your program before executing it. This is similar to PERL and PHP.
+This site is intended to host a variety of resources and pointers to information about Python. In these pages you will find
 
-**Python is Interactive**
-
-You can actually sit at a Python prompt and interact with the interpreter directly to write your programs.
-
-**Python is Object-Oriented**
-
-Python supports Object-Oriented style or technique of programming that encapsulates code within objects.
-
-**Python is Beginner Friendly**
-
-Python is a great language for the beginner-level programmers and supports the development of a wide range of applications from simple text processing to WWW browsers to games.
+* how to [get started](/get_started) with python
+* a [reading list](#books)
+* collection of [best courses](#courses) about python
+* links to [python videos](#videos)
+* as well as [tutorials](/tutorials) and cool [demos]()
 
 ## Books
 

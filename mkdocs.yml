@@ -8,6 +8,7 @@ pages:
 - "<span class='fa fa-home'></span> Home": "index.md"
 - "<span class='fa fa-cloud-download'></span> Get Started": 'get_started.md'
 - "<span class='fa fa-book'></span> Tutorials":
+  - "Introduction": 'tutorials.md'
   - "Basic Syntax":
     - "Overview": 'basic_syntax.md'
     - "Yield and Generator": 'basic_syntax_yield.md'
@@ -32,7 +33,6 @@ pages:
   - "Environment": 'environment.md'
   - "Module": 'make_a_module.md'
   - "Production": 'production.md'
-- "<span class='fa fa-question-circle'></span> Ask": "ask.md"
 
 markdown_extensions:
     - footnotes

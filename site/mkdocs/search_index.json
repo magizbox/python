@@ -2,13 +2,13 @@
     "docs": [
         {
             "location": "/", 
-            "text": "What is Python?\n\n\n\n\nPython is a widely used general-purpose, high-level programming language. Its design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code than would be possible in languages such as C++ or Java. The language provides constructs intended to enable clear programs on both a small and large scale.\n\n\n\n\nPython is Interpreted\n\n\nPython is processed at runtime by the interpreter. You do not need to compile your program before executing it. This is similar to PERL and PHP.\n\n\nPython is Interactive\n\n\nYou can actually sit at a Python prompt and interact with the interpreter directly to write your programs.\n\n\nPython is Object-Oriented\n\n\nPython supports Object-Oriented style or technique of programming that encapsulates code within objects.\n\n\nPython is Beginner Friendly\n\n\nPython is a great language for the beginner-level programmers and supports the development of a wide range of applications from simple text processing to WWW browsers to games.\n\n\nBooks\n\n\n\n\n\n\n\n\nCourses\n\n\n\n\n\n\n\n\nVideos\n\n\n\n\n\n\n\n\nChallenges\n\n\n\n\nwww.pythonchallenge.com\n\n\n\n\nExternal Links\n\n\n\n\nTop 10 Python Libraries Of 2015", 
+            "text": "Welcome to Python\n\n\nPython is a widely used general-purpose, high-level programming language. Its design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code than would be possible in languages such as C++ or Java. The language provides constructs intended to enable clear programs on both a small and large scale.\n\n\nThis site is intended to host a variety of resources and pointers to information about Python. In these pages you will find\n\n\n\n\nhow to \nget started\n with python\n\n\na \nreading list\n\n\ncollection of \nbest courses\n about python\n\n\nlinks to \npython videos\n\n\nas well as \ntutorials\n and cool \ndemos\n\n\n\n\nBooks\n\n\n\n\n\n\n\n\nCourses\n\n\n\n\n\n\n\n\nVideos\n\n\n\n\n\n\n\n\nChallenges\n\n\n\n\nwww.pythonchallenge.com\n\n\n\n\nExternal Links\n\n\n\n\nTop 10 Python Libraries Of 2015", 
             "title": "<span class='fa fa-home'></span> Home"
         }, 
         {
-            "location": "/#what-is-python", 
-            "text": "Python is a widely used general-purpose, high-level programming language. Its design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code than would be possible in languages such as C++ or Java. The language provides constructs intended to enable clear programs on both a small and large scale.   Python is Interpreted  Python is processed at runtime by the interpreter. You do not need to compile your program before executing it. This is similar to PERL and PHP.  Python is Interactive  You can actually sit at a Python prompt and interact with the interpreter directly to write your programs.  Python is Object-Oriented  Python supports Object-Oriented style or technique of programming that encapsulates code within objects.  Python is Beginner Friendly  Python is a great language for the beginner-level programmers and supports the development of a wide range of applications from simple text processing to WWW browsers to games.", 
-            "title": "What is Python?"
+            "location": "/#welcome-to-python", 
+            "text": "Python is a widely used general-purpose, high-level programming language. Its design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code than would be possible in languages such as C++ or Java. The language provides constructs intended to enable clear programs on both a small and large scale.  This site is intended to host a variety of resources and pointers to information about Python. In these pages you will find   how to  get started  with python  a  reading list  collection of  best courses  about python  links to  python videos  as well as  tutorials  and cool  demos", 
+            "title": "Welcome to Python"
         }, 
         {
             "location": "/#books", 
@@ -69,6 +69,21 @@
             "location": "/get_started/#python-anaconda", 
             "text": "Anaconda is BSD licensed which gives you permission to use Anaconda commercially and for redistribution.    cd /opt\nwget --no-check-certificate https://www.python.org/ftp/python/2.7.6/Python-2.7.6.tar.xz\ntar xf Python-2.7.6.tar.xz\ncd Python-2.7.6\n./configure --prefix=/usr/local\nmake   make altinstall\n## link\nln -s /usr/local/bin/python2.7 /usr/local/bin/python\n# final check\nwhich python\npython -V\n# install Anaconda\ncd ~/Downloads\nwget https://repo.continuum.io/archive/Anaconda-2.3.0-Linux-x86_64.sh\nbash ~/Downloads/Anaconda-2.3.0-Linux-x86_64.sh", 
             "title": "Python &amp; Anaconda"
+        }, 
+        {
+            "location": "/tutorials/", 
+            "text": "Python Tutorial\n\n\nPython is a general-purpose interpreted, interactive, object-oriented, and high-level programming language. It was created by Guido van Rossum during 1985- 1990. Like Perl, Python source code is also available under the GNU General Public License (GPL). This tutorial gives enough understanding on Python programming language.\n\n\nPython is Interpreted\n\n\nPython is processed at runtime by the interpreter. You do not need to compile your program before executing it. This is similar to PERL and PHP.\n\n\nPython is Interactive\n\n\nYou can actually sit at a Python prompt and interact with the interpreter directly to write your programs.\n\n\nPython is Object-Oriented\n\n\nPython supports Object-Oriented style or technique of programming that encapsulates code within objects.\n\n\nPython is Beginner Friendly\n\n\nPython is a great language for the beginner-level programmers and supports the development of a wide range of applications from simple text processing to WWW browsers to games.\n\n\nAudience\n\n\nThis tutorial is designed for software programmers who need to learn Python programming language from scratch.", 
+            "title": "Introduction"
+        }, 
+        {
+            "location": "/tutorials/#python-tutorial", 
+            "text": "Python is a general-purpose interpreted, interactive, object-oriented, and high-level programming language. It was created by Guido van Rossum during 1985- 1990. Like Perl, Python source code is also available under the GNU General Public License (GPL). This tutorial gives enough understanding on Python programming language.  Python is Interpreted  Python is processed at runtime by the interpreter. You do not need to compile your program before executing it. This is similar to PERL and PHP.  Python is Interactive  You can actually sit at a Python prompt and interact with the interpreter directly to write your programs.  Python is Object-Oriented  Python supports Object-Oriented style or technique of programming that encapsulates code within objects.  Python is Beginner Friendly  Python is a great language for the beginner-level programmers and supports the development of a wide range of applications from simple text processing to WWW browsers to games.", 
+            "title": "Python Tutorial"
+        }, 
+        {
+            "location": "/tutorials/#audience", 
+            "text": "This tutorial is designed for software programmers who need to learn Python programming language from scratch.", 
+            "title": "Audience"
         }, 
         {
             "location": "/basic_syntax/", 
@@ -904,26 +919,6 @@
             "location": "/production/#production-with-docker", 
             "text": "Base Image:  magizbox/conda2.7/  Docker Folder  your_app/\n\u251c\u2500\u2500 app\n\u2502\u00a0\u00a0 \u251c\u2500\u2500 config\n\u2502\u00a0\u00a0 \u2514\u2500\u2500 main.py\n\u251c\u2500\u2500 Dockerfile\n\u2514\u2500\u2500 run.sh  Dockerfile  FROM magizbox/conda2.7:4.0\n\nADD ./app /app\nADD ./run.sh /run.sh\n\nRUN conda env create -f environment.yml  run.sh  source activate your_environment\n\ncd /app\n\npython main.py  Compose   service:\n  build: ./service-app\n  command: 'bash run.sh'  Note: an other python conda with lower version (such as 3.5), will occur error when install requests package", 
             "title": "Production with docker"
-        }, 
-        {
-            "location": "/ask/", 
-            "text": "Getting help with Python\n\n\nWe are always happy to help you get your Python project going!\n\n\nPython has been around for many years, there are many archives of past questions, tutorials and articles on the web. A quick search may well answer your question directly! If not, please feel free to post a question to below github issue.\n\n\n\n\n\n    Ask Python Question \n\n\n\n\n\n\nOther resources\n\n\nThere are curated collections of python questions on StackOverflow.\n\n\nHow to ask a good question\n\n\nAsking good questions is \nthe best way to get good answers\n. Try to follow these tips:\n\n\n\n\nMake the question precise and specific. \n\"My code doesn't work\"\n, for example, does not help us to help you as much as \n\"This following code me an answer I didn't expect\"\n.\n\n\nShow that you've \ntried to solve the problem yourself\n. Everyone who answers questions on the list has a full-time job or study to do; no-one gets paid for answering these support questions. Spend their goodwill wisely: \n\"Here's the code I tried...\"\n or \n\"I read in the documentation that ...\"\n shows that you've at least made some effort to find things out for yourself.\n\n\nWhere appropriate \nshow a complete test case\n. Seeing where your code goes wrong is generally much easier if we can run it our our computers. Corollaries: don't post your entire project - take some time to reduce it down to a minimal test case. \nInclude enough data\n - runnable code is no help if critical resources. Reducing your code down to a minimal test case is often enough for you to figure out the problem yourself, which is always satisfying!\n\n\nDon't re-post your question after only a few hours\n. People are busy, and may be in a different timezone to you. If you're not sure if your question made it to the list, look in the archive.\n\n\nAdding lots of exclamation marks or other punctuation\n will \nnot\n move your question up the queue. Quite the reverse, in fact.\n\n\nAsk questions \non the list, rather than emailing the developers directly\n. This gives us the chance to share the load of answering questions, and also ensures that answers are archived in case they're of use to others in the future.", 
-            "title": "<span class='fa fa-question-circle'></span> Ask"
-        }, 
-        {
-            "location": "/ask/#getting-help-with-python", 
-            "text": "We are always happy to help you get your Python project going!  Python has been around for many years, there are many archives of past questions, tutorials and articles on the web. A quick search may well answer your question directly! If not, please feel free to post a question to below github issue.   \n    Ask Python Question", 
-            "title": "Getting help with Python"
-        }, 
-        {
-            "location": "/ask/#other-resources", 
-            "text": "There are curated collections of python questions on StackOverflow.", 
-            "title": "Other resources"
-        }, 
-        {
-            "location": "/ask/#how-to-ask-a-good-question", 
-            "text": "Asking good questions is  the best way to get good answers . Try to follow these tips:   Make the question precise and specific.  \"My code doesn't work\" , for example, does not help us to help you as much as  \"This following code me an answer I didn't expect\" .  Show that you've  tried to solve the problem yourself . Everyone who answers questions on the list has a full-time job or study to do; no-one gets paid for answering these support questions. Spend their goodwill wisely:  \"Here's the code I tried...\"  or  \"I read in the documentation that ...\"  shows that you've at least made some effort to find things out for yourself.  Where appropriate  show a complete test case . Seeing where your code goes wrong is generally much easier if we can run it our our computers. Corollaries: don't post your entire project - take some time to reduce it down to a minimal test case.  Include enough data  - runnable code is no help if critical resources. Reducing your code down to a minimal test case is often enough for you to figure out the problem yourself, which is always satisfying!  Don't re-post your question after only a few hours . People are busy, and may be in a different timezone to you. If you're not sure if your question made it to the list, look in the archive.  Adding lots of exclamation marks or other punctuation  will  not  move your question up the queue. Quite the reverse, in fact.  Ask questions  on the list, rather than emailing the developers directly . This gives us the chance to share the load of answering questions, and also ensures that answers are archived in case they're of use to others in the future.", 
-            "title": "How to ask a good question"
         }
     ]
 }
