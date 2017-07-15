@@ -87,15 +87,15 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../data_number/">Number</a>
+    <a href="../datastructure_number/">Number</a>
 </li>
             
 <li >
-    <a href="../data_collection/">Collection</a>
+    <a href="../datastructure_collection/">Collection (List, Set, Turple)</a>
 </li>
             
 <li >
-    <a href="../data_string/">String</a>
+    <a href="../datastructure_string/">String</a>
 </li>
             
 <li class="active">
@@ -103,7 +103,7 @@
 </li>
             
 <li >
-    <a href="../data_object/">Object</a>
+    <a href="../datastructure_object/">Object</a>
 </li>
     </ul>
   </li>
@@ -181,12 +181,12 @@
                     </a>
                 </li>
                     <li >
-                        <a rel="next" href="../data_string/">
+                        <a rel="next" href="../datastructure_string/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../data_object/">
+                        <a rel="prev" href="../datastructure_object/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -204,6 +204,7 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#datetime">Datetime</a></li>
+            <li><a href="#moment">Moment</a></li>
             <li><a href="#related-readings">Related Readings</a></li>
     </ul>
 </div></div>
@@ -236,11 +237,86 @@ end = time.time()
 print(end - start)
 </code></pre>
 
+<h3 id="moment">Moment</h3>
+<p>Dealing with dates in Python shouldn't have to suck.</p>
+<p><strong>Installation</strong></p>
+<pre><code>pip install moment
+</code></pre>
+
+<p><strong>Usage</strong></p>
+<pre><code class="python">import moment
+from datetime import datetime
+
+# Create a moment from a string
+moment.date(&quot;12-18-2012&quot;)
+
+# Create a moment with a specified strftime format
+moment.date(&quot;12-18-2012&quot;, &quot;%m-%d-%Y&quot;)
+
+# Moment uses the awesome dateparser library behind the scenes
+moment.date(&quot;2012-12-18&quot;)
+
+# Create a moment with words in it
+moment.date(&quot;December 18, 2012&quot;)
+
+# Create a moment that would normally be pretty hard to do
+moment.date(&quot;2 weeks ago&quot;)
+
+# Create a future moment that would otherwise be really difficult
+moment.date(&quot;2 weeks from now&quot;)
+
+# Create a moment from the current datetime
+moment.now()
+
+# The moment can also be UTC-based
+moment.utcnow()
+
+# Create a moment with the UTC time zone
+moment.utc(&quot;2012-12-18&quot;)
+
+# Create a moment from a Unix timestamp
+moment.unix(1355875153626)
+
+# Create a moment from a Unix UTC timestamp
+moment.unix(1355875153626, utc=True)
+
+# Return a datetime instance
+moment.date(2012, 12, 18).date
+
+# We can do the same thing with the UTC method
+moment.utc(2012, 12, 18).date
+
+# Create and format a moment using Moment.js semantics
+moment.now().format(&quot;YYYY-M-D&quot;)
+
+# Create and format a moment with strftime semantics
+moment.date(2012, 12, 18).strftime(&quot;%Y-%m-%d&quot;)
+
+# Update your moment's time zone
+moment.date(datetime(2012, 12, 18)).locale(&quot;US/Central&quot;).date
+
+# Alter the moment's UTC time zone to a different time zone
+moment.utcnow().timezone(&quot;US/Eastern&quot;).date
+
+# Set and update your moment's time zone. For instance, I'm on the
+# west coast, but want NYC's current time.
+moment.now().locale(&quot;US/Pacific&quot;).timezone(&quot;US/Eastern&quot;)
+
+# In order to manipulate time zones, a locale must always be set or
+# you must be using UTC.
+moment.utcnow().timezone(&quot;US/Eastern&quot;).date
+
+# You can also clone a moment, so the original stays unaltered
+now = moment.utcnow().timezone(&quot;US/Pacific&quot;)
+future = now.clone().add(weeks=2)
+</code></pre>
+
 <h3 id="related-readings">Related Readings</h3>
 <ul>
 <li>How to get current time in Python, <a href="http://stackoverflow.com/questions/415511/how-to-get-current-time-in-python">stackoverflow</a></li>
 <li>Does Python's time.time() return the local or UTC timestamp?, <a href="http://stackoverflow.com/a/16299439">stackoverflow</a></li>
 <li>Measure time elapsed in Python?, <a href="http://stackoverflow.com/questions/7370801/measure-time-elapsed-in-python">stackoverflow</a></li>
+<li>momnet, <a href="https://github.com/zachwill/moment">https://github.com/zachwill/moment</a></li>
 </ul></div>
         </div>
 

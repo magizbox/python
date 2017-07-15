@@ -122,3 +122,4 @@ print "dict['School']: ", dict['School']
 
 * Python Lists, [tutorialspoint.com](https://www.tutorialspoint.com/python/python_lists.htm)
 * Python Dictionary, [tutorialspoint.com](https://www.tutorialspoint.com/python/python_dictionary.htm)
+* Python Dictionary Methods, [guru99](https://www.guru99.com/python-dictionary-beginners-tutorial.html)
