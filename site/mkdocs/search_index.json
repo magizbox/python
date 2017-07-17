@@ -782,12 +782,12 @@
         }, 
         {
             "location": "/package_manager/", 
-            "text": "py2exe\n\n\nInstallation\n\n\n# py2exe\nconda install -c https://conda.anaconda.org/clinicalgraphics cg-py2exe\n\n\n\n\nBuild \n1\n\n\npython setup.py py2exe\n# build PyQT\npython setup.py py2exe --includes sip\n\n\n\n\n\n\n\n\n\n\n\n\nhttp://www.py2exe.org/index.cgi/Py2exeAndPyQt", 
+            "text": "py2exe\n\n\npy2exe is a Python Distutils extension which converts Python scripts into executable Windows programs, able to run without requiring a Python installation.Spice\n\n\nInstallation\n\n\n# py2exe\nconda install -c https://conda.anaconda.org/clinicalgraphics cg-py2exe\n\n\n\n\nBuild \n1\n\n\npython setup.py py2exe\n# build PyQT\npython setup.py py2exe --includes sip\n\n\n\n\nKnown Issues\n\n\nError: Microsoft Visual C++ 10.0 is required (Unable to find vcvarsall.bat) (\nlink\n)\n\n\nHow to fix\n\n\nStep 1: Install Visual Studio 2015\n\n\nStep 2:\n\n\nset VS100COMNTOOLS=%VS140COMNTOOLS%\n\n\n\n\n\n\n\n\n\n\n\n\nhttp://www.py2exe.org/index.cgi/Py2exeAndPyQt", 
             "title": "Package Manager"
         }, 
         {
             "location": "/package_manager/#py2exe", 
-            "text": "", 
+            "text": "py2exe is a Python Distutils extension which converts Python scripts into executable Windows programs, able to run without requiring a Python installation.Spice", 
             "title": "py2exe"
         }, 
         {
@@ -797,8 +797,13 @@
         }, 
         {
             "location": "/package_manager/#build-1", 
-            "text": "python setup.py py2exe\n# build PyQT\npython setup.py py2exe --includes sip      http://www.py2exe.org/index.cgi/Py2exeAndPyQt", 
+            "text": "python setup.py py2exe\n# build PyQT\npython setup.py py2exe --includes sip", 
             "title": "Build 1"
+        }, 
+        {
+            "location": "/package_manager/#known-issues", 
+            "text": "Error: Microsoft Visual C++ 10.0 is required (Unable to find vcvarsall.bat) ( link )  How to fix  Step 1: Install Visual Studio 2015  Step 2:  set VS100COMNTOOLS=%VS140COMNTOOLS%      http://www.py2exe.org/index.cgi/Py2exeAndPyQt", 
+            "title": "Known Issues"
         }, 
         {
             "location": "/environment/", 
