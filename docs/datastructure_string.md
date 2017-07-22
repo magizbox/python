@@ -171,6 +171,47 @@ Phone Num :  2004959559
 </td>
 </tr>
 
+<th colspan=3>Quantifiers & Alternation</th>
+<tr><td>a* a+ a?</td> <td>0 or more, 1 or more, 0 or 1</td>
+<td class="example">
+<f> /go<hb>*</hb>gle/ </f>
+<t> <h>gogle</h> <h>gogle</h> <h>google</h> <h>gooooogle</h> hgle</t>
+<f> /go<hb>+</hb>gle/ </f>
+<t> ggle <h>gogle</h> <h>google</h> <h>gooooogle</h> hgle</t>
+<f> /go<hb>?</hb>gle/ </f>
+<t> <h>ggle</h> <h>gogle</h> google gooooogle hgle</t>
+</td>
+</tr>
+
+<tr><td>a{5}, a{2,}</td> <td>exactly five, two or more</td>
+<td class="example">
+<f> /go<hb>{5}</hb>gle/ </f>
+<t> gogle gogle google <h>gooooogle</h> hgle</t>
+<f> /go<hb>{2,}</hb>gle/ </f>
+<t> gogle gogle <h>google</h> <h>gooooogle</h> hgle</t>
+</td>
+</tr>
+<tr><td>a{1,3}</td> <td>between one & three</td>
+<td class="example">
+<f> /go<hb>{1,3}</hb>gle/ </f>
+<t> gogle <h>gogle</h> <h>google</h> <h>gooogle</h> gooooogle hgle</t>
+</td>
+</tr>
+<tr><td>a+? a{2,}?</td> <td>match as few as possible</td>
+<td class="example">
+<f> /a<hb>+?</hb>/ </f>
+<t> <h>a</h> <h>aa</h> <h>aaaaaa</h></t>
+<f> /a<hb>{2,}?</hb>/ </f>
+<t> a <h>aa</h> <h>aaaaaa</h></t>
+</td>
+</tr>
+<tr><td>ab|cd</td> <td>match ab or cd</td>
+<td class="example">
+<f> /demo<hb>|</hb>example/ </f>
+<t> <h>demo</h> <h>example</h> <h>example</h>1</t>
+</td>
+</tr>
+
 <th colspan=3>Anchors</th>
 <tr><td>^abc$</td> <td>start / end of the string</td>
 <td class="example">
@@ -273,46 +314,6 @@ Phone Num :  2004959559
 </td>
 </tr>
 
-<th colspan=3>Quantifiers & Alternation</th>
-<tr><td>a* a+ a?</td> <td>0 or more, 1 or more, 0 or 1</td>
-<td class="example">
-<f> /go<hb>*</hb>gle/ </f>
-<t> <h>gogle</h> <h>gogle</h> <h>google</h> <h>gooooogle</h> hgle</t>
-<f> /go<hb>+</hb>gle/ </f>
-<t> ggle <h>gogle</h> <h>google</h> <h>gooooogle</h> hgle</t>
-<f> /go<hb>?</hb>gle/ </f>
-<t> <h>ggle</h> <h>gogle</h> google gooooogle hgle</t>
-</td>
-</tr>
-
-<tr><td>a{5}, a{2,}</td> <td>exactly five, two or more</td>
-<td class="example">
-<f> /go<hb>{5}</hb>gle/ </f>
-<t> gogle gogle google <h>gooooogle</h> hgle</t>
-<f> /go<hb>{2,}</hb>gle/ </f>
-<t> gogle gogle <h>google</h> <h>gooooogle</h> hgle</t>
-</td>
-</tr>
-<tr><td>a{1,3}</td> <td>between one & three</td>
-<td class="example">
-<f> /go<hb>{1,3}</hb>gle/ </f>
-<t> gogle <h>gogle</h> <h>google</h> <h>gooogle</h> gooooogle hgle</t>
-</td>
-</tr>
-<tr><td>a+? a{2,}?</td> <td>match as few as possible</td>
-<td class="example">
-<f> /a<hb>+?</hb>/ </f>
-<t> <h>a</h> <h>aa</h> <h>aaaaaa</h></t>
-<f> /a<hb>{2,}?</hb>/ </f>
-<t> a <h>aa</h> <h>aaaaaa</h></t>
-</td>
-</tr>
-<tr><td>ab|cd</td> <td>match ab or cd</td>
-<td class="example">
-<f> /demo<hb>|</hb>example/ </f>
-<t> <h>demo</h> <h>example</h> <h>example</h>1</t>
-</td>
-</tr>
 </table>
 
 **Related Readings**
