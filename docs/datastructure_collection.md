@@ -154,12 +154,25 @@ A tuple is a sequence of immutable Python objects. Tuples are sequences, just li
 <table class="highlight-table">
 
 <tr>
-<td><a href="#create-a-list">Create a list</a></td>
+<td><a href="#create-a-tuple">Create a tuple</a></td>
 <td class="example">
-<f> a = ["a", "b", 3] </f>
+<f> t = ("a", 1, 2) </f>
 </td>
 </tr>
 
+<tr>
+<td><a href="#accessing-values-in-tuples">Accessing Values in Tuples</a></td>
+<td class="example">
+<f> t[0], t[1:] </f>
+</td>
+</tr>
+
+<tr>
+<td><a href="#updating-tuples">Updating Tuples</a></td>
+<td class="example">
+<f> Not allowed </f>
+</td>
+</tr>
 </table>
 
 #### Create a tuple
