@@ -28,7 +28,7 @@
 }
 
 .highlight-table a {
-    color: white;
+    color: white !important;
 }
 
 .highlight-table .example {
