@@ -343,7 +343,7 @@ Phone Num :  2004959559
 <tr>
 <td>[^abc]</td> <td>not a, b or c</td>
 <td class="example">
-<f> /analy<h>[</h>sz<h>]</h>e/ </f>
+<f> /analy<h>[</h>^sz<h>]</h>e/ </f>
 <t>analyse analyze <h>analyxe</h> </t>
 </td>
 </tr>
@@ -361,14 +361,16 @@ Phone Num :  2004959559
 <td class="example">
 <f> /<h>^abc$</h>/ </f>
 <t> <h>abc</h></t>
+<f> /<h>^abc</h>/ </f>
+<t> <h>abc</h> abc</t>
+<f> /<h>abc$</h>/ </f>
+<t> abc <h>abc</h></t>
 </td></tr>
 <tr>
 <td>\b \B</td> <td> word, not-word boundary</td>
 <td class="example">
 <f> /<h>\b</h>is<h>\b</h>/ </f>
-<t>This island <h>
-
-is</h> beautiful.</t>
+<t>This island <h>is</h> beautiful.</t>
 <f> /<h>\B</h>cat<h>\B</h>/ </f>
 <t> cat certifi<h>cat</h>e</t>
 </td>
@@ -460,26 +462,26 @@ is</h> beautiful.</t>
 <tr><td>a* a+ a?</td> <td>0 or more, 1 or more, 0 or 1</td>
 <td class="example">
 <f> /go<hb>*</hb>gle/ </f>
-<t> <h>gogle</h> <h>gooooogle</h> goggle</t>
+<t> <h>gogle</h> <h>gogle</h> <h>google</h> <h>gooooogle</h> hgle</t>
 <f> /go<hb>+</hb>gle/ </f>
-<t> gogle <h>gooooogle</h> goggle</t>
-<f> /demos<hb>?</hb>123/ </f>
-<t> <h>demos123</h> demosA123 demos?123</t>
+<t> ggle <h>gogle</h> <h>google</h> <h>gooooogle</h> hgle</t>
+<f> /go<hb>?</hb>gle/ </f>
+<t> <h>ggle</h> <h>gogle</h> google gooooogle hgle</t>
 </td>
 </tr>
 
 <tr><td>a{5}, a{2,}</td> <td>exactly five, two or more</td>
 <td class="example">
-<f> /w<hb>{3}</hb>/ </f>
-<t> <h>www</h>.google.com</t>
+<f> /go<hb>{5}</hb>gle/ </f>
+<t> gogle gogle google <h>gooooogle</h> hgle</t>
 <f> /go<hb>{2,}</hb>gle/ </f>
-<t> <h>gooooogle</h> goggle</t>
+<t> gogle gogle <h>google</h> <h>gooooogle</h> hgle</t>
 </td>
 </tr>
 <tr><td>a{1,3}</td> <td>between one & three</td>
 <td class="example">
-<f> /a<hb>{4,7}</hb>/ </f>
-<t> <h>aaaa</h> <h>aaaaaa</h> aa</t>
+<f> /go<hb>{1,3}</hb>gle/ </f>
+<t> gogle <h>gogle</h> <h>google</h> <h>gooogle</h> gooooogle hgle</t>
 </td>
 </tr>
 <tr><td>a+? a{2,}?</td> <td>match as few as possible</td>

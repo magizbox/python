@@ -204,22 +204,83 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#list">List</a></li>
-        <li class="main "><a href="#dictionary">Dictionary</a></li>
-        <li class="main "><a href="#related-readings">Related Readings</a></li>
+        <li class="main active"><a href="#collection">Collection</a></li>
+            <li><a href="#list">List</a></li>
+            <li><a href="#tuples">Tuples</a></li>
+            <li><a href="#dictionary">Dictionary</a></li>
+            <li><a href="#related-readings">Related Readings</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<p>The most basic data structure in Python is the <strong>sequence</strong>. Each element of a sequence is assigned a number - its position or index. The first index is zero, the second index is one, and so forth.</p>
+<h1 id="collection">Collection</h1>
+<p>In this post I will cover 4 most popular data types in python <code>list</code>, <code>tuple</code>, <code>set</code>, <code>dictionary</code></p>
 <h2 id="list">List</h2>
+<p>The most basic data structure in Python is the <strong>sequence</strong>. Each element of a sequence is assigned a number - its position or index. The first index is zero, the second index is one, and so forth.</p>
 <p>The list is a most versatile datatype available in Python which can be written as a list of comma-separated values (items) between square brackets. Important thing about a list is that items in a list need not be of the same type.</p>
-<p><strong>Create a list</strong></p>
+<p><strong>Usage</strong></p>
+<ul>
+<li>A list keeps <em>order</em>, dict and set don't: when you care about order, therefore, you must use list (if your choice of containers is limited to these three, of course)</li>
+</ul>
+<p><strong>Most Popular Operations</strong></p>
+<table class="highlight-table">
+
+<tr>
+<td><a href="#create-a-list">Create a list</a></td>
+<td class="example">
+<f> a = ["a", "b", 3] </f>
+</td>
+</tr>
+
+<tr>
+<td><a href="#access-values-in-list">Access values in list</a></td>
+<td class="example">
+<f> a[1] </f>
+</td>
+</tr>
+
+<tr>
+<td><a href="#updated-list">Updated List</a></td>
+<td class="example">
+<f> a[0] = 5 </f>
+</td>
+</tr>
+
+<tr>
+<td><a href="#delete-list-elements">Delete list elements</a></td>
+<td class="example">
+<f> del a[1] </f>
+</td>
+
+<tr>
+<td><a href="#delete-list-elements">Reverse a list</a></td>
+<td class="example">
+<f> a[::-1] </f>
+</td>
+
+<tr>
+<td><a href="#itertools">Itertools</a></td>
+<td class="example">
+<f> [a + b for (a, b) in itertools.product(x, y)] </f>
+</td>
+
+<tr>
+<td><a href="#select-random-elements-in-list">Select random elements in list</a></td>
+<td class="example">
+<f> random.choice(x) </f>
+<f> random.sample(x, 3) </f>
+</td>
+
+</tr>
+
+</table>
+
+<h4 id="create-a-list">Create a list</h4>
 <pre><code class="python">a = [1, 2, 3]
 # [1, 2, 3]
 </code></pre>
 
-<p><strong>Access values in lists</strong></p>
+<h4 id="access-values-in-list">Access values in list</h4>
 <pre><code class="python">list1 = ['physics', 'chemistry', 1997, 2000]
 list2 = [1, 2, 3, 4, 5, 6, 7 ]
 
@@ -228,7 +289,7 @@ print list1[0]   # physics
 print list2[1:5] # [2, 3, 4, 5]
 </code></pre>
 
-<p><strong>Updated lists</strong></p>
+<h4 id="updated-lists">Updated lists</h4>
 <pre><code class="python">list = ['physics', 'chemistry', 1997, 2000]
 print list[2] # 1997
 
@@ -236,7 +297,7 @@ list[2] = 2001
 print list[2] # 2001
 </code></pre>
 
-<p><strong>Delete list elements</strong></p>
+<h4 id="delete-list-elements">Delete list elements</h4>
 <pre><code class="python">list1 = ['physics', 'chemistry', 1997, 2000];
 
 print list1
@@ -248,12 +309,12 @@ print list1
 # ['physics', 'chemistry', 2000]
 </code></pre>
 
-<p><strong>Reverse a list</strong></p>
+<h4 id="reverse-a-list">Reverse a list</h4>
 <pre><code class="python">[1, 3, 2][::-1]
 # [2, 3, 1]
 </code></pre>
 
-<p><strong>Itertools</strong></p>
+<h4 id="itertools">Itertools</h4>
 <pre><code class="python">import itertools
 
 x = [1, 2, 3]
@@ -263,7 +324,7 @@ y = [2, 4, 5]
 # [3, 5, 6, 4, 6, 7, 5, 7, 8]
 </code></pre>
 
-<p><strong>Select random elements in list</strong></p>
+<h4 id="select-random-elements-in-list">Select random elements in list</h4>
 <pre><code class="python">import random
 
 x = [13, 23, 14, 52, 6, 23]
@@ -273,17 +334,97 @@ random.choice(x) # 52
 random.sample(x, 3) # [23, 14, 52]
 </code></pre>
 
+<h2 id="tuples">Tuples</h2>
+<p>A tuple is a sequence of immutable Python objects. Tuples are sequences, just like lists. The differences between tuples and lists are, the tuples cannot be changed unlike lists and tuples use parentheses, whereas lists use square brackets.</p>
+<p><strong>Usage</strong></p>
+<ul>
+<li>Tuples have structure, lists have order</li>
+<li>Tuples being immutable there is also a semantic distinction that should guide their usage. Tuples are heterogeneous data structures (i.e., their entries have different meanings), while lists are homogeneous sequences</li>
+</ul>
+<p><strong>Most Popular Operations</strong></p>
+<table class="highlight-table">
+
+<tr>
+<td><a href="#create-a-list">Create a list</a></td>
+<td class="example">
+<f> a = ["a", "b", 3] </f>
+</td>
+</tr>
+
+</table>
+
+<h4 id="create-a-tuple">Create a tuple</h4>
+<pre><code class="python">tup1 = ('physics', 'chemistry', 1997, 2000);
+tup2 = (1, 2, 3, 4, 5 );
+tup3 = &quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;;
+tup4 = ()
+tup5 = (50, )
+</code></pre>
+
+<h4 id="accessing-values-in-tuples">Accessing Values in Tuples</h4>
+<pre><code class="python">#!/usr/bin/python
+
+tup1 = ('physics', 'chemistry', 1997, 2000);
+tup2 = (1, 2, 3, 4, 5, 6, 7 );
+
+tup1[0]
+# physics
+
+tup2[1:5]
+[2, 3, 4, 5]
+</code></pre>
+
+<h4 id="updating-tuples">Updating Tuples</h4>
+<p>Tuples are immutable which means you cannot update or change the values of tuple elements. You are able to take portions of existing tuples to create new tuples as the following example demonstrates</p>
+<pre><code class="python">tup1 = (12, 34.56);
+tup2 = ('abc', 'xyz');
+
+# Following action is not valid for tuples
+# tup1[0] = 100;
+
+# So let's create a new tuple as follows
+tup3 = tup1 + tup2;
+print tup3
+</code></pre>
+
 <h2 id="dictionary">Dictionary</h2>
-<p>Each key is separated from its value by a colon (:), the items are separated by commas, and the whole thing is enclosed in curly braces. An empty dictionary without any items is written with just two curly braces, like this: {}.</p>
+<p>Each <strong>key</strong> is separated from its value by a colon (:), the items are separated by commas, and the whole thing is enclosed in curly braces. An empty dictionary without any items is written with just two curly braces, like this: {}.</p>
 <p>Keys are unique within a dictionary while values may not be. The values of a dictionary can be of any type, but the keys must be of an immutable data type such as strings, numbers, or tuples.</p>
-<p><strong>Create a dictionary</strong></p>
+<p><strong>Usage</strong></p>
+<ul>
+<li>dict associates with each <em>key a value</em>, while list and set just contain values: very different use cases, obviously.</li>
+</ul>
+<p><strong>Most Popular Operations</strong></p>
+<table class="highlight-table">
+
+<tr>
+<td><a href="#create-a-dictionary">Create a dictionary</a></td>
+<td class="example">
+<f> d = {"a": 1, "b": 2, "c": 3} </f>
+</td>
+</tr>
+
+<td><a href="#update-dictionary">Update dictionary</a></td>
+<td class="example">
+<f> d["a"] = 4 </f>
+</td>
+</tr>
+
+<td><a href="#delete-dictionary-elements">Delete dictionary elements</a></td>
+<td class="example">
+<f> del d["a"] </f>
+</td>
+</tr>
+</table>
+
+<h4 id="create-a-dictionary">Create a dictionary</h4>
 <pre><code class="python">dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'}
 
 print &quot;dict['Name']: &quot;, dict['Name']
 print &quot;dict['Age']: &quot;, dict['Age']
 </code></pre>
 
-<p><strong>Update dictionary</strong></p>
+<h4 id="update-dictionary">Update dictionary</h4>
 <pre><code class="python">dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'}
 
 dict['Age'] = 8; # update existing entry
@@ -294,7 +435,7 @@ print &quot;dict['Age']: &quot;, dict['Age']
 print &quot;dict['School']: &quot;, dict['School']
 </code></pre>
 
-<p><strong>Delete dictionary elements</strong></p>
+<h4 id="delete-dictionary-elements">Delete dictionary elements</h4>
 <pre><code class="python">dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'}
 
 del dict['Name']; # remove entry with key 'Name'
@@ -310,6 +451,8 @@ print &quot;dict['School']: &quot;, dict['School']
 <li>Python Lists, <a href="https://www.tutorialspoint.com/python/python_lists.htm">tutorialspoint.com</a></li>
 <li>Python Dictionary, <a href="https://www.tutorialspoint.com/python/python_dictionary.htm">tutorialspoint.com</a></li>
 <li>Python Dictionary Methods, <a href="https://www.guru99.com/python-dictionary-beginners-tutorial.html">guru99</a></li>
+<li>In Python, when to use a Dictionary, List or Set?, <a href="https://stackoverflow.com/questions/3489071/in-python-when-to-use-a-dictionary-list-or-set">stackoverflow</a></li>
+<li>What's the difference between lists and tuples?, <a href="https://stackoverflow.com/questions/626759/whats-the-difference-between-lists-and-tuples">stackoverflow</a></li>
 </ul></div>
         </div>
 
