@@ -207,6 +207,7 @@
         <li class="main active"><a href="#collection">Collection</a></li>
             <li><a href="#list">List</a></li>
             <li><a href="#tuples">Tuples</a></li>
+            <li><a href="#set">Set</a></li>
             <li><a href="#dictionary">Dictionary</a></li>
             <li><a href="#related-readings">Related Readings</a></li>
     </ul>
@@ -398,6 +399,101 @@ tup2 = ('abc', 'xyz');
 # So let's create a new tuple as follows
 tup3 = tup1 + tup2;
 print tup3
+</code></pre>
+
+<h2 id="set">Set</h2>
+<p>Sets are lists with no duplicate entries.</p>
+<p>The sets module provides classes for constructing and manipulating unordered collections of unique elements. Common uses include membership testing, removing duplicates from a sequence, and computing standard math operations on sets such as intersection, union, difference, and symmetric difference.</p>
+<p><strong>Usage</strong></p>
+<ul>
+<li>set forbids duplicates, list does not: also a crucial distinction.</li>
+</ul>
+<p><strong>Most Popular Operations</strong></p>
+<table class="highlight-table">
+
+<tr>
+<td><a href="#create-a-set">Create a set</a></td>
+<td class="example">
+<f> x = set(["Postcard", "Radio", "Telegram"]) </f>
+</td>
+</tr>
+
+<tr>
+<td><a href="#add-elements-to-a-set">Add elements to a set</a></td>
+<td class="example">
+<f> x.add("Mobile") </f>
+</td>
+</tr>
+
+<tr>
+<td><a href="#remove-elements-to-a-set">Remove elements to a set</a></td>
+<td class="example">
+<f> x.remove("Radio") </f>
+</td>
+</tr>
+
+
+<tr>
+<td><a href="#subset">Subset</a></td>
+<td class="example">
+<f> y.issubset(x) </f>
+</td>
+</tr>
+
+<tr>
+<td><a href="#intersection">Intersection</a></td>
+<td class="example">
+<f> x.intersection(y) </f>
+</td>
+</tr>
+
+<tr>
+<td><a href="#difference-between-two-sets">Difference between two sets</a></td>
+<td class="example">
+<f> x.difference(y) </f>
+</td>
+</tr>
+</table>
+
+<h4 id="create-a-set">Create a set</h4>
+<pre><code class="python">x = set([&quot;Postcard&quot;, &quot;Radio&quot;, &quot;Telegram&quot;])
+x
+# set(['Postcard', 'Telegram', 'Radio'])
+</code></pre>
+
+<h4 id="add-elements-to-a-set">Add elements to a set</h4>
+<pre><code class="python">x = set([&quot;Postcard&quot;, &quot;Radio&quot;, &quot;Telegram&quot;])
+x.add(&quot;Mobile&quot;)
+x
+# set(['Postcard', 'Telegram', 'Mobile', 'Radio'])
+</code></pre>
+
+<h4 id="remove-elements-to-a-set">Remove elements to a set</h4>
+<pre><code class="python">x = set([&quot;Postcard&quot;, &quot;Radio&quot;, &quot;Telegram&quot;])
+x.remove(&quot;Radio&quot;)
+x
+# set(['Postcard', 'Telegram'])
+</code></pre>
+
+<h4 id="subset">Subset</h4>
+<pre><code class="python">x = set([&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;])
+y = set([&quot;c&quot;,&quot;d&quot;])
+y.issubset(x)
+# True
+</code></pre>
+
+<h4 id="intersection">Intersection</h4>
+<pre><code class="python">x = set([&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;])
+y = set([&quot;c&quot;,&quot;d&quot;])
+x.intersection(y)
+# set(['c', 'd'])
+</code></pre>
+
+<h4 id="difference-between-two-sets">Difference between two sets</h4>
+<pre><code class="python">x = set([&quot;Postcard&quot;, &quot;Radio&quot;, &quot;Telegram&quot;])
+y = set([&quot;Radio&quot;,&quot;Television&quot;])
+x.difference(y)
+# set(['Postcard', 'Telegram'])
 </code></pre>
 
 <h2 id="dictionary">Dictionary</h2>

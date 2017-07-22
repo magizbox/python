@@ -215,6 +215,116 @@ tup2 = ('abc', 'xyz');
 tup3 = tup1 + tup2;
 print tup3
 ```
+## Set
+
+Sets are lists with no duplicate entries.
+
+The sets module provides classes for constructing and manipulating unordered collections of unique elements. Common uses include membership testing, removing duplicates from a sequence, and computing standard math operations on sets such as intersection, union, difference, and symmetric difference.
+
+**Usage**
+
+* set forbids duplicates, list does not: also a crucial distinction.
+
+**Most Popular Operations**
+
+<table class="highlight-table">
+
+<tr>
+<td><a href="#create-a-set">Create a set</a></td>
+<td class="example">
+<f> x = set(["Postcard", "Radio", "Telegram"]) </f>
+</td>
+</tr>
+
+<tr>
+<td><a href="#add-elements-to-a-set">Add elements to a set</a></td>
+<td class="example">
+<f> x.add("Mobile") </f>
+</td>
+</tr>
+
+<tr>
+<td><a href="#remove-elements-to-a-set">Remove elements to a set</a></td>
+<td class="example">
+<f> x.remove("Radio") </f>
+</td>
+</tr>
+
+
+<tr>
+<td><a href="#subset">Subset</a></td>
+<td class="example">
+<f> y.issubset(x) </f>
+</td>
+</tr>
+
+<tr>
+<td><a href="#intersection">Intersection</a></td>
+<td class="example">
+<f> x.intersection(y) </f>
+</td>
+</tr>
+
+<tr>
+<td><a href="#difference-between-two-sets">Difference between two sets</a></td>
+<td class="example">
+<f> x.difference(y) </f>
+</td>
+</tr>
+</table>
+
+#### Create a set
+
+```python
+x = set(["Postcard", "Radio", "Telegram"])
+x
+# set(['Postcard', 'Telegram', 'Radio'])
+```
+
+#### Add elements to a set
+
+```python
+x = set(["Postcard", "Radio", "Telegram"])
+x.add("Mobile")
+x
+# set(['Postcard', 'Telegram', 'Mobile', 'Radio'])
+```
+
+#### Remove elements to a set
+
+```python
+x = set(["Postcard", "Radio", "Telegram"])
+x.remove("Radio")
+x
+# set(['Postcard', 'Telegram'])
+```
+
+#### Subset
+
+```python
+x = set(["a","b","c","d"])
+y = set(["c","d"])
+y.issubset(x)
+# True
+```
+
+#### Intersection
+
+```python
+x = set(["a","b","c","d"])
+y = set(["c","d"])
+x.intersection(y)
+# set(['c', 'd'])
+```
+
+#### Difference between two sets
+
+```python
+x = set(["Postcard", "Radio", "Telegram"])
+y = set(["Radio","Television"])
+x.difference(y)
+# set(['Postcard', 'Telegram'])
+```
 
 ## Dictionary
 
