@@ -13,9 +13,12 @@
         <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="../css/highlight.css">
-        <link href="../css/book.css" rel="stylesheet">
-        <link href="../css/course.css" rel="stylesheet">
-        <link href="../css/video.css" rel="stylesheet">
+        <link href="../components/magiz-c-book/src/book.css" rel="stylesheet">
+        <link href="../components/magiz-c-course/src/course.css" rel="stylesheet">
+        <link href="../components/magiz-c-video/src/video.css" rel="stylesheet">
+        <link href="../components/magiz-c-benchmark/src/benchmark.css" rel="stylesheet">
+        <link href="../components/magiz-c-paper/src/paper.css" rel="stylesheet">
+        <link href="../components/magiz-doc/style.css" rel="stylesheet">
         <link href="../css/custom.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -145,6 +148,10 @@
 </li>
                             
 <li >
+    <a href="../command_line/">Command Line</a>
+</li>
+                            
+<li >
     <a href="../test/">Test</a>
 </li>
                             
@@ -214,22 +221,23 @@
             <li><a href="#variable-length-arguments">Variable-length arguments</a></li>
         <li class="main "><a href="#coding-convention">Coding Convention</a></li>
             <li><a href="#code-layout">Code layout</a></li>
+        <li class="main "><a href="#suggest-readings">Suggest Readings</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h2 id="print-print">Print, print</h2>
+<h1 id="print-print">Print, print</h1>
 <pre><code class="python">print &quot;Hello World&quot;
 </code></pre>
 
-<h2 id="conditional">Conditional</h2>
+<h1 id="conditional">Conditional</h1>
 <pre><code>if you_smart:
     print &quot;learn python&quot;
 else:
     print &quot;go away&quot;
 </code></pre>
 
-<h2 id="loop">Loop</h2>
+<h1 id="loop">Loop</h1>
 <p>In general, statements are executed sequentially: The first statement in a function is executed first, followed by the second, and so on. There may be a situation when you need to execute a block of code several number of times.</p>
 <p>Programming languages provide various control structures that allow for more complicated execution paths. A loop statement allows us to execute a statement or group of statements multiple times. The following diagram illustrates a loop statement</p>
 <div class="text-center">
@@ -254,7 +262,7 @@ else:
 </tbody>
 </table>
 
-<h3 id="while-loop">While Loop</h3>
+<h2 id="while-loop">While Loop</h2>
 <p>A while loop statement in Python programming language repeatedly executes a target statement as long as a given condition is true.</p>
 <p><strong>Syntax</strong></p>
 <p>The syntax of a while loop in Python programming language is</p>
@@ -271,7 +279,7 @@ while count &lt; 9:
 print &quot;Good bye!&quot;
 </code></pre>
 
-<h3 id="for-loop">For Loop</h3>
+<h2 id="for-loop">For Loop</h2>
 <p>It has the ability to iterate over the items of any sequence, such as a list or a string.</p>
 <p><strong>Syntax</strong></p>
 <pre><code>for iterating_var in sequence:
@@ -293,7 +301,7 @@ for fruit in fruits:
 print &quot;Good bye!&quot;
 </code></pre>
 
-<h3 id="yield-and-generator">Yield and Generator</h3>
+<h2 id="yield-and-generator">Yield and Generator</h2>
 <p>Yield is a keyword that is used like return, except the function will return a generator.</p>
 <pre><code>def createGenerator():
     yield 1
@@ -311,14 +319,8 @@ for i in mygenerator:
 </code></pre>
 
 <p>Visit <a href="../basic_syntax_yield/">Yield and Generator explained</a> for more information</p>
-<p><strong>Related Readings</strong></p>
-<ul>
-<li><a href="https://www.tutorialspoint.com/python/python_loops.htm">"Python Loops". www.tutorialspoint.com</a></li>
-<li><a href="http://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do">"What does the “yield” keyword do?". stackoverflow.com</a></li>
-<li><a href="https://jeffknupp.com/blog/2013/04/07/improve-your-python-yield-and-generators-explained/">"Improve Your Python: 'yield' and Generators Explained". jeffknupp.com</a></li>
-</ul>
-<h2 id="functions">Functions</h2>
-<h3 id="variable-length-arguments">Variable-length arguments</h3>
+<h1 id="functions">Functions</h1>
+<h2 id="variable-length-arguments">Variable-length arguments</h2>
 <pre><code>def functionname([formal_args,] *var_args_tuple ):
    &quot;function_docstring&quot;
    function_suite
@@ -343,13 +345,16 @@ printinfo( 70, 60, 50 )
 
 </code></pre>
 
-<p><strong>Related Readings</strong></p>
+<h1 id="coding-convention">Coding Convention</h1>
+<h2 id="code-layout">Code layout</h2>
+<p>Indentation: 4 spaces</p>
+<h1 id="suggest-readings">Suggest Readings</h1>
 <ul>
 <li><a href="http://www.tutorialspoint.com/python/python_functions.htm">"Python Functions". www.tutorialspoint.com</a></li>
-</ul>
-<h2 id="coding-convention">Coding Convention</h2>
-<h3 id="code-layout">Code layout</h3>
-<p>Indentation: 4 spaces</p></div>
+<li><a href="https://www.tutorialspoint.com/python/python_loops.htm">"Python Loops". www.tutorialspoint.com</a></li>
+<li><a href="http://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do">"What does the “yield” keyword do?". stackoverflow.com</a></li>
+<li><a href="https://jeffknupp.com/blog/2013/04/07/improve-your-python-yield-and-generators-explained/">"Improve Your Python: 'yield' and Generators Explained". jeffknupp.com</a></li>
+</ul></div>
         </div>
 
         <footer class="col-md-12">
@@ -359,12 +364,15 @@ printinfo( 70, 60, 50 )
         <script>var base_url = '..';</script>
         <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
         <script src="../js/base.js"></script>
-        <script src="../js/underscore.js"></script>
+        <script src="../components/underscore/underscore.js"></script>
+        <script src="../components/magiz-c-book/src/gspreadsheet.js"></script>
+        <script src="../components/magiz-c-paper/src/paper.js"></script>
+        <script src="../components/magiz-c-course/src/course.js"></script>
+        <script src="../components/magiz-c-benchmark/src/benchmark.js"></script>
+        <script src="../components/magiz-c-benchmark/src/bootstrap-popup.js"></script>
+        <script src="../components/magiz-c-book/src/book.js"></script>
+        <script src="../components/magiz-c-video/src/video.js"></script>
         <script src="../js/jquery.js"></script>
-        <script src="../js/gspreadsheet.js"></script>
-        <script src="../js/book.js"></script>
-        <script src="../js/course.js"></script>
-        <script src="../js/video.js"></script>
         <script src="../js/script.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">

@@ -26,6 +26,7 @@ pages:
   - "Event Based": 'event_based.md'
   - "Logging": 'logging.md'
   - "Configuration": 'configuration.md'
+  - "Command Line": 'command_line.md'
   - "Test": 'test.md'
   - "Web": 'web.md'
   - "IDE": 'ide.md'
@@ -38,15 +39,22 @@ markdown_extensions:
     - footnotes
 
 extra_css:
-  - css/book.css
-  - css/course.css
-  - css/video.css
+  - components/magiz-c-book/src/book.css
+  - components/magiz-c-course/src/course.css
+  - components/magiz-c-video/src/video.css
+  - components/magiz-c-benchmark/src/benchmark.css
+  - components/magiz-c-paper/src/paper.css
+  - components/magiz-doc/style.css
   - css/custom.css
+
 extra_javascript:
-  - js/underscore.js
+  - components/underscore/underscore.js
+  - components/magiz-c-book/src/gspreadsheet.js
+  - components/magiz-c-paper/src/paper.js
+  - components/magiz-c-course/src/course.js
+  - components/magiz-c-benchmark/src/benchmark.js
+  - components/magiz-c-benchmark/src/bootstrap-popup.js
+  - components/magiz-c-book/src/book.js
+  - components/magiz-c-video/src/video.js
   - js/jquery.js
-  - js/gspreadsheet.js
-  - js/book.js
-  - js/course.js
-  - js/video.js
   - js/script.js

@@ -1,10 +1,10 @@
-## Print, print
+# Print, print
 
 ```python
 print "Hello World"
 ```
 
-## Conditional
+# Conditional
 
 ```
 if you_smart:
@@ -13,7 +13,7 @@ else:
     print "go away"
 ```
 
-## Loop
+# Loop
 
 In general, statements are executed sequentially: The first statement in a function is executed first, followed by the second, and so on. There may be a situation when you need to execute a block of code several number of times.
 
@@ -42,7 +42,7 @@ Python programming language provides following types of loops to handle looping 
 </tbody>
 </table>
 
-### While Loop
+## While Loop
 
 A while loop statement in Python programming language repeatedly executes a target statement as long as a given condition is true.
 
@@ -66,7 +66,7 @@ while count < 9:
 print "Good bye!"
 ```
 
-### For Loop
+## For Loop
 
 It has the ability to iterate over the items of any sequence, such as a list or a string.
 
@@ -95,7 +95,7 @@ for fruit in fruits:
 print "Good bye!"
 ```
 
-### Yield and Generator
+## Yield and Generator
 
 Yield is a keyword that is used like return, except the function will return a generator.
 
@@ -117,15 +117,9 @@ for i in mygenerator:
 
 Visit [Yield and Generator explained](basic_syntax_yield.md) for more information
 
-**Related Readings**
+# Functions
 
-* ["Python Loops". www.tutorialspoint.com](https://www.tutorialspoint.com/python/python_loops.htm)
-* ["What does the “yield” keyword do?". stackoverflow.com](http://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do)
-* ["Improve Your Python: 'yield' and Generators Explained". jeffknupp.com](https://jeffknupp.com/blog/2013/04/07/improve-your-python-yield-and-generators-explained/)
-
-## Functions
-
-### Variable-length arguments
+## Variable-length arguments
 
 ```
 def functionname([formal_args,] *var_args_tuple ):
@@ -153,13 +147,16 @@ printinfo( 10 )
 printinfo( 70, 60, 50 )
 
 ```
-**Related Readings**
 
-* ["Python Functions". www.tutorialspoint.com](http://www.tutorialspoint.com/python/python_functions.htm)
+# Coding Convention
 
-## Coding Convention
-
-### Code layout
+## Code layout
 
 Indentation: 4 spaces
 
+# Suggest Readings 
+
+* ["Python Functions". www.tutorialspoint.com](http://www.tutorialspoint.com/python/python_functions.htm)
+* ["Python Loops". www.tutorialspoint.com](https://www.tutorialspoint.com/python/python_loops.htm)
+* ["What does the “yield” keyword do?". stackoverflow.com](http://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do)
+* ["Improve Your Python: 'yield' and Generators Explained". jeffknupp.com](https://jeffknupp.com/blog/2013/04/07/improve-your-python-yield-and-generators-explained/)
