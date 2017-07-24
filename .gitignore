@@ -136,3 +136,4 @@ ENV/
 
 # Rope project settings
 .ropeproject
+!/docs/components/jquery/dist/
