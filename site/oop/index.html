@@ -8,7 +8,7 @@
         <meta name="author" content="Vu Anh">
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Object Oriented - Python</title>
+        <title>Classes and Objects - Python</title>
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -119,9 +119,19 @@
     <a href="../io/">Python IO</a>
 </li>
                             
+  <li class="dropdown-submenu">
+    <a href="#">Object Oriented Programming</a>
+    <ul class="dropdown-menu">
+            
 <li class="active">
-    <a href="./">Object Oriented</a>
+    <a href="./">Classes and Objects</a>
 </li>
+            
+<li >
+    <a href="../design_patterns/">Design Patterns</a>
+</li>
+    </ul>
+  </li>
                             
 <li >
     <a href="../os/">Operating System</a>
@@ -140,7 +150,7 @@
 </li>
                             
 <li >
-    <a href="../web/">Web Development with Python</a>
+    <a href="../web/">Web Development</a>
 </li>
                         </ul>
                     </li>
@@ -199,7 +209,7 @@
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../os/">
+                        <a rel="prev" href="../design_patterns/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -217,34 +227,153 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#object-oriented-programming">Object Oriented Programming</a></li>
+            <li><a href="#classes-and-objects">Classes and Objects</a></li>
+            <li><a href="#inheritance">Inheritance</a></li>
         <li class="main "><a href="#object">Object</a></li>
-        <li class="main "><a href="#singleton">Singleton</a></li>
-            <li><a href="#non-thread-safe">Non-thread-safe</a></li>
-            <li><a href="#thread-safe">Thread safe</a></li>
+            <li><a href="#suggested-readings">Suggested Readings</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
 <h1 id="object-oriented-programming">Object Oriented Programming</h1>
-<p><sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup></p>
-<pre><code>class BankAccount:
-  id = None
-  balance = 0
+<p>Python has been an object-oriented language since it existed. Because of this, creating and using classes and objects are downright easy. This chapter helps you become an expert in using Python's object-oriented programming support.</p>
+<p>If you do not have any previous experience with object-oriented (OO) programming, you may want to consult an introductory course on it or at least a tutorial of some sort so that you have a grasp of the basic concepts.</p>
+<h2 id="classes-and-objects">Classes and Objects</h2>
+<p>Classes can be thought of as blueprints for creating objects. When I define a <code>BankAccount</code> class using the class keyword, I haven't actually created a bank account. Instead, what I've created is a sort of instruction manual for constructing "bank account" objects. Let's look at the following example code:</p>
+<pre><code class="python">class BankAccount:
+    id = None
+    balance = 0
 
-  def __init__(self, id, balance=0):
-    self.id = id
-    self.balance = balance
+    def __init__(self, id, balance=0):
+        self.id = id
+        self.balance = balance
 
-  def __get_balance():
-     pass
-  def withdraw():
-     pass
-   def deposite():
-     pass
+    def __get_balance(self):
+        return self.balance
+
+    def withdraw(self, amount):
+        self.balance = self.balance - amount
+
+    def deposit(self, amount):
+        self.balance = self.balance + amount
+
+john = BankAccount(1, 1000.0)
+john.withdraw(100.0)
+</code></pre>
+
+<p>The <code>class BankAccount</code> line <em>does not</em> create a new bank account. That is, just because we've <em>defined</em> a <code>BankAcount</code> doesn't mean we've <em>created</em> on; we've merely outlined the <em>blueprint</em> to create a <code>BankAccount</code> object. To do so, we call the class's <code>__init__</code> method with the proper number of arguments (minus <code>self</code>, which we'll get to in a moment)</p>
+<p>So, to use the "blueprint" that we crated by defining the <code>class BankAccount</code> (which is used to create <code>BankAccount</code> objects), we call the class name almost as if it were a function: <code>john = BankAccount(1, 1000.0)</code>. This line simple say "use the <code>BankAccount</code> blueprint to create me a new object, which I'll refer to as <code>john</code>".</p>
+<p>The <code>john</code> <em>object</em>, known as an <code>instance</code>, is the realized version of the <code>BankAccount</code> <em>class</em>. Before we called <code>BankAccount()</code>, no <code>BankAccount</code> object existed. We can, of course, create as many <code>BankAccount</code> objects as we'd like. There is still, however, only one <code>BankAccount</code> <em>class</em>, regardless of how many <em>instances</em> of the class we create.</p>
+<h3 id="self"><code>self</code></h3>
+<p>So what's with that <code>self</code> parameter to all of the <code>BankAccount</code> methods? What is it? Why, it's the instance, of course! Put another way, a method like withdraw defines the instructions for withdrawing money from some abstract customer's account. Calling <code>john.withdraw(100)</code> puts those instructions to use on the <code>john</code> instance.</p>
+<p>So when we say def <code>withdraw(self, amount)</code>:, we're saying, "here's how you withdraw money from a <code>BankAccount</code> object (which we'll call <code>self</code>) and a dollar figure (which we'll call <code>amount</code>). <code>self</code> is the <em>instance</em> of the <code>BankAccount</code> that <code>withdraw</code> is being called on. That's not me making analogies, either. <code>john.withdraw(100.0)</code> is just shorthand for <code>BankAccount.withdraw(john, 100.0)</code>, which is perfectly valid (if not often seen) code.</p>
+<h3 id="constructors-__init__">Constructors: <code>__init__</code></h3>
+<p><code>self</code> may make sense for other methods, but what about <code>__init__</code>? When we call <code>__init__</code>, we're in the process of creating an object, so how can there already be a <code>self</code>? Python allows us to extend the <code>self</code> pattern to when objects are constructed as well, even though it doesn't <em>exactly</em> fit. Just imagine that <code>john = (1, 1000.0)</code> is the same as calling <code>john = BankAccount(john, 1, 1000.0)</code>; the <code>john</code> that's passed in is also made the result.</p>
+<p>This is why when we call <code>__init__</code>, we initialize objects by saying things like <code>self.id = id</code>. Remember, since <code>self</code> is the instance, this is equivalent to saying <code>john.id = id</code>, which is the same as <code>john.id= 1</code>. Similarly, <code>self.balance = balance</code> is the same as <code>john.balance = 1000.0</code>. After these two lines, we consider the <code>BankAccount</code> object "initialized" and ready for use.</p>
+<h3 id="be-careful-what-you-__init__">Be careful what you <code>__init__</code></h3>
+<p>After <code>__init__</code> has finished, the caller can rightly assume that the object is ready to use. That is, after <code>john = BankAccount(1, 1000.0)</code>, we can start making <code>deposit</code> and <code>withdraw</code> calls on <code>john</code>; <code>john</code> is a <strong>fully-initialized</strong> object.</p>
+<h2 id="inheritance">Inheritance</h2>
+<p>While Object-oriented Programming is useful as a modeling tool, it truly gains power when the concept of <em>inheritance</em> is introduced. <em>Inheritance</em> is the process by which a "child" class <em>derives</em> the data and behavior of a "parent" class. An example will definitely help us here.</p>
+<p>Imagine we run a car dealership. We sell all types of vehicles, from motorcycles to trucks. We set ourselves apart from the competition by our prices. Specifically, how we determine the price of a vehicle on our lot: $5,000 x number of wheels a vehicle has. We love buying back our vehicles as well. We offer a flat rate - 10% of the miles driven on the vehicle. For trucks, that rate is $10,000. For cars, $8,000. For motorcycles, $4,000.</p>
+<p>If we wanted to create a sales system for our dealership using Object-oriented techniques, how would we do so? What would the objects be? We might have a <code>Sale</code> class, a <code>Customer</code> class, an <code>Inventory</code> class, and so forth, but we'd almost certainly have a <code>Car</code>, <code>Truck</code>, and <code>Motorcycle</code> class.</p>
+<p>What would these classes look like? Using what we've learned, here's a possible implementation of the <code>Car</code> class:</p>
+<pre><code class="python">class Car(object):
+    def __init__(self, wheels, miles, make, model, year, sold_on):
+        self.wheels = wheels
+        self.miles = miles
+        self.make = make
+        self.model = model
+        self.year = year
+        self.sold_on = sold_on
+
+    def sale_price(self):
+        if self.sold_on is not None:
+            return 0.0  # Already sold
+        return 5000.0 * self.wheels
+
+    def purchase_price(self):
+        if self.sold_on is None:
+            return 0.0  # Not yet sold
+        return 8000 - (.10 * self.miles)
+</code></pre>
+
+<p>OK, that looks pretty reasonable. Of course, we would likely have a number of other methods on the class, but I've shown two of particular interest to us: <code>sale_price</code> and <code>purchase_price</code>. We'll see why these are important in a bit.</p>
+<p>Now that we've got the <code>Car</code> class, perhaps we should create a <code>Truck</code> class? Let's follow the same pattern we did for car:</p>
+<pre><code class="python">class Truck(object):
+    def __init__(self, wheels, miles, make, model, year, sold_on):
+        self.wheels = wheels
+        self.miles = miles
+        self.make = make
+        self.model = model
+        self.year = year
+        self.sold_on = sold_on
+
+    def sale_price(self):
+        if self.sold_on is not None:
+            return 0.0  # Already sold
+        return 5000.0 * self.wheels
+
+    def purchase_price(self):
+        if self.sold_on is None:
+            return 0.0  # Not yet sold
+        return 10000 - (.10 * self.miles)
+</code></pre>
+
+<p>Wow. That's <em>almost</em> identical to the car class. One of the most important rules of programming (in general, not just when dealing with objects) is "DRY" or "<strong>D</strong>on't <strong>R</strong>epeat <strong>Y</strong>ourself. We've definitely repeated ourselves here. In fact, the <code>Car</code> and <code>Truck</code> classes differ only by a single character (aside from comments).</p>
+<p>So what gives? Where did we go wrong? Our main problem is that we raced straight to the concrete: <code>Car</code> and <code>Truck</code> are real things, tangible objects that make intuitive sense as classes. However, they share so much data and functionality in common that it seems there must be an <em>abstraction</em> we can introduce here. Indeed there is: the notion of <code>Vehicle</code>.</p>
+<h3 id="abstract-classes">Abstract Classes</h3>
+<p>A <code>Vehicle</code> is not a real-world object. Rather, it is a <em>concept</em> that some real-world objects (like cars, trucks, and motorcycles) embody. We would like to use the fact that each of these objects can be considered a vehicle to remove repeated code. We can do that by creating a <code>Vehicle</code> class:</p>
+<pre><code class="python">class Vehicle(object):
+    base_sale_price = 0
+
+    def __init__(self, wheels, miles, make, model, year, sold_on):
+        self.wheels = wheels
+        self.miles = miles
+        self.make = make
+        self.model = model
+        self.year = year
+        self.sold_on = sold_on
+
+
+    def sale_price(self):
+        if self.sold_on is not None:
+            return 0.0  # Already sold
+        return 5000.0 * self.wheels
+
+    def purchase_price(self):
+        if self.sold_on is None:
+            return 0.0  # Not yet sold
+        return self.base_sale_price - (.10 * self.miles)
+</code></pre>
+
+<p>Now we can make the <code>Car</code> and <code>Truck</code> class <em>inherit</em> from the <code>Vehicle</code> class by replacing <code>object</code> in the line class <code>Car(object)</code>. The class in parenthesis is the class that is inherited from (<code>object</code> essentially means "no inheritance". We'll discuss exactly why we write that in a bit).</p>
+<p>We can now define <code>Car</code> and <code>Truck</code> in a very straightforward way:</p>
+<pre><code class="python">class Car(Vehicle):
+
+    def __init__(self, wheels, miles, make, model, year, sold_on):
+        self.wheels = wheels
+        self.miles = miles
+        self.make = make
+        self.model = model
+        self.year = year
+        self.sold_on = sold_on
+        self.base_sale_price = 8000
+
+
+class Truck(Vehicle):
+
+    def __init__(self, wheels, miles, make, model, year, sold_on):
+        self.wheels = wheels
+        self.miles = miles
+        self.make = make
+        self.model = model
+        self.year = year
+        self.sold_on = sold_on
+        self.base_sale_price = 10000
 </code></pre>
 
 <h1 id="object">Object</h1>
-<p>Convert dict to object <sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup></p>
+<p>Convert dict to object</p>
 <pre><code class="python">class Struct:
     def __init__(self, **entries):
         self.__dict__.update(entries)
@@ -261,107 +390,12 @@
 2
 </code></pre>
 
-<h1 id="singleton">Singleton</h1>
-<h3 id="non-thread-safe">Non-thread-safe</h3>
-<p>Paul Manta's implementation of singletons <sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup></p>
-<pre><code class="python">@Singleton
-class Foo:
-   def __init__(self):
-       print 'Foo created'
-
-f = Foo() # Error, this isn't how you get the instance of a singleton
-
-f = Foo.Instance() # Good. Being explicit is in line with the Python Zen
-g = Foo.Instance() # Returns already created instance
-
-print f is g # True
-
-class Singleton:
-    &quot;&quot;&quot;
-    A non-thread-safe helper class to ease implementing singletons.
-    This should be used as a decorator -- not a metaclass -- to the
-    class that should be a singleton.
-
-    The decorated class can define one `__init__` function that
-    takes only the `self` argument. Also, the decorated class cannot be
-    inherited from. Other than that, there are no restrictions that apply
-    to the decorated class.
-
-    To get the singleton instance, use the `Instance` method. Trying
-    to use `__call__` will result in a `TypeError` being raised.
-
-    &quot;&quot;&quot;
-
-    def __init__(self, decorated):
-        self._decorated = decorated
-
-    def Instance(self):
-        &quot;&quot;&quot;
-        Returns the singleton instance. Upon its first call, it creates a
-        new instance of the decorated class and calls its `__init__` method.
-        On all subsequent calls, the already created instance is returned.
-
-        &quot;&quot;&quot;
-        try:
-            return self._instance
-        except AttributeError:
-            self._instance = self._decorated()
-            return self._instance
-
-    def __call__(self):
-        raise TypeError('Singletons must be accessed through `Instance()`.')
-
-    def __instancecheck__(self, inst):
-        return isinstance(inst, self._decorated)
-</code></pre>
-
-<h3 id="thread-safe">Thread safe</h3>
-<p>werediver's implementation of singletons. A thread safe implementation of singleton pattern in Python. Based on tornado.ioloop.IOLoop.instance() approach.</p>
-<pre><code class="python">import threading
-
-# Based on tornado.ioloop.IOLoop.instance() approach.
-# See https://github.com/facebook/tornado
-class SingletonMixin(object):
-    __singleton_lock = threading.Lock()
-    __singleton_instance = None
-
-    @classmethod
-    def instance(cls):
-        if not cls.__singleton_instance:
-            with cls.__singleton_lock:
-                if not cls.__singleton_instance:
-                    cls.__singleton_instance = cls()
-        return cls.__singleton_instance
-
-class A(SingletonMixin):
-    pass
-
-class B(SingletonMixin):
-    pass
-
-if __name__ == '__main__':
-    a, a2 = A.instance(), A.instance()
-    b, b2 = B.instance(), B.instance()
-
-    assert a is a2
-    assert b is b2
-    assert a is not b
-
-    print('a:  %s\na2: %s' % (a, a2))
-    print('b:  %s\nb2: %s' % (b, b2))
-</code></pre>
-
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:1">
-<p><a href="http://stackoverflow.com/questions/1305532/convert-python-dict-to-object">stackoverflow, Convert Python dict to object?</a>&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-<li id="fn:2">
-<p><a href="http://stackoverflow.com/a/7346105/772391">Is there a simple, elegant way to define singletons?</a>&#160;<a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div></div>
+<h2 id="suggested-readings">Suggested Readings</h2>
+<ul>
+<li><a href="https://jeffknupp.com/blog/2014/06/18/improve-your-python-python-classes-and-object-oriented-programming/">Improve Your Python: Python Classes and Object Oriented Programming</a></li>
+<li><a href="http://stackoverflow.com/questions/1305532/convert-python-dict-to-object">stackoverflow, Convert Python dict to object?</a></li>
+<li><a href="http://stackoverflow.com/questions/70528/why-are-pythons-private-methods-not-actually-private">Why are Python's 'private' methods not actually private?</a></li>
+</ul></div>
         </div>
 
         <footer class="col-md-12">
@@ -380,7 +414,8 @@ if __name__ == '__main__':
         <script src="../components/magiz-c-book/src/book.js"></script>
         <script src="../components/magiz-c-video/src/video.js"></script>
         <script src="../components/jquery/dist/jquery.js"></script>
-        <script src="../components/magiz-doc/doc.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <script src="../components/magiz-doc/doc.js"></script>
+        <script src="../components/magiz-doc/footer.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

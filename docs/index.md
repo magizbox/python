@@ -12,11 +12,17 @@ This site is intended to host a variety of resources and pointers to information
 * [Get Started](get_started.md)
 * [Introduction](tutorials.md)
 * [Basic Syntax: conditional, loop, function](basic_syntax.md)
-* [Data Structure: number, string, collection, date](datastructure_number.md)
+* [Data Structure: number](datastructure_number.md)
+* [Data Structure: string](datastructure_string.md)
+* [Data Structure: collection (list, set, tuple, dictionary)](datastructure_collection.md)
+* [Data Structure: date](datastructure_date.md)
 
 ## Classes and Inheritance
 
-* [Object Oriented Programming with Python](oop.md)
+* [Classes and Objects](oop.md#classes-and-objects)
+* [Constructors](oop.md#constructors-__init__)
+* [Inheritance](oop.md##inheritance)
+* [Design Patterns with Python](design_patterns.md)
 
 ## Go Deeper
 

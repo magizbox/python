@@ -19,12 +19,14 @@ pages:
     - "Time": 'datastructure_time.md'
     - "Object": 'datastructure_object.md'
   - "Python IO": 'io.md'
-  - "Object Oriented": 'oop.md'
+  - "Object Oriented Programming":
+    - "Classes and Objects": 'oop.md'
+    - "Design Patterns": 'design_patterns.md'
   - "Operating System": 'os.md'
   - "Networking": 'networking.md'
   - "Concurrency and Parallelism": 'concurrency_parallelism.md'
   - "Event Based": 'event_based.md'
-  - "Web Development with Python": 'web.md'
+  - "Web Development": 'web.md'
 - "<span class='fa fa-cube'></span> Software Development":
   - "Logging": 'logging.md'
   - "Configuration": 'configuration.md'
@@ -59,3 +61,4 @@ extra_javascript:
   - components/magiz-c-video/src/video.js
   - components/jquery/dist/jquery.js
   - components/magiz-doc/doc.js
+  - components/magiz-doc/footer.js
