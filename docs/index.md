@@ -1,11 +1,11 @@
-# The Python Tutorial <sup><i><a href="http://magizbox.com/">by MG</a></i></sup>
+# Python Tutorial <sup><i><a href="http://magizbox.com/">by MG</a></i></sup>
 
 > `Python` is a widely used general-purpose, high-level programming language. Its design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code than would be possible in languages such as C++ or Java.
 > The language provides constructs intended to enable clear programs on both a small and large scale.
 
 # Table of contents
 
-This site is intended to host a variety of resources and pointers to information about Python. In these pages you will find
+This site is intended to host a variety of resources and pointers to information about Python. 
 
 ## Learn Basic
 

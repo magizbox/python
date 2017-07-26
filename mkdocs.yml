@@ -48,7 +48,7 @@ extra_css:
   - components/magiz-c-benchmark/src/benchmark.css
   - components/magiz-c-paper/src/paper.css
   - components/magiz-doc/style.css
-  - css/custom.css
+  - components/magiz-doc/highlight.css
 
 extra_javascript:
   - components/underscore/underscore.js
