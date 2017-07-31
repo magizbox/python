@@ -1,8 +1,6 @@
 site_name: Python
 site_author: "Vu Anh"
 google_analytics: ['UA-68978617-1', 'magizbox.com']
-repo_url: https://github.com/magizbox/python/
-edit_uri: edit/master/docs/
 
 pages:
 - "Home": "index.md"
