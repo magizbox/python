@@ -48,10 +48,10 @@ This site is intended to host a variety of resources and pointers to information
 
 ## Miscellaneous 
 
-* [Best python books](#books)
-* [Best python courses](#courses)
-* [A collection of python videos](#videos)
-* [Python Challenges](#challenges)
+* [Books](#books)
+* [Courses](#courses)
+* [Videos](#videos)
+* [Challenges](#challenges)
 
 ### Books
 
