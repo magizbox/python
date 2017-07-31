@@ -5,9 +5,9 @@ repo_url: https://github.com/magizbox/python/
 edit_uri: edit/master/docs/
 
 pages:
-- "<span class='fa fa-home'></span> Home": "index.md"
-- "<span class='fa fa-cloud-download'></span> Get Started": 'get_started.md'
-- "<span class='fa fa-book'></span> Tutorials":
+- "Home": "index.md"
+- "Get Started": 'get_started.md'
+- "Basics":
   - "Introduction": 'tutorials.md'
   - "Basic Syntax":
     - "Overview": 'basic_syntax.md'
@@ -16,26 +16,27 @@ pages:
     - "Number": 'datastructure_number.md'
     - "Collection (List, Set, Turple)": 'datastructure_collection.md'
     - "String": 'datastructure_string.md'
-    - "Time": 'datastructure_time.md'
+    - "Datetime": 'datastructure_time.md'
     - "Object": 'datastructure_object.md'
-  - "Python IO": 'io.md'
   - "Object Oriented Programming":
     - "Classes and Objects": 'oop.md'
     - "Design Patterns": 'design_patterns.md'
+- "Go Deeper":
+  - "File System & IO": "io.md"
   - "Operating System": 'os.md'
   - "Networking": 'networking.md'
   - "Concurrency and Parallelism": 'concurrency_parallelism.md'
   - "Event Based": 'event_based.md'
   - "Web Development": 'web.md'
-- "<span class='fa fa-cube'></span> Software Development":
+- "Development":
   - "Logging": 'logging.md'
   - "Configuration": 'configuration.md'
   - "Command Line": 'command_line.md'
-  - "Test": 'test.md'
-  - "IDE": 'ide.md'
+  - "Testing": 'test.md'
+  - "IDE & Debugging": 'ide.md'
   - "Package Manager": 'package_manager.md'
   - "Environment": 'environment.md'
-  - "Module": 'make_a_module.md'
+  - "Module": 'module.md'
   - "Production": 'production.md'
 
 markdown_extensions:
