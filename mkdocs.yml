@@ -18,6 +18,7 @@ pages:
     - "Object": 'datastructure_object.md'
   - "Object Oriented Programming":
     - "Classes and Objects": 'oop.md'
+    - "Metaclasses": 'metaclasses.md'
     - "Design Patterns": 'design_patterns.md'
 - "Go Deeper":
   - "File System & IO": "io.md"

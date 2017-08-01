@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Vu Anh">
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Metaclasses - Python</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <link href="../components/magiz-c-book/src/book.css" rel="stylesheet">
+        <link href="../components/magiz-c-course/src/course.css" rel="stylesheet">
+        <link href="../components/magiz-c-video/src/video.css" rel="stylesheet">
+        <link href="../components/magiz-c-benchmark/src/benchmark.css" rel="stylesheet">
+        <link href="../components/magiz-c-paper/src/paper.css" rel="stylesheet">
+        <link href="../components/magiz-doc/style.css" rel="stylesheet">
+        <link href="../components/magiz-doc/highlight.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+	
+	<script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-68978617-1', 'magizbox.com');
+            ga('send', 'pageview');
+        </script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="..">Python</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                    <li >
+                        <a href="../get_started/">Get Started</a>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Basics <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../tutorials/">Introduction</a>
+</li>
+                            
+  <li class="dropdown-submenu">
+    <a href="#">Basic Syntax</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../basic_syntax/">Overview</a>
+</li>
+            
+<li >
+    <a href="../basic_syntax_yield/">Yield and Generator</a>
+</li>
+    </ul>
+  </li>
+                            
+  <li class="dropdown-submenu">
+    <a href="#">Data Structure</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../datastructure_number/">Number</a>
+</li>
+            
+<li >
+    <a href="../datastructure_collection/">Collection (List, Set, Turple)</a>
+</li>
+            
+<li >
+    <a href="../datastructure_string/">String</a>
+</li>
+            
+<li >
+    <a href="../datastructure_time/">Datetime</a>
+</li>
+            
+<li >
+    <a href="../datastructure_object/">Object</a>
+</li>
+    </ul>
+  </li>
+                            
+  <li class="dropdown-submenu">
+    <a href="#">Object Oriented Programming</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../oop/">Classes and Objects</a>
+</li>
+            
+<li class="active">
+    <a href="./">Metaclasses</a>
+</li>
+            
+<li >
+    <a href="../design_patterns/">Design Patterns</a>
+</li>
+    </ul>
+  </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Go Deeper <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../io/">File System & IO</a>
+</li>
+                            
+<li >
+    <a href="../os/">Operating System</a>
+</li>
+                            
+<li >
+    <a href="../networking/">Networking</a>
+</li>
+                            
+<li >
+    <a href="../concurrency_parallelism/">Concurrency and Parallelism</a>
+</li>
+                            
+<li >
+    <a href="../event_based/">Event Based</a>
+</li>
+                            
+<li >
+    <a href="../web/">Web Development</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Development <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../logging/">Logging</a>
+</li>
+                            
+<li >
+    <a href="../configuration/">Configuration</a>
+</li>
+                            
+<li >
+    <a href="../command_line/">Command Line</a>
+</li>
+                            
+<li >
+    <a href="../test/">Testing</a>
+</li>
+                            
+<li >
+    <a href="../ide/">IDE & Debugging</a>
+</li>
+                            
+<li >
+    <a href="../package_manager/">Package Manager</a>
+</li>
+                            
+<li >
+    <a href="../environment/">Environment</a>
+</li>
+                            
+<li >
+    <a href="../module/">Module</a>
+</li>
+                            
+<li >
+    <a href="../production/">Production</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../oop/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../design_patterns/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#metaclasses">Metaclasses</a></li>
+            <li><a href="#python-classes-and-objects">Python, Classes, and Objects</a></li>
+            <li><a href="#down-the-rabbit-hole-classes-as-objects">Down the Rabbit Hole: Classes as Objects</a></li>
+            <li><a href="#metaprogramming-creating-classes-on-the-fly">Metaprogramming: Creating Classes on the Fly</a></li>
+            <li><a href="#making-things-interesting-custom-metaclasses">Making Things Interesting: Custom Metaclasses</a></li>
+            <li><a href="#conclusion-when-should-you-use-metaclasses">Conclusion: When Should You Use Metaclasses?</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="metaclasses">Metaclasses</h1>
+<h2 id="python-classes-and-objects">Python, Classes, and Objects</h2>
+<p>Most readers are aware that Python is an object-oriented language.  By
+object-oriented, we mean that Python can define <em>classes</em>, which bundle
+<strong>data</strong> and <strong>functionality</strong> into one entity.  For example, we may
+create a class <code>IntContainer</code> which stores an integer and allows
+certain operations to be performed:</p>
+<pre><code class="python">class IntContainer(object):
+    def __init__(self, i):
+        self.i = int(i)
+
+    def add_one(self):
+        self.i += 1
+</code></pre>
+
+<pre><code class="python">ic = IntContainer(2)
+ic.add_one()
+print(ic.i)
+</code></pre>
+
+<pre><code>3
+</code></pre>
+<p>This is a bit of a silly example, but shows the fundamental nature of
+classes: their ability to bundle data and operations into a single
+<em>object</em>, which leads to cleaner, more manageable, and more adaptable code.
+Additionally, classes can inherit properties from parents and add or
+specialize attributes and methods.  This <em>object-oriented</em>
+approach to programming can be very intuitive and powerful.</p>
+<p>What many do not realize, though, is that quite literally
+<a href="http://www.diveintopython.net/getting_to_know_python/everything_is_an_object.html"><em>everything</em></a>
+in the Python language is an object.</p>
+<!-- PELICAN_END_SUMMARY -->
+
+<p>For example, integers are simply instances of
+the built-in <code>int</code> type:</p>
+<pre><code class="python">print type(1)
+</code></pre>
+
+<pre><code>&lt;type 'int'&gt;
+</code></pre>
+<p>To emphasize that the <code>int</code> type really is an object, let's derive from it
+and specialize the <code>__add__</code> method (which is the machinery underneath
+the <code>+</code> operator):</p>
+<p><em>(Note: We'll used the</em> <code>super</code> <em>syntax to call methods from the parent class: if you're unfamiliar with this, take a look at</em>
+<a href="http://stackoverflow.com/questions/576169/understanding-python-super-and-init-methods"><em>this StackOverflow question</em></a><em>).</em></p>
+<pre><code class="python">class MyInt(int):
+    def __add__(self, other):
+        print &quot;specializing addition&quot;
+        return super(MyInt, self).__add__(other)
+
+i = MyInt(2)
+print(i + 2)
+</code></pre>
+
+<pre><code>specializing addition
+4
+</code></pre>
+<p>Using the <code>+</code> operator on our derived type goes through our <code>__add__</code>
+method, as expected.
+We see that <code>int</code> really is an object that can be subclassed and extended
+just like user-defined classes.  The same is true
+of <code>float</code>s, <code>list</code>s, <code>tuple</code>s, and everything else in the Python
+language.  They're all objects.</p>
+<h2 id="down-the-rabbit-hole-classes-as-objects">Down the Rabbit Hole: Classes as Objects</h2>
+<p>We said above that <em>everything</em> in python is an object: it turns out that this
+is true of <em>classes themselves</em>.  Let's look at an example.</p>
+<p>We'll start by defining a class that does nothing</p>
+<pre><code class="python">class DoNothing(object):
+    pass
+</code></pre>
+
+<p>If we instantiate this, we can use the <code>type</code> operator to see the type
+of object that it is:</p>
+<pre><code class="python">d = DoNothing()
+type(d)
+</code></pre>
+
+<pre><code>__main__.DoNothing
+</code></pre>
+<p>We see that our variable <code>d</code> is an instance of the class
+<code>__main__.DoNothing</code>.</p>
+<p>We can do this similarly for built-in  types:</p>
+<pre><code class="python">L = [1, 2, 3]
+type(L)
+</code></pre>
+
+<pre><code>list
+</code></pre>
+<p>A list is, as you may expect, an object of type <code>list</code>.</p>
+<p>But let's take this a step further: what is the type
+of <code>DoNothing</code> itself?</p>
+<pre><code class="python">type(DoNothing)
+</code></pre>
+
+<pre><code>type
+</code></pre>
+<p>The type of <code>DoNothing</code> is <code>type</code>.  This tells us that the <em>class</em>
+<code>DoNothing</code> is itself an object, and that object is of type <code>type</code>.</p>
+<p>It turns out that this is the same for built-in datatypes:</p>
+<pre><code class="python">type(tuple), type(list), type(int), type(float)
+</code></pre>
+
+<pre><code>(type, type, type, type)
+</code></pre>
+<p>What this shows is that in Python, <em>classes are objects</em>, and they are objects of
+type <code>type</code>.  <code>type</code> is a <em>metaclass</em>: a class which instantiates classes.
+All <a href="http://www.python.org/doc/newstyle/">new-style classes</a>
+in Python are instances of the <code>type</code> metaclass, including <code>type</code> itself:</p>
+<pre><code class="python">type(type)
+</code></pre>
+
+<pre><code>type
+</code></pre>
+<p>Yes, you read that correctly:
+the type of <code>type</code> is <code>type</code>.  In other words, <code>type</code> is <em>an
+instance of itself</em>.  This sort of circularity cannot (to my knowledge)
+be duplicated in pure Python, and the behavior is created through a bit of a
+hack at the implementation level of Python.</p>
+<h2 id="metaprogramming-creating-classes-on-the-fly">Metaprogramming: Creating Classes on the Fly</h2>
+<p>Now that we've stepped back and considered the fact that classes in Python
+are simply objects like everything else, we can think about what is known
+as <em>metaprogramming</em>.  You're probably used to creating functions which
+return objects.  We can think of these functions as an object factory: they
+take some arguments, create an object, and return it.  Here is a simple example
+of a function which creates an <code>int</code> object:</p>
+<pre><code class="python">def int_factory(s):
+    i = int(s)
+    return i
+
+i = int_factory('100')
+print(i)
+</code></pre>
+
+<pre><code>100
+</code></pre>
+<p>This is overly-simplistic, but any function you write in the course
+of a normal program can be boiled down to this: take some arguments,
+do some operations, and create &amp; return an object.
+With the above discussion in mind, though, there's nothing to stop
+us from creating an object of type <code>type</code> (that is, a class), 
+and returning that instead -- this is a <em>metafunction:</em></p>
+<pre><code class="python">def class_factory():
+    class Foo(object):
+        pass
+    return Foo
+
+F = class_factory()
+f = F()
+print(type(f))
+</code></pre>
+
+<pre><code>&lt;class '__main__.Foo'&gt;
+</code></pre>
+<p>Just as the function <code>int_factory</code> constructs an returns an instance of
+<code>int</code>,
+the function <code>class_factory</code> constructs and returns an instance of <code>type</code>:
+that is, a class.</p>
+<p>But the above construction is a bit awkward: especially if we were going to do some
+more complicated logic when constructing <code>Foo</code>, it would be nice to avoid all the
+nested indentations and define the class in a more dynamic way.
+We can accomplish this by instantiating <code>Foo</code> from <code>type</code> directly:</p>
+<pre><code class="python">def class_factory():
+    return type('Foo', (), {})
+
+F = class_factory()
+f = F()
+print(type(f))
+</code></pre>
+
+<pre><code>&lt;class '__main__.Foo'&gt;
+</code></pre>
+<p>In fact, the construct</p>
+<pre><code class="python">class MyClass(object):
+    pass
+</code></pre>
+
+<p>is identical to the construct</p>
+<pre><code class="python">MyClass = type('MyClass', (), {})
+</code></pre>
+
+<p><code>MyClass</code> is an instance of type <code>type</code>, and that can be seen
+explicitly in the second version of the definition.
+A potential confusion arises from the more common use of <code>type</code> as
+a function to determine the type of an object, but you should strive
+to separate these two uses of the keyword in your mind:
+here <code>type</code> is a class (more precisely, a <em>metaclass</em>),
+and <code>MyClass</code> is an instance of <code>type</code>.</p>
+<p>The arguments to the <code>type</code> constructor are:
+type(name, bases, dct)
+- <code>name</code> is a string giving the name of the class to be constructed
+- <code>bases</code> is a tuple giving the parent classes of the class to be constructed
+- <code>dct</code> is a dictionary of the attributes and methods of the class to be constructed</p>
+<p>So, for example, the following two pieces of code have identical results:</p>
+<pre><code class="python">class Foo(object):
+    i = 4
+
+class Bar(Foo):
+    def get_i(self):
+        return self.i
+
+b = Bar()
+print(b.get_i())
+</code></pre>
+
+<pre><code>4
+</code></pre>
+<pre><code class="python">Foo = type('Foo', (), dict(i=4))
+
+Bar = type('Bar', (Foo,), dict(get_i = lambda self: self.i))
+
+b = Bar()
+print(b.get_i())
+</code></pre>
+
+<pre><code>4
+</code></pre>
+<p>This perhaps seems a bit over-complicated in the case of this contrived
+example, but it can be very powerful as a means of dynamically creating
+new classes on-the-fly.</p>
+<h2 id="making-things-interesting-custom-metaclasses">Making Things Interesting: Custom Metaclasses</h2>
+<p>Now things get really fun.  Just as we can inherit from and extend a class we've
+created, we can also inherit from and extend the <code>type</code> metaclass, and create
+custom behavior in our metaclass.</p>
+<h3 id="example-1-modifying-attributes">Example 1: Modifying Attributes</h3>
+<p>Let's use a simple example where we want to create an API in which the user can
+create a set of interfaces which contain a file object.  Each interface should
+have a unique string ID, and contain an open file object.  The user could then write
+specialized methods to accomplish certain tasks.  There are certainly good
+ways to do this without delving into metaclasses, but such a simple example will
+(hopefully) elucidate what's going on.</p>
+<p>First we'll create our interface meta class, deriving from <code>type</code>:</p>
+<pre><code class="python">class InterfaceMeta(type):
+    def __new__(cls, name, parents, dct):
+        # create a class_id if it's not specified
+        if 'class_id' not in dct:
+            dct['class_id'] = name.lower()
+
+        # open the specified file for writing
+        if 'file' in dct:
+            filename = dct['file']
+            dct['file'] = open(filename, 'w')
+
+        # we need to call type.__new__ to complete the initialization
+        return super(InterfaceMeta, cls).__new__(cls, name, parents, dct)
+</code></pre>
+
+<p>Notice that we've modified the input dictionary (the attributes and
+methods of the class) to add a class id if it's not present, and to
+replace the filename with a file object pointing to that file name.</p>
+<p>Now we'll use our <code>InterfaceMeta</code> class to construct and instantiate
+an Interface object:</p>
+<pre><code class="python">Interface = InterfaceMeta('Interface', (), dict(file='tmp.txt'))
+
+print(Interface.class_id)
+print(Interface.file)
+</code></pre>
+
+<pre><code>interface
+&lt;open file 'tmp.txt', mode 'w' at 0x21b8810&gt;
+</code></pre>
+<p>This behaves as we'd expect: the <code>class_id</code> class variable is created,
+and the <code>file</code> class variable is replaced with an open file object.
+Still, the creation of the <code>Interface</code> class
+using <code>InterfaceMeta</code> directly is a bit clunky and difficult to read.
+This is where <code>__metaclass__</code> comes in
+and steals the show.  We can accomplish the same thing by
+defining <code>Interface</code> this way:</p>
+<pre><code class="python">class Interface(object):
+    __metaclass__ = InterfaceMeta
+    file = 'tmp.txt'
+
+print(Interface.class_id)
+print(Interface.file)
+</code></pre>
+
+<pre><code>interface
+&lt;open file 'tmp.txt', mode 'w' at 0x21b8ae0&gt;
+</code></pre>
+<p>by defining the <code>__metaclass__</code> attribute of the class, we've told the
+class that it should be constructed using <code>InterfaceMeta</code> rather than
+using <code>type</code>.  To make this more definite, observe that the type of
+<code>Interface</code> is now <code>InterfaceMeta</code>:</p>
+<pre><code class="python">type(Interface)
+</code></pre>
+
+<pre><code>__main__.InterfaceMeta
+</code></pre>
+<p>Furthermore, any class derived from <code>Interface</code> will now be constructed
+using the same metaclass:</p>
+<pre><code class="python">class UserInterface(Interface):
+    file = 'foo.txt'
+
+print(UserInterface.file)
+print(UserInterface.class_id)
+</code></pre>
+
+<pre><code>&lt;open file 'foo.txt', mode 'w' at 0x21b8c00&gt;
+userinterface
+</code></pre>
+<p>This simple example shows how metaclasses can be used to create powerful and
+flexible APIs for projects.  For example, the
+<a href="https://www.djangoproject.com/">Django project</a>
+makes use of these sorts of constructions to allow concise declarations
+of very powerful extensions to their basic classes.</p>
+<h3 id="example-2-registering-subclasses">Example 2: Registering Subclasses</h3>
+<p>Another possible use of a metaclass is to automatically register all
+subclasses derived from a given base class.  For example, you may have
+a basic interface to a database and wish for the user to be able to
+define their own interfaces, which are automatically stored in a master registry.</p>
+<p>You might proceed this way:</p>
+<pre><code class="python">class DBInterfaceMeta(type):
+    # we use __init__ rather than __new__ here because we want
+    # to modify attributes of the class *after* they have been
+    # created
+    def __init__(cls, name, bases, dct):
+        if not hasattr(cls, 'registry'):
+            # this is the base class.  Create an empty registry
+            cls.registry = {}
+        else:
+            # this is a derived class.  Add cls to the registry
+            interface_id = name.lower()
+            cls.registry[interface_id] = cls
+
+        super(DBInterfaceMeta, cls).__init__(name, bases, dct)
+</code></pre>
+
+<p>Our metaclass simply adds a <code>registry</code> dictionary if it's not already
+present, and adds the new class to the registry if the registry is already
+there.  Let's see how this works:</p>
+<pre><code class="python">class DBInterface(object):
+    __metaclass__ = DBInterfaceMeta
+
+print(DBInterface.registry)
+</code></pre>
+
+<pre><code>{}
+</code></pre>
+<p>Now let's create some subclasses, and double-check that they're added to
+the registry:</p>
+<pre><code class="python">class FirstInterface(DBInterface):
+    pass
+
+class SecondInterface(DBInterface):
+    pass
+
+class SecondInterfaceModified(SecondInterface):
+    pass
+
+print(DBInterface.registry)
+</code></pre>
+
+<pre><code>{'firstinterface': &lt;class '__main__.FirstInterface'&gt;, 'secondinterface': &lt;class '__main__.SecondInterface'&gt;, 'secondinterfacemodified': &lt;class '__main__.SecondInterfaceModified'&gt;}
+</code></pre>
+<p>It works as expected!  This could be used in conjunction with
+a function that chooses implementations from the registry,
+and any user-defined <code>Interface</code>-derived objects would be
+automatically accounted for, without the user having to remember
+to manually register the new types.</p>
+<h2 id="conclusion-when-should-you-use-metaclasses">Conclusion: When Should You Use Metaclasses?</h2>
+<p>I've gone through some examples of what metaclasses are, and some ideas 
+about how they might be used to create very powerful and flexible APIs. 
+Although metaclasses are in the background of everything you do in Python,
+the average coder rarely has to think about them.</p>
+<p>But the question remains: when should you think about using custom
+metaclasses in your project?  It's a complicated question, but
+there's a quotation floating around the web
+that addresses it quite succinctly:</p>
+<blockquote>
+<p>Metaclasses are deeper magic than 99% of users should ever worry about.
+If you wonder whether you need them, you don’t (the people who actually
+need them know with certainty that they need them, and don’t need an
+explanation about why).</p>
+<p>– Tim Peters</p>
+</blockquote>
+<p>In a way, this is a very unsatisfying answer: it's a bit reminiscent of
+the wistful and cliched explanation of the border between attraction
+and love: "well, you just... know!"</p>
+<p>But I think Tim is right: in general,
+I've found that most tasks in Python that can be accomplished through
+use of custom metaclasses can also be accomplished more cleanly and with
+more clarity by other means.  As programmers, we should always be careful
+to avoid being clever for the sake of cleverness alone, though
+it is admittedly an ever-present temptation.</p>
+<p>I personally spent six years doing science with Python, writing code
+nearly on a daily basis, before I found a problem for which metaclasses
+were the natural solution.  And it turns out Tim was right:</p>
+<p>I just knew.</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
+        <script src="../components/underscore/underscore.js"></script>
+        <script src="../components/magiz-c-book/src/gspreadsheet.js"></script>
+        <script src="../components/magiz-c-paper/src/paper.js"></script>
+        <script src="../components/magiz-c-course/src/course.js"></script>
+        <script src="../components/magiz-c-benchmark/src/benchmark.js"></script>
+        <script src="../components/magiz-c-benchmark/src/bootstrap-popup.js"></script>
+        <script src="../components/magiz-c-book/src/book.js"></script>
+        <script src="../components/magiz-c-video/src/video.js"></script>
+        <script src="../components/jquery/dist/jquery.js"></script>
+        <script src="../components/magiz-doc/doc.js"></script>
+        <script src="../components/magiz-doc/footer.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
