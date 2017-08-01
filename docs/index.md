@@ -23,6 +23,7 @@ This site is intended to host a variety of resources and pointers to information
 * [Classes and Objects](oop.md#classes-and-objects)
 * [Constructors](oop.md#constructors-__init__)
 * [Inheritance](oop.md##inheritance)
+* [Metaclasses](metaclasses.md)
 * [Design Patterns with Python](design_patterns.md)
 
 ## Go Deeper
