@@ -40,6 +40,7 @@ pages:
 
 markdown_extensions:
     - footnotes
+    - mdx_math
 
 extra_css:
   - components/magiz-c-book/src/book.css
@@ -61,4 +62,4 @@ extra_javascript:
   - components/magiz-c-video/src/video.js
   - components/magiz-doc/doc.js
   - components/magiz-doc/footer.js
-  - http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML
