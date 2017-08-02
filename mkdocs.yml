@@ -59,7 +59,6 @@ extra_javascript:
   - components/magiz-c-benchmark/src/bootstrap-popup.js
   - components/magiz-c-book/src/book.js
   - components/magiz-c-video/src/video.js
-  - components/jquery/dist/jquery.js
   - components/magiz-doc/doc.js
   - components/magiz-doc/footer.js
   - http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
