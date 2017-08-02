@@ -62,3 +62,4 @@ extra_javascript:
   - components/jquery/dist/jquery.js
   - components/magiz-doc/doc.js
   - components/magiz-doc/footer.js
+  - http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
