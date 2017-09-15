@@ -19,3 +19,4 @@ print greeting
 # References
 
 * http://www.ptmcg.com/geo/python/howtousepyparsing.html#steps-to-follow
+* Introduction to Pyparsing: An Object-oriented Easy-to-Use Toolkit for Building Recursive Descent Parsers, http://www.ptmcg.com/geo/python/confs/TxUnconf2008Pyparsing.html
