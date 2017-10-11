@@ -148,6 +148,14 @@ printinfo( 70, 60, 50 )
 
 ```
 
+## Module
+
+Relative import
+
+```
+from a import b
+```
+
 # Coding Convention
 
 ## Code layout
