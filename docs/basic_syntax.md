@@ -152,6 +152,13 @@ printinfo( 70, 60, 50 )
 
 Relative import
 
+Python 3
+```
+from .a import b
+```
+
+Python 2
+
 ```
 from a import b
 ```
